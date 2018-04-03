@@ -8,22 +8,33 @@
 
 #import "AppDelegate.h"
 
+#import "FFMAboutController.h"
+
 @interface AppDelegate ()
 
-@property (weak) IBOutlet NSWindow *window;
 
 @end
 
 @implementation AppDelegate
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-    // Insert code here to initialize your application
+    _windowController = [[FFMWindowController alloc] initWithWindowNibName:@"FFMWindowController"];
+    [_windowController.window center];
+    [_windowController.window makeKeyAndOrderFront:nil];
 }
 
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
     // Insert code here to tear down your application
 }
+
+#pragma mark-  menu
+
+- (IBAction)about:(NSMenuItem *)sender {
+    FFMAboutController *vc = [[FFMAboutController alloc] initWithNibName:@"FFMAboutController" bundle:nil];
+    [_windowController.contentViewController presentViewControllerAsModalWindow:vc];
+}
+
 
 
 @end

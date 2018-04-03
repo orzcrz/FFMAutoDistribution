@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		021AE5A52073D5FD00DB96A9 /* FFMConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 021AE5A42073D5FD00DB96A9 /* FFMConstants.m */; };
+		021AE5B02073D7F500DB96A9 /* FFMAboutController.m in Sources */ = {isa = PBXBuildFile; fileRef = 021AE5AE2073D7F500DB96A9 /* FFMAboutController.m */; };
+		021AE5B12073D7F500DB96A9 /* FFMAboutController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 021AE5AF2073D7F500DB96A9 /* FFMAboutController.xib */; };
+		021AE5B62073DA4E00DB96A9 /* FFMHomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 021AE5B42073DA4E00DB96A9 /* FFMHomeController.m */; };
+		021AE5B72073DA4E00DB96A9 /* FFMHomeController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 021AE5B52073DA4E00DB96A9 /* FFMHomeController.xib */; };
+		021AE5C02073DBB800DB96A9 /* FFMWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 021AE5BE2073DBB800DB96A9 /* FFMWindowController.m */; };
+		021AE5C12073DBB800DB96A9 /* FFMWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 021AE5BF2073DBB800DB96A9 /* FFMWindowController.xib */; };
 		D2162D8B2073C15E00260BC0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D2162D8A2073C15E00260BC0 /* AppDelegate.m */; };
 		D2162D8D2073C15E00260BC0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2162D8C2073C15E00260BC0 /* Assets.xcassets */; };
 		D2162D902073C15E00260BC0 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2162D8E2073C15E00260BC0 /* MainMenu.xib */; };
@@ -14,6 +21,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		021AE59E2073D1A100DB96A9 /* placeholder */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = placeholder; sourceTree = "<group>"; };
+		021AE5A02073D1C400DB96A9 /* placeholder */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = placeholder; sourceTree = "<group>"; };
+		021AE5A12073D1CF00DB96A9 /* placeholder */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = placeholder; sourceTree = "<group>"; };
+		021AE5A32073D5FD00DB96A9 /* FFMConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFMConstants.h; sourceTree = "<group>"; };
+		021AE5A42073D5FD00DB96A9 /* FFMConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFMConstants.m; sourceTree = "<group>"; };
+		021AE5AD2073D7F500DB96A9 /* FFMAboutController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFMAboutController.h; sourceTree = "<group>"; };
+		021AE5AE2073D7F500DB96A9 /* FFMAboutController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFMAboutController.m; sourceTree = "<group>"; };
+		021AE5AF2073D7F500DB96A9 /* FFMAboutController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FFMAboutController.xib; sourceTree = "<group>"; };
+		021AE5B32073DA4E00DB96A9 /* FFMHomeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFMHomeController.h; sourceTree = "<group>"; };
+		021AE5B42073DA4E00DB96A9 /* FFMHomeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFMHomeController.m; sourceTree = "<group>"; };
+		021AE5B52073DA4E00DB96A9 /* FFMHomeController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FFMHomeController.xib; sourceTree = "<group>"; };
+		021AE5BD2073DBB800DB96A9 /* FFMWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFMWindowController.h; sourceTree = "<group>"; };
+		021AE5BE2073DBB800DB96A9 /* FFMWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFMWindowController.m; sourceTree = "<group>"; };
+		021AE5BF2073DBB800DB96A9 /* FFMWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FFMWindowController.xib; sourceTree = "<group>"; };
 		D2162D862073C15E00260BC0 /* FFMAutoDistribution.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FFMAutoDistribution.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2162D892073C15E00260BC0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D2162D8A2073C15E00260BC0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -35,6 +56,55 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		021AE5992073D11500DB96A9 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				021AE5A12073D1CF00DB96A9 /* placeholder */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		021AE59A2073D11500DB96A9 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				021AE5A02073D1C400DB96A9 /* placeholder */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		021AE59B2073D11500DB96A9 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				021AE59E2073D1A100DB96A9 /* placeholder */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		021AE59C2073D11500DB96A9 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				021AE5A32073D5FD00DB96A9 /* FFMConstants.h */,
+				021AE5A42073D5FD00DB96A9 /* FFMConstants.m */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		021AE5AC2073D7F500DB96A9 /* Src */ = {
+			isa = PBXGroup;
+			children = (
+				021AE5AD2073D7F500DB96A9 /* FFMAboutController.h */,
+				021AE5AE2073D7F500DB96A9 /* FFMAboutController.m */,
+				021AE5AF2073D7F500DB96A9 /* FFMAboutController.xib */,
+				021AE5B32073DA4E00DB96A9 /* FFMHomeController.h */,
+				021AE5B42073DA4E00DB96A9 /* FFMHomeController.m */,
+				021AE5B52073DA4E00DB96A9 /* FFMHomeController.xib */,
+				021AE5BD2073DBB800DB96A9 /* FFMWindowController.h */,
+				021AE5BE2073DBB800DB96A9 /* FFMWindowController.m */,
+				021AE5BF2073DBB800DB96A9 /* FFMWindowController.xib */,
+			);
+			path = Src;
+			sourceTree = "<group>";
+		};
 		D2162D7D2073C15E00260BC0 = {
 			isa = PBXGroup;
 			children = (
@@ -56,8 +126,11 @@
 			children = (
 				D2162D892073C15E00260BC0 /* AppDelegate.h */,
 				D2162D8A2073C15E00260BC0 /* AppDelegate.m */,
-				D2162D9D2073C39400260BC0 /* Component */,
-				D2162D9C2073C38E00260BC0 /* Core */,
+				021AE5AC2073D7F500DB96A9 /* Src */,
+				021AE5992073D11500DB96A9 /* Components */,
+				021AE59A2073D11500DB96A9 /* Core */,
+				021AE59C2073D11500DB96A9 /* Utils */,
+				021AE59B2073D11500DB96A9 /* Resources */,
 				D2162D9A2073C1A600260BC0 /* SupportingFiles */,
 			);
 			path = FFMAutoDistribution;
@@ -66,27 +139,13 @@
 		D2162D9A2073C1A600260BC0 /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
-				D2162D8C2073C15E00260BC0 /* Assets.xcassets */,
 				D2162D8E2073C15E00260BC0 /* MainMenu.xib */,
+				D2162D8C2073C15E00260BC0 /* Assets.xcassets */,
 				D2162D912073C15E00260BC0 /* Info.plist */,
 				D2162D922073C15E00260BC0 /* main.m */,
 				D2162D9B2073C20800260BC0 /* FFMPrefixHeader.pch */,
 			);
 			path = SupportingFiles;
-			sourceTree = "<group>";
-		};
-		D2162D9C2073C38E00260BC0 /* Core */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Core;
-			sourceTree = "<group>";
-		};
-		D2162D9D2073C39400260BC0 /* Component */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Component;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -99,6 +158,7 @@
 				D2162D822073C15E00260BC0 /* Sources */,
 				D2162D832073C15E00260BC0 /* Frameworks */,
 				D2162D842073C15E00260BC0 /* Resources */,
+				021AE5A22073D3F600DB96A9 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -115,12 +175,13 @@
 		D2162D7E2073C15E00260BC0 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = FFM;
 				LastUpgradeCheck = 0910;
 				ORGANIZATIONNAME = "常润泽";
 				TargetAttributes = {
 					D2162D852073C15E00260BC0 = {
 						CreatedOnToolsVersion = 9.1;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.Sandbox = {
 								enabled = 0;
@@ -152,20 +213,43 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				021AE5B72073DA4E00DB96A9 /* FFMHomeController.xib in Resources */,
 				D2162D8D2073C15E00260BC0 /* Assets.xcassets in Resources */,
+				021AE5C12073DBB800DB96A9 /* FFMWindowController.xib in Resources */,
 				D2162D902073C15E00260BC0 /* MainMenu.xib in Resources */,
+				021AE5B12073D7F500DB96A9 /* FFMAboutController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		021AE5A22073D3F600DB96A9 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ \"Release\" == \"${CONFIGURATION}\" ]\n\nthen\n\nbuildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\n\nbuildNumber=$(($buildNumber + 1))\n\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"\n\nfi";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D2162D822073C15E00260BC0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				021AE5A52073D5FD00DB96A9 /* FFMConstants.m in Sources */,
+				021AE5C02073DBB800DB96A9 /* FFMWindowController.m in Sources */,
+				021AE5B62073DA4E00DB96A9 /* FFMHomeController.m in Sources */,
 				D2162D932073C15E00260BC0 /* main.m in Sources */,
 				D2162D8B2073C15E00260BC0 /* AppDelegate.m in Sources */,
+				021AE5B02073D7F500DB96A9 /* FFMAboutController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,7 +296,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -267,7 +351,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -290,9 +374,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 97LF6BB4ZK;
+				DEVELOPMENT_TEAM = "";
 				GCC_PREFIX_HEADER = "${SRCROOT}/$(TARGET_NAME)/SupportingFiles/FFMPrefixHeader.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/FFMAutoDistribution/SupportingFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
@@ -306,9 +391,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 97LF6BB4ZK;
+				DEVELOPMENT_TEAM = "";
 				GCC_PREFIX_HEADER = "${SRCROOT}/$(TARGET_NAME)/SupportingFiles/FFMPrefixHeader.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/FFMAutoDistribution/SupportingFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";

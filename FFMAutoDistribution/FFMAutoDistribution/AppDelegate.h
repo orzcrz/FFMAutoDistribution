@@ -7,9 +7,11 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "FFMWindowController.h"
 
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 
+@property (strong) FFMWindowController *windowController;
 
 @end
 

@@ -18,7 +18,7 @@
 - (void)windowDidLoad {
     [super windowDidLoad];
     
-    FFMHomeController *vc = [[FFMHomeController alloc] initWithNibName:@"FFMHomeController" bundle:[NSBundle mainBundle]];
+    FFMHomeController *vc = [FFMHomeController ffm_loadFromNib];
     self.contentViewController = vc;
 }
 

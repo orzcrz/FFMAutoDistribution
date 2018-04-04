@@ -7,34 +7,45 @@
 //
 
 #import "AppDelegate.h"
+#import "FFMAuthorization.h"
 
-#import "FFMAboutController.h"
+#import "FFMAboutWC.h"
+#import "FFMPreferencesWC.h"
 
-@interface AppDelegate ()
-
+@interface AppDelegate () {
+    FFMPreferencesWC *_preferenceWC;
+}
 
 @end
 
 @implementation AppDelegate
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-    _windowController = [[FFMWindowController alloc] initWithWindowNibName:@"FFMWindowController"];
-    [_windowController.window center];
+    _windowController = [FFMWindowController ffm_loadFromNib];
     [_windowController.window makeKeyAndOrderFront:nil];
+    
+//    [FFMAuthorization requestAuthorization:^(BOOL isAuthorized) {
+//    }];
 }
 
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
-    // Insert code here to tear down your application
+    
 }
 
 #pragma mark-  menu
 
 - (IBAction)about:(NSMenuItem *)sender {
-    FFMAboutController *vc = [[FFMAboutController alloc] initWithNibName:@"FFMAboutController" bundle:nil];
-    [_windowController.contentViewController presentViewControllerAsModalWindow:vc];
+    FFMAboutWC *about = [FFMAboutWC ffm_loadFromNib];
+    [_windowController showWindow:about.window];
+    [about.window orderFront:nil];
 }
 
+- (IBAction)preferences:(id)sender {
+    _preferenceWC = [FFMPreferencesWC ffm_loadFromNib];
+    [_windowController showWindow:_preferenceWC.window];
+    [_preferenceWC.window orderFront:nil];
+}
 
 
 @end

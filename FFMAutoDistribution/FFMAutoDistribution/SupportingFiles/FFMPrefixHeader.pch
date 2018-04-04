@@ -11,5 +11,6 @@
 
 #import "FFMConstants.h"
 
+#import "FFMNibHelper.h"
 
 #endif /* FFMPrefixHeader_pch */

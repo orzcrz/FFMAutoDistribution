@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		021AE5A52073D5FD00DB96A9 /* FFMConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 021AE5A42073D5FD00DB96A9 /* FFMConstants.m */; };
-		021AE5B02073D7F500DB96A9 /* FFMAboutController.m in Sources */ = {isa = PBXBuildFile; fileRef = 021AE5AE2073D7F500DB96A9 /* FFMAboutController.m */; };
-		021AE5B12073D7F500DB96A9 /* FFMAboutController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 021AE5AF2073D7F500DB96A9 /* FFMAboutController.xib */; };
 		021AE5B62073DA4E00DB96A9 /* FFMHomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 021AE5B42073DA4E00DB96A9 /* FFMHomeController.m */; };
 		021AE5B72073DA4E00DB96A9 /* FFMHomeController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 021AE5B52073DA4E00DB96A9 /* FFMHomeController.xib */; };
 		021AE5C02073DBB800DB96A9 /* FFMWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 021AE5BE2073DBB800DB96A9 /* FFMWindowController.m */; };
@@ -18,17 +16,19 @@
 		D2162D8D2073C15E00260BC0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2162D8C2073C15E00260BC0 /* Assets.xcassets */; };
 		D2162D902073C15E00260BC0 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2162D8E2073C15E00260BC0 /* MainMenu.xib */; };
 		D2162D932073C15E00260BC0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D2162D922073C15E00260BC0 /* main.m */; };
+		D2162DA3207463D700260BC0 /* FFMAboutWC.m in Sources */ = {isa = PBXBuildFile; fileRef = D2162DA1207463D700260BC0 /* FFMAboutWC.m */; };
+		D2162DA4207463D700260BC0 /* FFMAboutWC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2162DA2207463D700260BC0 /* FFMAboutWC.xib */; };
+		D2162DA82074685E00260BC0 /* FFMAuthorization.m in Sources */ = {isa = PBXBuildFile; fileRef = D2162DA72074685E00260BC0 /* FFMAuthorization.m */; };
+		D2162DB22074AC8F00260BC0 /* FFMPreferencesWC.m in Sources */ = {isa = PBXBuildFile; fileRef = D2162DB02074AC8F00260BC0 /* FFMPreferencesWC.m */; };
+		D2162DB32074AC8F00260BC0 /* FFMPreferencesWC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2162DB12074AC8F00260BC0 /* FFMPreferencesWC.xib */; };
+		D2162DC42074AE6E00260BC0 /* FFMNibHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D2162DC32074AE6E00260BC0 /* FFMNibHelper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		021AE59E2073D1A100DB96A9 /* placeholder */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = placeholder; sourceTree = "<group>"; };
-		021AE5A02073D1C400DB96A9 /* placeholder */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = placeholder; sourceTree = "<group>"; };
 		021AE5A12073D1CF00DB96A9 /* placeholder */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = placeholder; sourceTree = "<group>"; };
 		021AE5A32073D5FD00DB96A9 /* FFMConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFMConstants.h; sourceTree = "<group>"; };
 		021AE5A42073D5FD00DB96A9 /* FFMConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFMConstants.m; sourceTree = "<group>"; };
-		021AE5AD2073D7F500DB96A9 /* FFMAboutController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFMAboutController.h; sourceTree = "<group>"; };
-		021AE5AE2073D7F500DB96A9 /* FFMAboutController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFMAboutController.m; sourceTree = "<group>"; };
-		021AE5AF2073D7F500DB96A9 /* FFMAboutController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FFMAboutController.xib; sourceTree = "<group>"; };
 		021AE5B32073DA4E00DB96A9 /* FFMHomeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFMHomeController.h; sourceTree = "<group>"; };
 		021AE5B42073DA4E00DB96A9 /* FFMHomeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFMHomeController.m; sourceTree = "<group>"; };
 		021AE5B52073DA4E00DB96A9 /* FFMHomeController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FFMHomeController.xib; sourceTree = "<group>"; };
@@ -43,6 +43,16 @@
 		D2162D912073C15E00260BC0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D2162D922073C15E00260BC0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D2162D9B2073C20800260BC0 /* FFMPrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFMPrefixHeader.pch; sourceTree = "<group>"; };
+		D2162DA0207463D700260BC0 /* FFMAboutWC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFMAboutWC.h; sourceTree = "<group>"; };
+		D2162DA1207463D700260BC0 /* FFMAboutWC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFMAboutWC.m; sourceTree = "<group>"; };
+		D2162DA2207463D700260BC0 /* FFMAboutWC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FFMAboutWC.xib; sourceTree = "<group>"; };
+		D2162DA62074685E00260BC0 /* FFMAuthorization.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFMAuthorization.h; sourceTree = "<group>"; };
+		D2162DA72074685E00260BC0 /* FFMAuthorization.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFMAuthorization.m; sourceTree = "<group>"; };
+		D2162DAF2074AC8F00260BC0 /* FFMPreferencesWC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFMPreferencesWC.h; sourceTree = "<group>"; };
+		D2162DB02074AC8F00260BC0 /* FFMPreferencesWC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFMPreferencesWC.m; sourceTree = "<group>"; };
+		D2162DB12074AC8F00260BC0 /* FFMPreferencesWC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FFMPreferencesWC.xib; sourceTree = "<group>"; };
+		D2162DC22074AE6E00260BC0 /* FFMNibHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFMNibHelper.h; sourceTree = "<group>"; };
+		D2162DC32074AE6E00260BC0 /* FFMNibHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFMNibHelper.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,7 +77,7 @@
 		021AE59A2073D11500DB96A9 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				021AE5A02073D1C400DB96A9 /* placeholder */,
+				D2162DA52074680E00260BC0 /* Authorization */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -83,6 +93,7 @@
 		021AE59C2073D11500DB96A9 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				D2162DBE2074ADFC00260BC0 /* Ext */,
 				021AE5A32073D5FD00DB96A9 /* FFMConstants.h */,
 				021AE5A42073D5FD00DB96A9 /* FFMConstants.m */,
 			);
@@ -92,15 +103,9 @@
 		021AE5AC2073D7F500DB96A9 /* Src */ = {
 			isa = PBXGroup;
 			children = (
-				021AE5AD2073D7F500DB96A9 /* FFMAboutController.h */,
-				021AE5AE2073D7F500DB96A9 /* FFMAboutController.m */,
-				021AE5AF2073D7F500DB96A9 /* FFMAboutController.xib */,
-				021AE5B32073DA4E00DB96A9 /* FFMHomeController.h */,
-				021AE5B42073DA4E00DB96A9 /* FFMHomeController.m */,
-				021AE5B52073DA4E00DB96A9 /* FFMHomeController.xib */,
-				021AE5BD2073DBB800DB96A9 /* FFMWindowController.h */,
-				021AE5BE2073DBB800DB96A9 /* FFMWindowController.m */,
-				021AE5BF2073DBB800DB96A9 /* FFMWindowController.xib */,
+				D2162DA920746CB400260BC0 /* Preferences */,
+				D2162D9F20745D6A00260BC0 /* About */,
+				D2162D9E20745D4400260BC0 /* Root */,
 			);
 			path = Src;
 			sourceTree = "<group>";
@@ -148,6 +153,57 @@
 			path = SupportingFiles;
 			sourceTree = "<group>";
 		};
+		D2162D9E20745D4400260BC0 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				021AE5B32073DA4E00DB96A9 /* FFMHomeController.h */,
+				021AE5B42073DA4E00DB96A9 /* FFMHomeController.m */,
+				021AE5B52073DA4E00DB96A9 /* FFMHomeController.xib */,
+				021AE5BD2073DBB800DB96A9 /* FFMWindowController.h */,
+				021AE5BE2073DBB800DB96A9 /* FFMWindowController.m */,
+				021AE5BF2073DBB800DB96A9 /* FFMWindowController.xib */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		D2162D9F20745D6A00260BC0 /* About */ = {
+			isa = PBXGroup;
+			children = (
+				D2162DA0207463D700260BC0 /* FFMAboutWC.h */,
+				D2162DA1207463D700260BC0 /* FFMAboutWC.m */,
+				D2162DA2207463D700260BC0 /* FFMAboutWC.xib */,
+			);
+			path = About;
+			sourceTree = "<group>";
+		};
+		D2162DA52074680E00260BC0 /* Authorization */ = {
+			isa = PBXGroup;
+			children = (
+				D2162DA62074685E00260BC0 /* FFMAuthorization.h */,
+				D2162DA72074685E00260BC0 /* FFMAuthorization.m */,
+			);
+			path = Authorization;
+			sourceTree = "<group>";
+		};
+		D2162DA920746CB400260BC0 /* Preferences */ = {
+			isa = PBXGroup;
+			children = (
+				D2162DAF2074AC8F00260BC0 /* FFMPreferencesWC.h */,
+				D2162DB02074AC8F00260BC0 /* FFMPreferencesWC.m */,
+				D2162DB12074AC8F00260BC0 /* FFMPreferencesWC.xib */,
+			);
+			path = Preferences;
+			sourceTree = "<group>";
+		};
+		D2162DBE2074ADFC00260BC0 /* Ext */ = {
+			isa = PBXGroup;
+			children = (
+				D2162DC22074AE6E00260BC0 /* FFMNibHelper.h */,
+				D2162DC32074AE6E00260BC0 /* FFMNibHelper.m */,
+			);
+			path = Ext;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -181,7 +237,7 @@
 				TargetAttributes = {
 					D2162D852073C15E00260BC0 = {
 						CreatedOnToolsVersion = 9.1;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Sandbox = {
 								enabled = 0;
@@ -213,11 +269,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2162DB32074AC8F00260BC0 /* FFMPreferencesWC.xib in Resources */,
 				021AE5B72073DA4E00DB96A9 /* FFMHomeController.xib in Resources */,
+				D2162DA4207463D700260BC0 /* FFMAboutWC.xib in Resources */,
 				D2162D8D2073C15E00260BC0 /* Assets.xcassets in Resources */,
 				021AE5C12073DBB800DB96A9 /* FFMWindowController.xib in Resources */,
 				D2162D902073C15E00260BC0 /* MainMenu.xib in Resources */,
-				021AE5B12073D7F500DB96A9 /* FFMAboutController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,10 +303,13 @@
 			files = (
 				021AE5A52073D5FD00DB96A9 /* FFMConstants.m in Sources */,
 				021AE5C02073DBB800DB96A9 /* FFMWindowController.m in Sources */,
+				D2162DC42074AE6E00260BC0 /* FFMNibHelper.m in Sources */,
+				D2162DA3207463D700260BC0 /* FFMAboutWC.m in Sources */,
+				D2162DB22074AC8F00260BC0 /* FFMPreferencesWC.m in Sources */,
 				021AE5B62073DA4E00DB96A9 /* FFMHomeController.m in Sources */,
 				D2162D932073C15E00260BC0 /* main.m in Sources */,
 				D2162D8B2073C15E00260BC0 /* AppDelegate.m in Sources */,
-				021AE5B02073D7F500DB96A9 /* FFMAboutController.m in Sources */,
+				D2162DA82074685E00260BC0 /* FFMAuthorization.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

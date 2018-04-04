@@ -14,6 +14,10 @@
 
 @interface FFMWindowController ()
 
+@property (nonatomic, strong) FFMAboutWC *about;
+@property (nonatomic, strong) FFMPreferencesWC *preferenceWC;
+@property (nonatomic, strong) FFMGitRepoSettingWC *gitRepo;
+
 @end
 
 @implementation FFMWindowController
@@ -23,24 +27,40 @@
     
 }
 
+- (void)end {
+    
+}
+
 - (void)showAbout {
-    FFMAboutWC *about = [FFMAboutWC ffm_loadFromNib];
-    [self showWindow:about.window];
-    [about.window orderFront:nil];
+    [self.about showWindow:self];
 }
 
 - (void)showPreference {
-    FFMPreferencesWC *preferenceWC = [FFMPreferencesWC ffm_loadFromNib];
-    [self showWindow:preferenceWC.window];
-    [preferenceWC.window orderFront:nil];
+    [self.preferenceWC showWindow:self];
 }
 
 - (void)showRepoSetting {
-    FFMGitRepoSettingWC *gitRepo = [FFMGitRepoSettingWC ffm_loadFromNib];
-    
-    [self showWindow:gitRepo.window];
-    [gitRepo.window orderFront:nil];
+    [self.gitRepo showWindow:self];
 }
 
+#pragma mark-   Setter & Getter
+
+- (FFMAboutWC *)about {
+    if (_about) return _about;
+    _about = [FFMAboutWC ffm_loadFromNib];
+    return _about;
+}
+
+- (FFMPreferencesWC *)preferenceWC {
+    if (_preferenceWC) return _preferenceWC;
+    _preferenceWC = [FFMPreferencesWC ffm_loadFromNib];
+    return _preferenceWC;
+}
+
+- (FFMGitRepoSettingWC *)gitRepo {
+    if (_gitRepo) return _gitRepo;
+    _gitRepo = [FFMGitRepoSettingWC ffm_loadFromNib];
+    return _gitRepo;
+}
 
 @end

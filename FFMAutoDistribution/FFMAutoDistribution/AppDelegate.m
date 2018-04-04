@@ -9,6 +9,8 @@
 #import "AppDelegate.h"
 #import "FFMAuthorization.h"
 
+#import "FFMGitRepoSettingWC.h"
+
 @interface AppDelegate ()
 
 @end
@@ -18,7 +20,6 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     _windowController = [FFMWindowController ffm_loadFromNib];
     [_windowController.window makeKeyAndOrderFront:nil];
-    
 //    [FFMAuthorization requestAuthorization:^(BOOL isAuthorized) {
 //    }];
 }

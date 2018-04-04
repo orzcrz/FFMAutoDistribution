@@ -32,7 +32,7 @@
 #pragma mark-   touch action
 
 - (IBAction)cancel:(id)sender {
-    [self.window orderOut:nil];
+    [self.window close];
 }
 
 - (IBAction)confirm:(NSButton *)sender {

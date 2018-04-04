@@ -13,4 +13,7 @@
 
 #import "FFMNibHelper.h"
 
+#import "FFMBaseView.h"
+
+
 #endif /* FFMPrefixHeader_pch */

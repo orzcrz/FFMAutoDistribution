@@ -7,7 +7,10 @@
 //
 
 #import "FFMWindowController.h"
-#import "FFMHomeController.h"
+
+#import "FFMAboutWC.h"
+#import "FFMPreferencesWC.h"
+#import "FFMGitRepoSettingWC.h"
 
 @interface FFMWindowController ()
 
@@ -18,8 +21,26 @@
 - (void)windowDidLoad {
     [super windowDidLoad];
     
-    FFMHomeController *vc = [FFMHomeController ffm_loadFromNib];
-    self.contentViewController = vc;
 }
+
+- (void)showAbout {
+    FFMAboutWC *about = [FFMAboutWC ffm_loadFromNib];
+    [self showWindow:about.window];
+    [about.window orderFront:nil];
+}
+
+- (void)showPreference {
+    FFMPreferencesWC *preferenceWC = [FFMPreferencesWC ffm_loadFromNib];
+    [self showWindow:preferenceWC.window];
+    [preferenceWC.window orderFront:nil];
+}
+
+- (void)showRepoSetting {
+    FFMGitRepoSettingWC *gitRepo = [FFMGitRepoSettingWC ffm_loadFromNib];
+    
+    [self showWindow:gitRepo.window];
+    [gitRepo.window orderFront:nil];
+}
+
 
 @end

@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		021AE5A52073D5FD00DB96A9 /* FFMConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 021AE5A42073D5FD00DB96A9 /* FFMConstants.m */; };
-		021AE5B62073DA4E00DB96A9 /* FFMHomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 021AE5B42073DA4E00DB96A9 /* FFMHomeController.m */; };
-		021AE5B72073DA4E00DB96A9 /* FFMHomeController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 021AE5B52073DA4E00DB96A9 /* FFMHomeController.xib */; };
 		021AE5C02073DBB800DB96A9 /* FFMWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 021AE5BE2073DBB800DB96A9 /* FFMWindowController.m */; };
 		021AE5C12073DBB800DB96A9 /* FFMWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 021AE5BF2073DBB800DB96A9 /* FFMWindowController.xib */; };
 		D2162D8B2073C15E00260BC0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D2162D8A2073C15E00260BC0 /* AppDelegate.m */; };
@@ -22,6 +20,9 @@
 		D2162DB22074AC8F00260BC0 /* FFMPreferencesWC.m in Sources */ = {isa = PBXBuildFile; fileRef = D2162DB02074AC8F00260BC0 /* FFMPreferencesWC.m */; };
 		D2162DB32074AC8F00260BC0 /* FFMPreferencesWC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2162DB12074AC8F00260BC0 /* FFMPreferencesWC.xib */; };
 		D2162DC42074AE6E00260BC0 /* FFMNibHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D2162DC32074AE6E00260BC0 /* FFMNibHelper.m */; };
+		D2D24EE12074C76E008CEB8E /* FFMGitRepoSettingWC.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D24EDF2074C76E008CEB8E /* FFMGitRepoSettingWC.m */; };
+		D2D24EE22074C76E008CEB8E /* FFMGitRepoSettingWC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2D24EE02074C76E008CEB8E /* FFMGitRepoSettingWC.xib */; };
+		D2D24EE62074D568008CEB8E /* FFMBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D24EE52074D568008CEB8E /* FFMBaseView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,9 +30,6 @@
 		021AE5A12073D1CF00DB96A9 /* placeholder */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = placeholder; sourceTree = "<group>"; };
 		021AE5A32073D5FD00DB96A9 /* FFMConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFMConstants.h; sourceTree = "<group>"; };
 		021AE5A42073D5FD00DB96A9 /* FFMConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFMConstants.m; sourceTree = "<group>"; };
-		021AE5B32073DA4E00DB96A9 /* FFMHomeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFMHomeController.h; sourceTree = "<group>"; };
-		021AE5B42073DA4E00DB96A9 /* FFMHomeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFMHomeController.m; sourceTree = "<group>"; };
-		021AE5B52073DA4E00DB96A9 /* FFMHomeController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FFMHomeController.xib; sourceTree = "<group>"; };
 		021AE5BD2073DBB800DB96A9 /* FFMWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFMWindowController.h; sourceTree = "<group>"; };
 		021AE5BE2073DBB800DB96A9 /* FFMWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFMWindowController.m; sourceTree = "<group>"; };
 		021AE5BF2073DBB800DB96A9 /* FFMWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FFMWindowController.xib; sourceTree = "<group>"; };
@@ -53,6 +51,11 @@
 		D2162DB12074AC8F00260BC0 /* FFMPreferencesWC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FFMPreferencesWC.xib; sourceTree = "<group>"; };
 		D2162DC22074AE6E00260BC0 /* FFMNibHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFMNibHelper.h; sourceTree = "<group>"; };
 		D2162DC32074AE6E00260BC0 /* FFMNibHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFMNibHelper.m; sourceTree = "<group>"; };
+		D2D24EDE2074C76E008CEB8E /* FFMGitRepoSettingWC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFMGitRepoSettingWC.h; sourceTree = "<group>"; };
+		D2D24EDF2074C76E008CEB8E /* FFMGitRepoSettingWC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFMGitRepoSettingWC.m; sourceTree = "<group>"; };
+		D2D24EE02074C76E008CEB8E /* FFMGitRepoSettingWC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FFMGitRepoSettingWC.xib; sourceTree = "<group>"; };
+		D2D24EE42074D568008CEB8E /* FFMBaseView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFMBaseView.h; sourceTree = "<group>"; };
+		D2D24EE52074D568008CEB8E /* FFMBaseView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFMBaseView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +96,7 @@
 		021AE59C2073D11500DB96A9 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				D2D24EE32074D553008CEB8E /* UI */,
 				D2162DBE2074ADFC00260BC0 /* Ext */,
 				021AE5A32073D5FD00DB96A9 /* FFMConstants.h */,
 				021AE5A42073D5FD00DB96A9 /* FFMConstants.m */,
@@ -103,6 +107,7 @@
 		021AE5AC2073D7F500DB96A9 /* Src */ = {
 			isa = PBXGroup;
 			children = (
+				D2D24EDD2074C73F008CEB8E /* GitRepo */,
 				D2162DA920746CB400260BC0 /* Preferences */,
 				D2162D9F20745D6A00260BC0 /* About */,
 				D2162D9E20745D4400260BC0 /* Root */,
@@ -156,9 +161,6 @@
 		D2162D9E20745D4400260BC0 /* Root */ = {
 			isa = PBXGroup;
 			children = (
-				021AE5B32073DA4E00DB96A9 /* FFMHomeController.h */,
-				021AE5B42073DA4E00DB96A9 /* FFMHomeController.m */,
-				021AE5B52073DA4E00DB96A9 /* FFMHomeController.xib */,
 				021AE5BD2073DBB800DB96A9 /* FFMWindowController.h */,
 				021AE5BE2073DBB800DB96A9 /* FFMWindowController.m */,
 				021AE5BF2073DBB800DB96A9 /* FFMWindowController.xib */,
@@ -202,6 +204,25 @@
 				D2162DC32074AE6E00260BC0 /* FFMNibHelper.m */,
 			);
 			path = Ext;
+			sourceTree = "<group>";
+		};
+		D2D24EDD2074C73F008CEB8E /* GitRepo */ = {
+			isa = PBXGroup;
+			children = (
+				D2D24EDE2074C76E008CEB8E /* FFMGitRepoSettingWC.h */,
+				D2D24EDF2074C76E008CEB8E /* FFMGitRepoSettingWC.m */,
+				D2D24EE02074C76E008CEB8E /* FFMGitRepoSettingWC.xib */,
+			);
+			path = GitRepo;
+			sourceTree = "<group>";
+		};
+		D2D24EE32074D553008CEB8E /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				D2D24EE42074D568008CEB8E /* FFMBaseView.h */,
+				D2D24EE52074D568008CEB8E /* FFMBaseView.m */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,9 +291,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D2162DB32074AC8F00260BC0 /* FFMPreferencesWC.xib in Resources */,
-				021AE5B72073DA4E00DB96A9 /* FFMHomeController.xib in Resources */,
 				D2162DA4207463D700260BC0 /* FFMAboutWC.xib in Resources */,
 				D2162D8D2073C15E00260BC0 /* Assets.xcassets in Resources */,
+				D2D24EE22074C76E008CEB8E /* FFMGitRepoSettingWC.xib in Resources */,
 				021AE5C12073DBB800DB96A9 /* FFMWindowController.xib in Resources */,
 				D2162D902073C15E00260BC0 /* MainMenu.xib in Resources */,
 			);
@@ -301,12 +322,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2D24EE12074C76E008CEB8E /* FFMGitRepoSettingWC.m in Sources */,
 				021AE5A52073D5FD00DB96A9 /* FFMConstants.m in Sources */,
 				021AE5C02073DBB800DB96A9 /* FFMWindowController.m in Sources */,
+				D2D24EE62074D568008CEB8E /* FFMBaseView.m in Sources */,
 				D2162DC42074AE6E00260BC0 /* FFMNibHelper.m in Sources */,
 				D2162DA3207463D700260BC0 /* FFMAboutWC.m in Sources */,
 				D2162DB22074AC8F00260BC0 /* FFMPreferencesWC.m in Sources */,
-				021AE5B62073DA4E00DB96A9 /* FFMHomeController.m in Sources */,
 				D2162D932073C15E00260BC0 /* main.m in Sources */,
 				D2162D8B2073C15E00260BC0 /* AppDelegate.m in Sources */,
 				D2162DA82074685E00260BC0 /* FFMAuthorization.m in Sources */,

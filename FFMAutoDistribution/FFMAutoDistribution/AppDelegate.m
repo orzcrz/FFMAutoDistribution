@@ -9,12 +9,7 @@
 #import "AppDelegate.h"
 #import "FFMAuthorization.h"
 
-#import "FFMAboutWC.h"
-#import "FFMPreferencesWC.h"
-
-@interface AppDelegate () {
-    FFMPreferencesWC *_preferenceWC;
-}
+@interface AppDelegate ()
 
 @end
 
@@ -36,15 +31,15 @@
 #pragma mark-  menu
 
 - (IBAction)about:(NSMenuItem *)sender {
-    FFMAboutWC *about = [FFMAboutWC ffm_loadFromNib];
-    [_windowController showWindow:about.window];
-    [about.window orderFront:nil];
+    [_windowController showAbout];
 }
 
 - (IBAction)preferences:(id)sender {
-    _preferenceWC = [FFMPreferencesWC ffm_loadFromNib];
-    [_windowController showWindow:_preferenceWC.window];
-    [_preferenceWC.window orderFront:nil];
+    [_windowController showPreference];
+}
+
+- (IBAction)setGitRepo:(id)sender {
+    [_windowController showRepoSetting];
 }
 
 

@@ -10,4 +10,8 @@
 
 @interface FFMWindowController : NSWindowController
 
+- (void)showAbout;
+- (void)showPreference;
+- (void)showRepoSetting;
+
 @end

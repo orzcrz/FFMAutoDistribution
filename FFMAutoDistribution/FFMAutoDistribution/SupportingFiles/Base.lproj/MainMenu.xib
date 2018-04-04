@@ -42,21 +42,14 @@
                         </items>
                     </menu>
                 </menuItem>
-                <menuItem title="仓库" id="aUF-d1-5bR">
+                <menuItem title="仓库" id="1jT-s1-bwf">
                     <modifierMask key="keyEquivalentModifierMask"/>
-                    <menu key="submenu" title="仓库" systemMenu="window" id="Td7-aD-5lo">
+                    <menu key="submenu" title="仓库" systemMenu="apple" id="FG3-YR-IJK">
                         <items>
-                            <menuItem title="仓库设置" id="OY7-WF-poV">
+                            <menuItem title="仓库设置" id="19M-KI-iBc" userLabel="仓库设置">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
-                                    <action selector="performMiniaturize:" target="-1" id="VwT-WD-YPe"/>
-                                </connections>
-                            </menuItem>
-                            <menuItem isSeparatorItem="YES" id="eu3-7i-yIM"/>
-                            <menuItem title="刷新远程仓库" id="LE2-aR-0XJ">
-                                <modifierMask key="keyEquivalentModifierMask"/>
-                                <connections>
-                                    <action selector="arrangeInFront:" target="-1" id="DRN-fu-gQh"/>
+                                    <action selector="setGitRepo:" target="Voe-Tx-rLC" id="nlm-zb-fDR"/>
                                 </connections>
                             </menuItem>
                         </items>

@@ -36,6 +36,7 @@
 #pragma mark-   touch action
 
 - (IBAction)openPanel:(NSButton *)sender {
+    sender.state = NSOnState;
     [FFMUtils openPanel:^(NSString *path) {
         _localTF.stringValue = path;
     }];
@@ -46,8 +47,8 @@
 }
 
 - (IBAction)confirm:(NSButton *)sender {
-    sender.state = NSControlStateValueOn;
-
+    sender.state = NSOnState;
+    
     NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
     [ud setObject:_remoteNameTF.stringValue forKey:FFMGitRepoRemoteName];
     [ud setObject:_remoteTF.stringValue forKey:FFMGitRepoRemoteURL];

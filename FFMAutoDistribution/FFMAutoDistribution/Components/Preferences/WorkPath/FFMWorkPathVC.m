@@ -23,7 +23,7 @@
 }
 
 - (IBAction)selectPath:(NSButton *)sender {
-    sender.state = NSControlStateValueOn;
+    sender.state = NSOnState;
     
     [FFMUtils openPanel:^(NSString *path) {
         _workPath.stringValue = path;

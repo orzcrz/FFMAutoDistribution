@@ -74,7 +74,7 @@
 #pragma mark-   touch action
 
 - (IBAction)packing:(NSButton *)sender {
-    sender.state = NSControlStateValueOn;
+    sender.state = NSOnState;
     
     self.output.args = self.shellArgs;
     

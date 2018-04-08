@@ -20,13 +20,17 @@
 
 @implementation FFMGitRepoSettingWC
 
-- (void)dealloc {
-    NSLog(@"%@ dealloc", NSStringFromClass([self class]));
-}
-
 - (void)windowDidLoad {
     [super windowDidLoad];
     
+    __weak typeof(self) weakself = self;
+    [[NSNotificationCenter defaultCenter] addObserverForName:NSControlTextDidChangeNotification object:nil queue:nil usingBlock:^(NSNotification * _Nonnull note) {
+        weakself.confirmBtn.enabled = \
+        weakself.remoteNameTF.stringValue.length &&
+        weakself.remoteTF.stringValue.length &&
+        weakself.localNameTF.stringValue.length &&
+        weakself.localTF.stringValue.length;
+    }];
 }
 
 #pragma mark-   touch action
@@ -37,7 +41,13 @@
 
 - (IBAction)confirm:(NSButton *)sender {
     sender.state = NSControlStateValueOn;
-    
+
+    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+    [ud setObject:_remoteNameTF.stringValue forKey:FFMGitRepoRemoteName];
+    [ud setObject:_remoteTF.stringValue forKey:FFMGitRepoRemoteURL];
+    [ud setObject:_localNameTF.stringValue forKey:FFMGitRepoLocalName];
+    [ud setObject:_localTF.stringValue forKey:FFMGitRepoLocalURL];
+    [ud synchronize];
 }
 
 @end

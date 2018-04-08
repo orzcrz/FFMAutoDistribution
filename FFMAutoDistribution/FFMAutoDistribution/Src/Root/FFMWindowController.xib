@@ -8,6 +8,12 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="FFMWindowController">
             <connections>
+                <outlet property="branch" destination="5h4-oX-rYH" id="nXL-7H-d8x"/>
+                <outlet property="build" destination="I7Q-fn-6RW" id="JVo-j8-Daa"/>
+                <outlet property="log" destination="6UG-mR-yqW" id="ceb-Ns-T5i"/>
+                <outlet property="packingBtn" destination="rUJ-FY-KzO" id="ukl-j8-wE7"/>
+                <outlet property="platform" destination="RLx-d5-Iup" id="f2Y-hA-KLb"/>
+                <outlet property="sign" destination="dow-Lk-Khr" id="1DK-1V-naz"/>
                 <outlet property="window" destination="F0z-JX-Cv5" id="gIp-Ho-8D9"/>
             </connections>
         </customObject>
@@ -15,15 +21,176 @@
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <window allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" animationBehavior="default" id="F0z-JX-Cv5">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
-            <rect key="contentRect" x="196" y="240" width="480" height="270"/>
+            <rect key="contentRect" x="196" y="240" width="540" height="268"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
             <view key="contentView" wantsLayer="YES" id="se5-gp-TjO">
-                <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                <rect key="frame" x="0.0" y="0.0" width="540" height="268"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="u4y-Th-sh1">
+                        <rect key="frame" x="241" y="191" width="58" height="17"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="更新日志" id="RWj-Bs-hVd">
+                            <font key="font" size="13" name=".PingFangSC-Regular"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8oT-y1-hFV">
+                        <rect key="frame" x="150" y="87" width="240" height="88"/>
+                        <clipView key="contentView" id="f1x-m6-mKl">
+                            <rect key="frame" x="1" y="1" width="223" height="86"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <textView importsGraphics="NO" verticallyResizable="YES" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="6UG-mR-yqW">
+                                    <rect key="frame" x="0.0" y="0.0" width="223" height="86"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <size key="minSize" width="223" height="86"/>
+                                    <size key="maxSize" width="503" height="10000000"/>
+                                    <color key="insertionPointColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </textView>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </clipView>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="240" id="Fj3-Nu-rIH"/>
+                            <constraint firstAttribute="height" constant="88" id="y3V-bN-gJX"/>
+                        </constraints>
+                        <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="mpZ-NB-8Ym">
+                            <rect key="frame" x="-100" y="-100" width="87" height="18"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </scroller>
+                        <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="GN9-1Z-T9i">
+                            <rect key="frame" x="224" y="1" width="15" height="86"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </scroller>
+                    </scrollView>
+                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="Njn-en-SJX">
+                        <rect key="frame" x="0.0" y="224" width="540" height="44"/>
+                        <subviews>
+                            <box verticalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="LOG-9I-54x">
+                                <rect key="frame" x="0.0" y="-2" width="540" height="5"/>
+                            </box>
+                            <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="I7Q-fn-6RW">
+                                <rect key="frame" x="272" y="9" width="130" height="26"/>
+                                <popUpButtonCell key="cell" type="push" title="Debug" bezelStyle="rounded" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" selectedItem="qim-BN-kIt" id="Clj-Bg-JYU">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="menu"/>
+                                    <menu key="menu" title="蒲公英" id="UG6-6a-0Vo">
+                                        <items>
+                                            <menuItem title="Debug" state="on" id="qim-BN-kIt">
+                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                            </menuItem>
+                                            <menuItem title="Release" id="MkA-cs-K5u">
+                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                            </menuItem>
+                                        </items>
+                                    </menu>
+                                </popUpButtonCell>
+                            </popUpButton>
+                            <comboBox verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="5h4-oX-rYH">
+                                <rect key="frame" x="8" y="8" width="128" height="26"/>
+                                <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" completes="NO" usesDataSource="YES" numberOfVisibleItems="6" id="cRe-aj-U5f">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </comboBoxCell>
+                                <connections>
+                                    <action selector="checkBranch:" target="-2" id="fFm-n2-kB1"/>
+                                    <outlet property="dataSource" destination="-2" id="xu0-Zp-fpy"/>
+                                </connections>
+                            </comboBox>
+                            <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="RLx-d5-Iup">
+                                <rect key="frame" x="405" y="9" width="130" height="26"/>
+                                <popUpButtonCell key="cell" type="push" title="蒲公英" bezelStyle="rounded" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="NFY-vB-C6v" id="iY7-g3-1WD">
+                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="menu"/>
+                                    <menu key="menu" title="蒲公英" id="H1X-qu-EMo">
+                                        <items>
+                                            <menuItem title="蒲公英" state="on" id="NFY-vB-C6v">
+                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                            </menuItem>
+                                            <menuItem title="Fir" id="xqY-hW-u5W">
+                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                            </menuItem>
+                                            <menuItem title="TestFlight" id="0Ja-73-MEV">
+                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                            </menuItem>
+                                        </items>
+                                    </menu>
+                                </popUpButtonCell>
+                            </popUpButton>
+                            <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="dow-Lk-Khr">
+                                <rect key="frame" x="139" y="9" width="130" height="26"/>
+                                <popUpButtonCell key="cell" type="push" title="development" bezelStyle="rounded" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="YIP-oc-mlo" id="UdV-en-InB" userLabel="签名">
+                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="menu"/>
+                                    <menu key="menu" title="development" id="UCc-9Q-jfQ">
+                                        <items>
+                                            <menuItem title="development" state="on" id="YIP-oc-mlo">
+                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                            </menuItem>
+                                            <menuItem title="ad-hoc" id="XWc-C7-odS">
+                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                            </menuItem>
+                                            <menuItem title="app-store" id="gh5-S7-w5o">
+                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                            </menuItem>
+                                        </items>
+                                    </menu>
+                                </popUpButtonCell>
+                            </popUpButton>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="I7Q-fn-6RW" firstAttribute="leading" secondItem="dow-Lk-Khr" secondAttribute="trailing" constant="8" id="7lu-VI-FhH"/>
+                            <constraint firstAttribute="bottom" secondItem="LOG-9I-54x" secondAttribute="bottom" id="8Uc-vH-Sgr"/>
+                            <constraint firstAttribute="height" constant="44" id="9by-CG-wVp"/>
+                            <constraint firstAttribute="trailing" secondItem="LOG-9I-54x" secondAttribute="trailing" id="DVW-Ve-dYQ"/>
+                            <constraint firstItem="5h4-oX-rYH" firstAttribute="leading" secondItem="Njn-en-SJX" secondAttribute="leading" constant="8" id="HmJ-TU-Cr1"/>
+                            <constraint firstAttribute="trailing" secondItem="RLx-d5-Iup" secondAttribute="trailing" constant="8" id="JMQ-sd-cKW"/>
+                            <constraint firstItem="dow-Lk-Khr" firstAttribute="leading" secondItem="5h4-oX-rYH" secondAttribute="trailing" constant="8" id="Wpn-52-Ugm"/>
+                            <constraint firstItem="dow-Lk-Khr" firstAttribute="centerY" secondItem="5h4-oX-rYH" secondAttribute="centerY" id="cBF-rk-H18"/>
+                            <constraint firstItem="LOG-9I-54x" firstAttribute="leading" secondItem="Njn-en-SJX" secondAttribute="leading" id="iGi-Dd-voR"/>
+                            <constraint firstItem="I7Q-fn-6RW" firstAttribute="centerY" secondItem="dow-Lk-Khr" secondAttribute="centerY" id="ikI-cf-mbh"/>
+                            <constraint firstItem="5h4-oX-rYH" firstAttribute="centerY" secondItem="Njn-en-SJX" secondAttribute="centerY" id="jqK-S6-1GY"/>
+                            <constraint firstItem="RLx-d5-Iup" firstAttribute="leading" secondItem="I7Q-fn-6RW" secondAttribute="trailing" constant="8" id="mi7-rn-oNk"/>
+                            <constraint firstItem="dow-Lk-Khr" firstAttribute="width" secondItem="5h4-oX-rYH" secondAttribute="width" id="mwx-x8-27c"/>
+                            <constraint firstItem="RLx-d5-Iup" firstAttribute="width" secondItem="I7Q-fn-6RW" secondAttribute="width" id="sDj-8t-2ak"/>
+                            <constraint firstItem="I7Q-fn-6RW" firstAttribute="width" secondItem="dow-Lk-Khr" secondAttribute="width" id="tSd-jI-aKv"/>
+                            <constraint firstItem="RLx-d5-Iup" firstAttribute="centerY" secondItem="I7Q-fn-6RW" secondAttribute="centerY" id="xqa-tA-knC"/>
+                        </constraints>
+                    </customView>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="rUJ-FY-KzO">
+                        <rect key="frame" x="193" y="36" width="140" height="32"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="128" id="Ohh-LR-9EI"/>
+                        </constraints>
+                        <buttonCell key="cell" type="push" title="打包" bezelStyle="rounded" alignment="center" enabled="NO" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="DoM-Xo-ywe">
+                            <behavior key="behavior" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="packing:" target="-2" id="CPA-Nx-eiM"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="8oT-y1-hFV" firstAttribute="centerX" secondItem="u4y-Th-sh1" secondAttribute="centerX" id="5hD-KX-hzm"/>
+                    <constraint firstItem="rUJ-FY-KzO" firstAttribute="centerX" secondItem="6UG-mR-yqW" secondAttribute="centerX" id="7hc-UK-hk1"/>
+                    <constraint firstItem="Njn-en-SJX" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" id="CrZ-n8-B3U"/>
+                    <constraint firstItem="u4y-Th-sh1" firstAttribute="centerX" secondItem="se5-gp-TjO" secondAttribute="centerX" id="T8H-YW-frc"/>
+                    <constraint firstAttribute="trailing" secondItem="Njn-en-SJX" secondAttribute="trailing" id="Zkh-bk-FM5"/>
+                    <constraint firstItem="Njn-en-SJX" firstAttribute="top" secondItem="se5-gp-TjO" secondAttribute="top" id="joV-T1-xDm"/>
+                    <constraint firstItem="rUJ-FY-KzO" firstAttribute="top" secondItem="6UG-mR-yqW" secondAttribute="bottom" constant="24" id="ld9-iA-I7u"/>
+                    <constraint firstItem="8oT-y1-hFV" firstAttribute="centerX" secondItem="se5-gp-TjO" secondAttribute="centerX" id="qMf-Dz-jQa"/>
+                    <constraint firstItem="8oT-y1-hFV" firstAttribute="top" secondItem="u4y-Th-sh1" secondAttribute="bottom" constant="16" id="qWY-xG-GSI"/>
+                    <constraint firstItem="u4y-Th-sh1" firstAttribute="top" secondItem="Njn-en-SJX" secondAttribute="bottom" constant="16" id="vCN-Us-bmd"/>
+                </constraints>
             </view>
             <connections>
                 <outlet property="delegate" destination="-2" id="0bl-1N-AYu"/>
             </connections>
+            <point key="canvasLocation" x="181" y="1"/>
         </window>
     </objects>
 </document>

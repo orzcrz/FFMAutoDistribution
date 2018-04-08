@@ -19,6 +19,15 @@
 
 @implementation NSWindow (Ext)
 
+- (NSView *)ffm_titleBar {
+    for (NSView *view in self.contentView.superview.subviews) {
+        if ([view isKindOfClass:NSClassFromString(@"NSTitlebarContainerView")]) {
+            return view;
+        }
+    }
+    return nil;
+}
+
 - (void)ffm_setSize:(NSSize)size {
     // top regular
     NSPoint origin = NSMakePoint(NSMinX(self.frame), NSMinY(self.frame) + NSHeight(self.frame) - size.height);

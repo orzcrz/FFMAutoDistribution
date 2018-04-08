@@ -8,4 +8,12 @@
 
 #import "FFMConstants.h"
 
+NSString *const FFMPackingBranches = @"FFMPackingBranches";
+
+NSString *const FFMPackingWorkPath = @"FFMPackingWorkPath";
+
+NSString *const FFMGitRepoRemoteName = @"FFMGitRepoRemoteName";
+NSString *const FFMGitRepoRemoteURL = @"FFMGitRepoRemoteURL";
+NSString *const FFMGitRepoLocalName = @"FFMGitRepoLocalName";
+NSString *const FFMGitRepoLocalURL = @"FFMGitRepoLocalURL";
 

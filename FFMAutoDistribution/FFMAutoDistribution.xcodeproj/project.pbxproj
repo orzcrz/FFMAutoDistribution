@@ -23,6 +23,15 @@
 		D2D24EE12074C76E008CEB8E /* FFMGitRepoSettingWC.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D24EDF2074C76E008CEB8E /* FFMGitRepoSettingWC.m */; };
 		D2D24EE22074C76E008CEB8E /* FFMGitRepoSettingWC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2D24EE02074C76E008CEB8E /* FFMGitRepoSettingWC.xib */; };
 		D2D24EE62074D568008CEB8E /* FFMBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D24EE52074D568008CEB8E /* FFMBaseView.m */; };
+		D2D24EE92079BD4B008CEB8E /* FFMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D24EE82079BD4B008CEB8E /* FFMUtils.m */; };
+		D2D24EF12079C609008CEB8E /* FFMWorkPathVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D24EEF2079C609008CEB8E /* FFMWorkPathVC.m */; };
+		D2D24EF22079C609008CEB8E /* FFMWorkPathVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2D24EF02079C609008CEB8E /* FFMWorkPathVC.xib */; };
+		D2D24EF62079E6E5008CEB8E /* FFMPgySettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D24EF42079E6E5008CEB8E /* FFMPgySettingVC.m */; };
+		D2D24EF72079E6E5008CEB8E /* FFMPgySettingVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2D24EF52079E6E5008CEB8E /* FFMPgySettingVC.xib */; };
+		D2D24EFB2079F139008CEB8E /* FFMFirSettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D24EF92079F139008CEB8E /* FFMFirSettingVC.m */; };
+		D2D24EFC2079F139008CEB8E /* FFMFirSettingVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2D24EFA2079F139008CEB8E /* FFMFirSettingVC.xib */; };
+		D2D24F002079F14F008CEB8E /* FFMTestFlightSettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D24EFE2079F14F008CEB8E /* FFMTestFlightSettingVC.m */; };
+		D2D24F012079F14F008CEB8E /* FFMTestFlightSettingVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2D24EFF2079F14F008CEB8E /* FFMTestFlightSettingVC.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +65,20 @@
 		D2D24EE02074C76E008CEB8E /* FFMGitRepoSettingWC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FFMGitRepoSettingWC.xib; sourceTree = "<group>"; };
 		D2D24EE42074D568008CEB8E /* FFMBaseView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFMBaseView.h; sourceTree = "<group>"; };
 		D2D24EE52074D568008CEB8E /* FFMBaseView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFMBaseView.m; sourceTree = "<group>"; };
+		D2D24EE72079BD4B008CEB8E /* FFMUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFMUtils.h; sourceTree = "<group>"; };
+		D2D24EE82079BD4B008CEB8E /* FFMUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFMUtils.m; sourceTree = "<group>"; };
+		D2D24EEE2079C609008CEB8E /* FFMWorkPathVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFMWorkPathVC.h; sourceTree = "<group>"; };
+		D2D24EEF2079C609008CEB8E /* FFMWorkPathVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFMWorkPathVC.m; sourceTree = "<group>"; };
+		D2D24EF02079C609008CEB8E /* FFMWorkPathVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FFMWorkPathVC.xib; sourceTree = "<group>"; };
+		D2D24EF32079E6E5008CEB8E /* FFMPgySettingVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFMPgySettingVC.h; sourceTree = "<group>"; };
+		D2D24EF42079E6E5008CEB8E /* FFMPgySettingVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFMPgySettingVC.m; sourceTree = "<group>"; };
+		D2D24EF52079E6E5008CEB8E /* FFMPgySettingVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FFMPgySettingVC.xib; sourceTree = "<group>"; };
+		D2D24EF82079F139008CEB8E /* FFMFirSettingVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFMFirSettingVC.h; sourceTree = "<group>"; };
+		D2D24EF92079F139008CEB8E /* FFMFirSettingVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFMFirSettingVC.m; sourceTree = "<group>"; };
+		D2D24EFA2079F139008CEB8E /* FFMFirSettingVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FFMFirSettingVC.xib; sourceTree = "<group>"; };
+		D2D24EFD2079F14F008CEB8E /* FFMTestFlightSettingVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFMTestFlightSettingVC.h; sourceTree = "<group>"; };
+		D2D24EFE2079F14F008CEB8E /* FFMTestFlightSettingVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFMTestFlightSettingVC.m; sourceTree = "<group>"; };
+		D2D24EFF2079F14F008CEB8E /* FFMTestFlightSettingVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FFMTestFlightSettingVC.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +123,8 @@
 				D2162DBE2074ADFC00260BC0 /* Ext */,
 				021AE5A32073D5FD00DB96A9 /* FFMConstants.h */,
 				021AE5A42073D5FD00DB96A9 /* FFMConstants.m */,
+				D2D24EE72079BD4B008CEB8E /* FFMUtils.h */,
+				D2D24EE82079BD4B008CEB8E /* FFMUtils.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -107,10 +132,10 @@
 		021AE5AC2073D7F500DB96A9 /* Src */ = {
 			isa = PBXGroup;
 			children = (
-				D2D24EDD2074C73F008CEB8E /* GitRepo */,
-				D2162DA920746CB400260BC0 /* Preferences */,
-				D2162D9F20745D6A00260BC0 /* About */,
 				D2162D9E20745D4400260BC0 /* Root */,
+				D2162DA920746CB400260BC0 /* Preferences */,
+				D2D24EDD2074C73F008CEB8E /* GitRepo */,
+				D2162D9F20745D6A00260BC0 /* About */,
 			);
 			path = Src;
 			sourceTree = "<group>";
@@ -190,6 +215,10 @@
 		D2162DA920746CB400260BC0 /* Preferences */ = {
 			isa = PBXGroup;
 			children = (
+				D2D24EED2079C5EC008CEB8E /* WorkPath */,
+				D2D24EEC2079C5E4008CEB8E /* TestFlight */,
+				D2D24EEB2079C5DF008CEB8E /* Fir */,
+				D2D24EEA2079C5D4008CEB8E /* Pgy */,
 				D2162DAF2074AC8F00260BC0 /* FFMPreferencesWC.h */,
 				D2162DB02074AC8F00260BC0 /* FFMPreferencesWC.m */,
 				D2162DB12074AC8F00260BC0 /* FFMPreferencesWC.xib */,
@@ -223,6 +252,46 @@
 				D2D24EE52074D568008CEB8E /* FFMBaseView.m */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		D2D24EEA2079C5D4008CEB8E /* Pgy */ = {
+			isa = PBXGroup;
+			children = (
+				D2D24EF32079E6E5008CEB8E /* FFMPgySettingVC.h */,
+				D2D24EF42079E6E5008CEB8E /* FFMPgySettingVC.m */,
+				D2D24EF52079E6E5008CEB8E /* FFMPgySettingVC.xib */,
+			);
+			path = Pgy;
+			sourceTree = "<group>";
+		};
+		D2D24EEB2079C5DF008CEB8E /* Fir */ = {
+			isa = PBXGroup;
+			children = (
+				D2D24EF82079F139008CEB8E /* FFMFirSettingVC.h */,
+				D2D24EF92079F139008CEB8E /* FFMFirSettingVC.m */,
+				D2D24EFA2079F139008CEB8E /* FFMFirSettingVC.xib */,
+			);
+			path = Fir;
+			sourceTree = "<group>";
+		};
+		D2D24EEC2079C5E4008CEB8E /* TestFlight */ = {
+			isa = PBXGroup;
+			children = (
+				D2D24EFD2079F14F008CEB8E /* FFMTestFlightSettingVC.h */,
+				D2D24EFE2079F14F008CEB8E /* FFMTestFlightSettingVC.m */,
+				D2D24EFF2079F14F008CEB8E /* FFMTestFlightSettingVC.xib */,
+			);
+			path = TestFlight;
+			sourceTree = "<group>";
+		};
+		D2D24EED2079C5EC008CEB8E /* WorkPath */ = {
+			isa = PBXGroup;
+			children = (
+				D2D24EEE2079C609008CEB8E /* FFMWorkPathVC.h */,
+				D2D24EEF2079C609008CEB8E /* FFMWorkPathVC.m */,
+				D2D24EF02079C609008CEB8E /* FFMWorkPathVC.xib */,
+			);
+			path = WorkPath;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -293,9 +362,13 @@
 				D2162DB32074AC8F00260BC0 /* FFMPreferencesWC.xib in Resources */,
 				D2162DA4207463D700260BC0 /* FFMAboutWC.xib in Resources */,
 				D2162D8D2073C15E00260BC0 /* Assets.xcassets in Resources */,
+				D2D24EF22079C609008CEB8E /* FFMWorkPathVC.xib in Resources */,
+				D2D24EFC2079F139008CEB8E /* FFMFirSettingVC.xib in Resources */,
+				D2D24F012079F14F008CEB8E /* FFMTestFlightSettingVC.xib in Resources */,
 				D2D24EE22074C76E008CEB8E /* FFMGitRepoSettingWC.xib in Resources */,
 				021AE5C12073DBB800DB96A9 /* FFMWindowController.xib in Resources */,
 				D2162D902073C15E00260BC0 /* MainMenu.xib in Resources */,
+				D2D24EF72079E6E5008CEB8E /* FFMPgySettingVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,13 +398,18 @@
 				D2D24EE12074C76E008CEB8E /* FFMGitRepoSettingWC.m in Sources */,
 				021AE5A52073D5FD00DB96A9 /* FFMConstants.m in Sources */,
 				021AE5C02073DBB800DB96A9 /* FFMWindowController.m in Sources */,
+				D2D24EF12079C609008CEB8E /* FFMWorkPathVC.m in Sources */,
+				D2D24EF62079E6E5008CEB8E /* FFMPgySettingVC.m in Sources */,
 				D2D24EE62074D568008CEB8E /* FFMBaseView.m in Sources */,
+				D2D24F002079F14F008CEB8E /* FFMTestFlightSettingVC.m in Sources */,
 				D2162DC42074AE6E00260BC0 /* FFMNibHelper.m in Sources */,
 				D2162DA3207463D700260BC0 /* FFMAboutWC.m in Sources */,
 				D2162DB22074AC8F00260BC0 /* FFMPreferencesWC.m in Sources */,
 				D2162D932073C15E00260BC0 /* main.m in Sources */,
+				D2D24EFB2079F139008CEB8E /* FFMFirSettingVC.m in Sources */,
 				D2162D8B2073C15E00260BC0 /* AppDelegate.m in Sources */,
 				D2162DA82074685E00260BC0 /* FFMAuthorization.m in Sources */,
+				D2D24EE92079BD4B008CEB8E /* FFMUtils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

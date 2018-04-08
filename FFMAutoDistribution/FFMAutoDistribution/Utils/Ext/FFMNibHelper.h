@@ -16,6 +16,8 @@
 
 @interface NSWindow (Ext)
 
+- (NSView *)ffm_titleBar;
+
 - (void)ffm_setSize:(NSSize)size;
 
 @end

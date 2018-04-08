@@ -27,9 +27,9 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="5g5-VH-mX2">
-                        <rect key="frame" x="424" y="9" width="92" height="32"/>
+                        <rect key="frame" x="376" y="9" width="140" height="32"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="80" id="DYl-9p-EFd"/>
+                            <constraint firstAttribute="width" constant="128" id="DYl-9p-EFd"/>
                         </constraints>
                         <buttonCell key="cell" type="push" title="确定" bezelStyle="rounded" alignment="center" enabled="NO" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="I4H-lN-ASH">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
@@ -40,7 +40,7 @@
                         </connections>
                     </button>
                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="5Zf-qL-Hqa">
-                        <rect key="frame" x="320" y="9" width="92" height="32"/>
+                        <rect key="frame" x="224" y="9" width="140" height="32"/>
                         <buttonCell key="cell" type="push" title="取消" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="L2S-Pi-XJE">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" size="13" name=".PingFangSC-Regular"/>

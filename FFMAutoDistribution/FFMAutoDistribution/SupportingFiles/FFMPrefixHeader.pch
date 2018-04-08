@@ -15,5 +15,7 @@
 
 #import "FFMBaseView.h"
 
+#import "FFMUtils.h"
+
 
 #endif /* FFMPrefixHeader_pch */

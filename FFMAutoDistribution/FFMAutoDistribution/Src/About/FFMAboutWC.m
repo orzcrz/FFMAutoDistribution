@@ -16,8 +16,6 @@
 @end
 
 @implementation FFMAboutWC
-- (IBAction)pgy:(id)sender {
-}
 
 - (void)windowDidLoad {
     [super windowDidLoad];

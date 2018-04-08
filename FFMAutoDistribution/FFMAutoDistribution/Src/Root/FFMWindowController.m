@@ -12,11 +12,18 @@
 #import "FFMPreferencesWC.h"
 #import "FFMGitRepoSettingWC.h"
 
-@interface FFMWindowController ()
+@interface FFMWindowController ()<NSComboBoxDataSource>
 
 @property (nonatomic, strong) FFMAboutWC *about;
 @property (nonatomic, strong) FFMPreferencesWC *preferenceWC;
 @property (nonatomic, strong) FFMGitRepoSettingWC *gitRepo;
+
+@property (weak) IBOutlet NSComboBox *branch; // 分支名
+@property (weak) IBOutlet NSPopUpButton *sign; // development/ad-hoc/app-store
+@property (weak) IBOutlet NSPopUpButton *build; // Debug/Release
+@property (weak) IBOutlet NSPopUpButton *platform; // 分发平台
+@property (unsafe_unretained) IBOutlet NSTextView *log; // 更新日志
+@property (weak) IBOutlet NSButton *packingBtn;
 
 @end
 
@@ -25,11 +32,56 @@
 - (void)windowDidLoad {
     [super windowDidLoad];
     
+    __weak typeof(self) weakself = self;
+    [[NSNotificationCenter defaultCenter] addObserverForName:NSControlTextDidChangeNotification object:nil queue:nil usingBlock:^(NSNotification * _Nonnull note) {
+        weakself.packingBtn.enabled = \
+        weakself.branch.stringValue.length &&
+        weakself.log.string.length;
+    }];
 }
 
-- (void)end {
+#pragma mark-   touch action
+
+- (IBAction)packing:(NSButton *)sender {
+    sender.state = NSControlStateValueOn;
+    
     
 }
+
+- (IBAction)checkBranch:(NSComboBox *)sender {
+    if (!sender.stringValue.length) {
+        return;
+    }
+    
+    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+    NSMutableArray *branches = [[ud arrayForKey:FFMPackingBranches]?:@[] mutableCopy];
+    if (branches.count > 5) {
+        [branches replaceObjectAtIndex:0 withObject:sender.stringValue];
+    }
+    else {
+        [branches insertObject:sender.stringValue atIndex:0];
+    }
+    [ud setObject:branches.copy forKey:FFMPackingBranches];
+    [sender reloadData];
+
+}
+
+#pragma mark-   NSComboBoxDataSource
+
+- (NSInteger)numberOfItemsInComboBox:(NSComboBox *)comboBox {
+    NSArray *branches = [[NSUserDefaults standardUserDefaults] arrayForKey:FFMPackingBranches];
+    return branches.count;
+}
+
+- (nullable id)comboBox:(NSComboBox *)comboBox objectValueForItemAtIndex:(NSInteger)index {
+    NSArray *branches = [[NSUserDefaults standardUserDefaults] arrayForKey:FFMPackingBranches];
+    if (branches.count) {
+        return branches[index];
+    }
+    return nil;
+}
+
+#pragma mark-   preference
 
 - (void)showAbout {
     [self.about showWindow:self];

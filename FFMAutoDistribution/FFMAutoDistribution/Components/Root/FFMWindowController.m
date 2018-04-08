@@ -7,7 +7,7 @@
 //
 
 #import "FFMWindowController.h"
-
+#import "FFMOutputWC.h"
 #import "FFMAboutWC.h"
 #import "FFMPreferencesWC.h"
 #import "FFMGitRepoSettingWC.h"
@@ -17,6 +17,7 @@
 @property (nonatomic, strong) FFMAboutWC *about;
 @property (nonatomic, strong) FFMPreferencesWC *preferenceWC;
 @property (nonatomic, strong) FFMGitRepoSettingWC *gitRepo;
+@property (nonatomic, strong) FFMOutputWC *output;
 
 @property (weak) IBOutlet NSComboBox *branch; // 分支名
 @property (weak) IBOutlet NSPopUpButton *sign; // development/ad-hoc/app-store
@@ -44,13 +45,19 @@
     NSArray *branches = [ud stringArrayForKey:FFMPackingBranches];
     self.branch.stringValue = branches.count ? branches.firstObject : @"";
     
-    self.log.string = [ud stringForKey:FFMPackingLog];
+    self.log.string = [ud stringForKey:FFMPackingLog] ?: @"";
 }
 
 - (void)EditDidChange:(NSNotification *)note {
     self.packingBtn.enabled = \
     self.branch.stringValue.length &&
     self.log.string.length;
+    
+    if (note.object == self.log) {
+        NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+        [ud setObject:self.log.string forKey:FFMPackingLog];
+        [ud synchronize];
+    }
 }
 
 #pragma mark-   touch action
@@ -117,6 +124,12 @@
 }
 
 #pragma mark-   Setter & Getter
+
+- (FFMOutputWC *)output {
+    if (_output) return _output;
+    _output = [FFMOutputWC ffm_loadFromNib];
+    return _output;
+}
 
 - (FFMAboutWC *)about {
     if (_about) return _about;

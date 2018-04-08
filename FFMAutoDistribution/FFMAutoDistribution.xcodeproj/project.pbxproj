@@ -20,6 +20,8 @@
 		D2162DB22074AC8F00260BC0 /* FFMPreferencesWC.m in Sources */ = {isa = PBXBuildFile; fileRef = D2162DB02074AC8F00260BC0 /* FFMPreferencesWC.m */; };
 		D2162DB32074AC8F00260BC0 /* FFMPreferencesWC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2162DB12074AC8F00260BC0 /* FFMPreferencesWC.xib */; };
 		D2162DC42074AE6E00260BC0 /* FFMNibHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D2162DC32074AE6E00260BC0 /* FFMNibHelper.m */; };
+		D2540B14207A1B0400C01C4B /* FFMOutputWC.m in Sources */ = {isa = PBXBuildFile; fileRef = D2540B12207A1B0400C01C4B /* FFMOutputWC.m */; };
+		D2540B15207A1B0400C01C4B /* FFMOutputWC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2540B13207A1B0400C01C4B /* FFMOutputWC.xib */; };
 		D2D24EE12074C76E008CEB8E /* FFMGitRepoSettingWC.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D24EDF2074C76E008CEB8E /* FFMGitRepoSettingWC.m */; };
 		D2D24EE22074C76E008CEB8E /* FFMGitRepoSettingWC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2D24EE02074C76E008CEB8E /* FFMGitRepoSettingWC.xib */; };
 		D2D24EE62074D568008CEB8E /* FFMBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D24EE52074D568008CEB8E /* FFMBaseView.m */; };
@@ -36,7 +38,6 @@
 
 /* Begin PBXFileReference section */
 		021AE59E2073D1A100DB96A9 /* placeholder */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = placeholder; sourceTree = "<group>"; };
-		021AE5A12073D1CF00DB96A9 /* placeholder */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = placeholder; sourceTree = "<group>"; };
 		021AE5A32073D5FD00DB96A9 /* FFMConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFMConstants.h; sourceTree = "<group>"; };
 		021AE5A42073D5FD00DB96A9 /* FFMConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFMConstants.m; sourceTree = "<group>"; };
 		021AE5BD2073DBB800DB96A9 /* FFMWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFMWindowController.h; sourceTree = "<group>"; };
@@ -60,6 +61,9 @@
 		D2162DB12074AC8F00260BC0 /* FFMPreferencesWC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FFMPreferencesWC.xib; sourceTree = "<group>"; };
 		D2162DC22074AE6E00260BC0 /* FFMNibHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFMNibHelper.h; sourceTree = "<group>"; };
 		D2162DC32074AE6E00260BC0 /* FFMNibHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFMNibHelper.m; sourceTree = "<group>"; };
+		D2540B11207A1B0400C01C4B /* FFMOutputWC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFMOutputWC.h; sourceTree = "<group>"; };
+		D2540B12207A1B0400C01C4B /* FFMOutputWC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFMOutputWC.m; sourceTree = "<group>"; };
+		D2540B13207A1B0400C01C4B /* FFMOutputWC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FFMOutputWC.xib; sourceTree = "<group>"; };
 		D2D24EDE2074C76E008CEB8E /* FFMGitRepoSettingWC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFMGitRepoSettingWC.h; sourceTree = "<group>"; };
 		D2D24EDF2074C76E008CEB8E /* FFMGitRepoSettingWC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFMGitRepoSettingWC.m; sourceTree = "<group>"; };
 		D2D24EE02074C76E008CEB8E /* FFMGitRepoSettingWC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FFMGitRepoSettingWC.xib; sourceTree = "<group>"; };
@@ -95,7 +99,11 @@
 		021AE5992073D11500DB96A9 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				021AE5A12073D1CF00DB96A9 /* placeholder */,
+				D2540B10207A1AE000C01C4B /* Output */,
+				D2162D9E20745D4400260BC0 /* Root */,
+				D2162DA920746CB400260BC0 /* Preferences */,
+				D2D24EDD2074C73F008CEB8E /* GitRepo */,
+				D2162D9F20745D6A00260BC0 /* About */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -129,17 +137,6 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
-		021AE5AC2073D7F500DB96A9 /* Src */ = {
-			isa = PBXGroup;
-			children = (
-				D2162D9E20745D4400260BC0 /* Root */,
-				D2162DA920746CB400260BC0 /* Preferences */,
-				D2D24EDD2074C73F008CEB8E /* GitRepo */,
-				D2162D9F20745D6A00260BC0 /* About */,
-			);
-			path = Src;
-			sourceTree = "<group>";
-		};
 		D2162D7D2073C15E00260BC0 = {
 			isa = PBXGroup;
 			children = (
@@ -161,7 +158,6 @@
 			children = (
 				D2162D892073C15E00260BC0 /* AppDelegate.h */,
 				D2162D8A2073C15E00260BC0 /* AppDelegate.m */,
-				021AE5AC2073D7F500DB96A9 /* Src */,
 				021AE5992073D11500DB96A9 /* Components */,
 				021AE59A2073D11500DB96A9 /* Core */,
 				021AE59C2073D11500DB96A9 /* Utils */,
@@ -233,6 +229,16 @@
 				D2162DC32074AE6E00260BC0 /* FFMNibHelper.m */,
 			);
 			path = Ext;
+			sourceTree = "<group>";
+		};
+		D2540B10207A1AE000C01C4B /* Output */ = {
+			isa = PBXGroup;
+			children = (
+				D2540B11207A1B0400C01C4B /* FFMOutputWC.h */,
+				D2540B12207A1B0400C01C4B /* FFMOutputWC.m */,
+				D2540B13207A1B0400C01C4B /* FFMOutputWC.xib */,
+			);
+			path = Output;
 			sourceTree = "<group>";
 		};
 		D2D24EDD2074C73F008CEB8E /* GitRepo */ = {
@@ -368,6 +374,7 @@
 				D2D24EE22074C76E008CEB8E /* FFMGitRepoSettingWC.xib in Resources */,
 				021AE5C12073DBB800DB96A9 /* FFMWindowController.xib in Resources */,
 				D2162D902073C15E00260BC0 /* MainMenu.xib in Resources */,
+				D2540B15207A1B0400C01C4B /* FFMOutputWC.xib in Resources */,
 				D2D24EF72079E6E5008CEB8E /* FFMPgySettingVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -407,6 +414,7 @@
 				D2162DB22074AC8F00260BC0 /* FFMPreferencesWC.m in Sources */,
 				D2162D932073C15E00260BC0 /* main.m in Sources */,
 				D2D24EFB2079F139008CEB8E /* FFMFirSettingVC.m in Sources */,
+				D2540B14207A1B0400C01C4B /* FFMOutputWC.m in Sources */,
 				D2162D8B2073C15E00260BC0 /* AppDelegate.m in Sources */,
 				D2162DA82074685E00260BC0 /* FFMAuthorization.m in Sources */,
 				D2D24EE92079BD4B008CEB8E /* FFMUtils.m in Sources */,

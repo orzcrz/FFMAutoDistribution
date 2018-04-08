@@ -8,6 +8,7 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="FFMFirSettingVC">
             <connections>
+                <outlet property="tkTF" destination="faJ-mv-tXy" id="IUa-Ft-Qbs"/>
                 <outlet property="view" destination="5KV-H5-qva" id="fmd-9A-RaR"/>
             </connections>
         </customObject>

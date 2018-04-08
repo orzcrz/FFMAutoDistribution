@@ -32,12 +32,25 @@
 - (void)windowDidLoad {
     [super windowDidLoad];
     
-    __weak typeof(self) weakself = self;
-    [[NSNotificationCenter defaultCenter] addObserverForName:NSControlTextDidChangeNotification object:nil queue:nil usingBlock:^(NSNotification * _Nonnull note) {
-        weakself.packingBtn.enabled = \
-        weakself.branch.stringValue.length &&
-        weakself.log.string.length;
-    }];
+    NSNotificationCenter *notiCenter = [NSNotificationCenter defaultCenter];
+    [notiCenter addObserver:self selector:@selector(EditDidChange:) name:NSControlTextDidChangeNotification object:self.branch];
+    [notiCenter addObserver:self selector:@selector(EditDidChange:) name:NSTextViewDidChangeSelectionNotification object:self.log];
+    
+    [self setDefaultValues];
+}
+
+- (void)setDefaultValues {
+    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+    NSArray *branches = [ud stringArrayForKey:FFMPackingBranches];
+    self.branch.stringValue = branches.count ? branches.firstObject : @"";
+    
+    self.log.string = [ud stringForKey:FFMPackingLog];
+}
+
+- (void)EditDidChange:(NSNotification *)note {
+    self.packingBtn.enabled = \
+    self.branch.stringValue.length &&
+    self.log.string.length;
 }
 
 #pragma mark-   touch action
@@ -53,13 +66,21 @@
         return;
     }
     
+    NSString *branch = sender.stringValue;
+    
     NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
     NSMutableArray *branches = [[ud arrayForKey:FFMPackingBranches]?:@[] mutableCopy];
     if (branches.count > 5) {
-        [branches replaceObjectAtIndex:0 withObject:sender.stringValue];
+        [branches replaceObjectAtIndex:0 withObject:branch];
     }
     else {
-        [branches insertObject:sender.stringValue atIndex:0];
+        if ([branches indexOfObject:branch] != 0) {
+            if ([branches containsObject:branch]) {
+                [branches removeObject:branch];
+            }
+            
+            [branches insertObject:branch atIndex:0];
+        }
     }
     [ud setObject:branches.copy forKey:FFMPackingBranches];
     [sender reloadData];

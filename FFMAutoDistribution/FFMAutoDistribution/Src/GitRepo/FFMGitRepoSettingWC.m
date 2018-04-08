@@ -35,6 +35,12 @@
 
 #pragma mark-   touch action
 
+- (IBAction)openPanel:(NSButton *)sender {
+    [FFMUtils openPanel:^(NSString *path) {
+        _localTF.stringValue = path;
+    }];
+}
+
 - (IBAction)cancel:(id)sender {
     [self.window close];
 }

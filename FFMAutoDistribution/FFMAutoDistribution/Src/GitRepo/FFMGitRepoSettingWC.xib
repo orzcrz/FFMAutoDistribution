@@ -70,7 +70,7 @@
                             </textField>
                             <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="3aE-Pr-xiU">
                                 <rect key="frame" x="144" y="47" width="342" height="22"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="R3R-DY-fxp">
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="输入远程仓库名" drawsBackground="YES" id="R3R-DY-fxp">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -78,7 +78,7 @@
                             </textField>
                             <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="cGd-rY-mJE">
                                 <rect key="frame" x="144" y="14" width="342" height="22"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="B6Z-QQ-XbR">
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="输入远程仓库地址" drawsBackground="YES" id="B6Z-QQ-XbR">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -121,24 +121,36 @@
                             </textField>
                             <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="xxC-P6-p4M">
                                 <rect key="frame" x="91" y="47" width="395" height="22"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="p7W-6e-ycV">
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="输入本地仓库名" drawsBackground="YES" id="p7W-6e-ycV">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
                             <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="p39-48-bK5">
-                                <rect key="frame" x="91" y="14" width="395" height="22"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="f52-31-BcO">
+                                <rect key="frame" x="91" y="14" width="358" height="22"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="输入或选择本地仓库路径" drawsBackground="YES" id="f52-31-BcO">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
+                            <button horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="asa-iU-9eo">
+                                <rect key="frame" x="461" y="11" width="29" height="26"/>
+                                <buttonCell key="cell" type="disclosure" bezelStyle="roundedDisclosure" imagePosition="only" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Gh8-gQ-nFM">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="openPanel:" target="-2" id="0qG-pV-JHB"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="TcT-75-jWz" secondAttribute="bottom" constant="16" id="5db-eP-lSm"/>
                             <constraint firstItem="p39-48-bK5" firstAttribute="centerY" secondItem="TcT-75-jWz" secondAttribute="centerY" id="7R2-uz-NgL"/>
+                            <constraint firstItem="asa-iU-9eo" firstAttribute="leading" secondItem="p39-48-bK5" secondAttribute="trailing" constant="16" id="Efu-t2-dVK"/>
+                            <constraint firstItem="asa-iU-9eo" firstAttribute="centerY" secondItem="p39-48-bK5" secondAttribute="centerY" id="GsE-vA-8Gq"/>
                             <constraint firstItem="TcT-75-jWz" firstAttribute="leading" secondItem="LtG-vK-ZlN" secondAttribute="leading" id="JVF-JR-RRE"/>
                             <constraint firstItem="xxC-P6-p4M" firstAttribute="leading" secondItem="LtG-vK-ZlN" secondAttribute="trailing" constant="8" id="NcB-jK-Djg"/>
                             <constraint firstItem="p39-48-bK5" firstAttribute="leading" secondItem="TcT-75-jWz" secondAttribute="trailing" constant="8" id="Pc0-bN-Uni"/>
@@ -147,8 +159,8 @@
                             <constraint firstItem="TcT-75-jWz" firstAttribute="top" secondItem="LtG-vK-ZlN" secondAttribute="bottom" constant="16" id="bzG-mR-UWc"/>
                             <constraint firstItem="LtG-vK-ZlN" firstAttribute="leading" secondItem="l9J-qD-tnI" secondAttribute="leading" constant="16" id="cHJ-Ij-oWv"/>
                             <constraint firstItem="xxC-P6-p4M" firstAttribute="centerY" secondItem="LtG-vK-ZlN" secondAttribute="centerY" id="jh8-1G-bWk"/>
+                            <constraint firstAttribute="trailing" secondItem="asa-iU-9eo" secondAttribute="trailing" constant="16" id="n55-h1-nM7"/>
                             <constraint firstItem="TcT-75-jWz" firstAttribute="trailing" secondItem="LtG-vK-ZlN" secondAttribute="trailing" id="taY-7H-nFa"/>
-                            <constraint firstAttribute="trailing" secondItem="p39-48-bK5" secondAttribute="trailing" constant="16" id="wlv-sv-Boo"/>
                         </constraints>
                     </customView>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ktH-hY-RPK">

@@ -8,6 +8,8 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="FFMTestFlightSettingVC">
             <connections>
+                <outlet property="accountTF" destination="Rby-IN-q46" id="NyY-d4-OFl"/>
+                <outlet property="passcodeTF" destination="4fS-P7-Vrm" id="hHF-jV-sp9"/>
                 <outlet property="view" destination="ybc-1l-qU7" id="Rkr-gZ-QFR"/>
             </connections>
         </customObject>

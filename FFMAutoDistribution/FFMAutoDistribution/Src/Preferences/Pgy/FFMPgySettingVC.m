@@ -10,13 +10,24 @@
 
 @interface FFMPgySettingVC ()
 
+@property (weak) IBOutlet NSTextField *akTF;
+@property (weak) IBOutlet NSTextField *ukTF;
+
 @end
 
 @implementation FFMPgySettingVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do view setup here.
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(savePgyApiInfo) name:NSControlTextDidEndEditingNotification object:nil];
+}
+
+- (void)savePgyApiInfo {
+    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+    [ud setObject:_akTF.stringValue forKey:FFMPackingPgyAPIKey];
+    [ud setObject:_ukTF.stringValue forKey:FFMPackingPgyUserKey];
+    [ud synchronize];
 }
 
 @end

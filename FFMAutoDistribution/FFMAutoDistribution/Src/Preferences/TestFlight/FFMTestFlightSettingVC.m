@@ -10,13 +10,24 @@
 
 @interface FFMTestFlightSettingVC ()
 
+@property (weak) IBOutlet NSTextField *accountTF;
+@property (weak) IBOutlet NSSecureTextField *passcodeTF;
+
 @end
 
 @implementation FFMTestFlightSettingVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do view setup here.
+
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(saveDeveloperInfo) name:NSControlTextDidEndEditingNotification object:nil];
+}
+
+- (void)saveDeveloperInfo {
+    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+    [ud setObject:_accountTF.stringValue forKey:FFMPackingTestFlightAccount];
+    [ud setObject:_passcodeTF.stringValue forKey:FFMPackingTestFlightPasscode];
+    [ud synchronize];
 }
 
 @end

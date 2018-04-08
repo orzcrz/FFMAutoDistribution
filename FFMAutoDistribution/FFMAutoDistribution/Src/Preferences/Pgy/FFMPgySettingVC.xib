@@ -8,6 +8,8 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="FFMPgySettingVC">
             <connections>
+                <outlet property="akTF" destination="Irj-Vw-xdJ" id="knK-bP-KD1"/>
+                <outlet property="ukTF" destination="I8j-cx-g7F" id="q1U-Eu-1Y3"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
         </customObject>

@@ -18,11 +18,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    __weak typeof(self) weakself = self;
-    [[NSNotificationCenter defaultCenter] addObserverForName:NSControlTextDidEndEditingNotification object:_workPath queue:nil usingBlock:^(NSNotification * _Nonnull note) {
-        [weakself updateWorkPath];
-    }];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(saveWorkPath) name:NSControlTextDidEndEditingNotification object:nil];
 }
 
 - (IBAction)selectPath:(NSButton *)sender {
@@ -30,13 +27,11 @@
     
     [FFMUtils openPanel:^(NSString *path) {
         _workPath.stringValue = path;
-        [self updateWorkPath];
+        [self saveWorkPath];
     }];
 }
 
-- (void)updateWorkPath {
-    if (!_workPath.stringValue.length) return;
-    
+- (void)saveWorkPath {
     NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
     [ud setObject:_workPath.stringValue forKey:FFMPackingWorkPath];
     [ud synchronize];

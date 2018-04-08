@@ -10,13 +10,23 @@
 
 @interface FFMFirSettingVC ()
 
+@property (weak) IBOutlet NSTextField *tkTF;
+
 @end
 
 @implementation FFMFirSettingVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do view setup here.
+
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(saveFirApiInfo) name:NSControlTextDidEndEditingNotification object:nil];
+
+}
+
+- (void)saveFirApiInfo {
+    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+    [ud setObject:_tkTF.stringValue forKey:FFMPackingFirAPIToken];
+    [ud synchronize];
 }
 
 @end

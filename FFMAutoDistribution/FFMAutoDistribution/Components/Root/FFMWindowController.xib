@@ -87,6 +87,9 @@
                                         </items>
                                     </menu>
                                 </popUpButtonCell>
+                                <connections>
+                                    <action selector="selectBuilidConfig:" target="-2" id="8Sp-BF-AL4"/>
+                                </connections>
                             </popUpButton>
                             <comboBox verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="5h4-oX-rYH">
                                 <rect key="frame" x="8" y="8" width="128" height="26"/>
@@ -119,6 +122,9 @@
                                         </items>
                                     </menu>
                                 </popUpButtonCell>
+                                <connections>
+                                    <action selector="selectPlatform:" target="-2" id="aTR-8h-Fuz"/>
+                                </connections>
                             </popUpButton>
                             <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="dow-Lk-Khr">
                                 <rect key="frame" x="139" y="9" width="130" height="26"/>
@@ -139,6 +145,9 @@
                                         </items>
                                     </menu>
                                 </popUpButtonCell>
+                                <connections>
+                                    <action selector="selectSignMode:" target="-2" id="uHo-nl-Vcs"/>
+                                </connections>
                             </popUpButton>
                         </subviews>
                         <constraints>
@@ -161,7 +170,7 @@
                         </constraints>
                     </customView>
                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="rUJ-FY-KzO">
-                        <rect key="frame" x="193" y="36" width="140" height="32"/>
+                        <rect key="frame" x="201" y="36" width="140" height="32"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="128" id="Ohh-LR-9EI"/>
                         </constraints>

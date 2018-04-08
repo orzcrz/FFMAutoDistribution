@@ -8,6 +8,10 @@
 
 #import <Cocoa/Cocoa.h>
 
+@class FFMShellTaskArgs;
+
 @interface FFMOutputWC : NSWindowController
+
+@property (strong) FFMShellTaskArgs *args;
 
 @end

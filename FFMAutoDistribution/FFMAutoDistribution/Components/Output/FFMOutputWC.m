@@ -8,9 +8,12 @@
 
 #import "FFMOutputWC.h"
 
+#import "FFMShellTask.h"
+
 @interface FFMOutputWC ()
 
 @property (unsafe_unretained) IBOutlet NSTextView *textView;
+@property (strong) FFMShellTask *task;
 
 @end
 
@@ -19,7 +22,12 @@
 - (void)windowDidLoad {
     [super windowDidLoad];
     
-    
+    self.task = [FFMShellTask new];
+    [self.task startWithArgs:self.args];
+}
+
+- (void)close {
+    [self.task stop];
 }
 
 - (void)appendConentString:(NSString *)string toTextView:(NSTextView *)textView {

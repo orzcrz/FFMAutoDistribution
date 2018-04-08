@@ -22,6 +22,10 @@
 		D2162DC42074AE6E00260BC0 /* FFMNibHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D2162DC32074AE6E00260BC0 /* FFMNibHelper.m */; };
 		D2540B14207A1B0400C01C4B /* FFMOutputWC.m in Sources */ = {isa = PBXBuildFile; fileRef = D2540B12207A1B0400C01C4B /* FFMOutputWC.m */; };
 		D2540B15207A1B0400C01C4B /* FFMOutputWC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2540B13207A1B0400C01C4B /* FFMOutputWC.xib */; };
+		D2540B19207A383C00C01C4B /* FFMShellTask.m in Sources */ = {isa = PBXBuildFile; fileRef = D2540B18207A383C00C01C4B /* FFMShellTask.m */; };
+		D2540B1D207A3D0A00C01C4B /* development.plist in Resources */ = {isa = PBXBuildFile; fileRef = D2540B1A207A3D0A00C01C4B /* development.plist */; };
+		D2540B1E207A3D0A00C01C4B /* release.plist in Resources */ = {isa = PBXBuildFile; fileRef = D2540B1B207A3D0A00C01C4B /* release.plist */; };
+		D2540B1F207A3D0A00C01C4B /* ad-hoc.plist in Resources */ = {isa = PBXBuildFile; fileRef = D2540B1C207A3D0A00C01C4B /* ad-hoc.plist */; };
 		D2D24EE12074C76E008CEB8E /* FFMGitRepoSettingWC.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D24EDF2074C76E008CEB8E /* FFMGitRepoSettingWC.m */; };
 		D2D24EE22074C76E008CEB8E /* FFMGitRepoSettingWC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2D24EE02074C76E008CEB8E /* FFMGitRepoSettingWC.xib */; };
 		D2D24EE62074D568008CEB8E /* FFMBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D24EE52074D568008CEB8E /* FFMBaseView.m */; };
@@ -37,7 +41,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		021AE59E2073D1A100DB96A9 /* placeholder */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = placeholder; sourceTree = "<group>"; };
 		021AE5A32073D5FD00DB96A9 /* FFMConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFMConstants.h; sourceTree = "<group>"; };
 		021AE5A42073D5FD00DB96A9 /* FFMConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFMConstants.m; sourceTree = "<group>"; };
 		021AE5BD2073DBB800DB96A9 /* FFMWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFMWindowController.h; sourceTree = "<group>"; };
@@ -64,6 +67,11 @@
 		D2540B11207A1B0400C01C4B /* FFMOutputWC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFMOutputWC.h; sourceTree = "<group>"; };
 		D2540B12207A1B0400C01C4B /* FFMOutputWC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFMOutputWC.m; sourceTree = "<group>"; };
 		D2540B13207A1B0400C01C4B /* FFMOutputWC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FFMOutputWC.xib; sourceTree = "<group>"; };
+		D2540B17207A383C00C01C4B /* FFMShellTask.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFMShellTask.h; sourceTree = "<group>"; };
+		D2540B18207A383C00C01C4B /* FFMShellTask.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFMShellTask.m; sourceTree = "<group>"; };
+		D2540B1A207A3D0A00C01C4B /* development.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = development.plist; sourceTree = "<group>"; };
+		D2540B1B207A3D0A00C01C4B /* release.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = release.plist; sourceTree = "<group>"; };
+		D2540B1C207A3D0A00C01C4B /* ad-hoc.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ad-hoc.plist"; sourceTree = "<group>"; };
 		D2D24EDE2074C76E008CEB8E /* FFMGitRepoSettingWC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFMGitRepoSettingWC.h; sourceTree = "<group>"; };
 		D2D24EDF2074C76E008CEB8E /* FFMGitRepoSettingWC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFMGitRepoSettingWC.m; sourceTree = "<group>"; };
 		D2D24EE02074C76E008CEB8E /* FFMGitRepoSettingWC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FFMGitRepoSettingWC.xib; sourceTree = "<group>"; };
@@ -111,6 +119,7 @@
 		021AE59A2073D11500DB96A9 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				D2540B16207A37EE00C01C4B /* ShellTask */,
 				D2162DA52074680E00260BC0 /* Authorization */,
 			);
 			path = Core;
@@ -119,7 +128,7 @@
 		021AE59B2073D11500DB96A9 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				021AE59E2073D1A100DB96A9 /* placeholder */,
+				D2540B20207A3D0D00C01C4B /* Plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -239,6 +248,25 @@
 				D2540B13207A1B0400C01C4B /* FFMOutputWC.xib */,
 			);
 			path = Output;
+			sourceTree = "<group>";
+		};
+		D2540B16207A37EE00C01C4B /* ShellTask */ = {
+			isa = PBXGroup;
+			children = (
+				D2540B17207A383C00C01C4B /* FFMShellTask.h */,
+				D2540B18207A383C00C01C4B /* FFMShellTask.m */,
+			);
+			path = ShellTask;
+			sourceTree = "<group>";
+		};
+		D2540B20207A3D0D00C01C4B /* Plist */ = {
+			isa = PBXGroup;
+			children = (
+				D2540B1C207A3D0A00C01C4B /* ad-hoc.plist */,
+				D2540B1A207A3D0A00C01C4B /* development.plist */,
+				D2540B1B207A3D0A00C01C4B /* release.plist */,
+			);
+			path = Plist;
 			sourceTree = "<group>";
 		};
 		D2D24EDD2074C73F008CEB8E /* GitRepo */ = {
@@ -367,10 +395,13 @@
 			files = (
 				D2162DB32074AC8F00260BC0 /* FFMPreferencesWC.xib in Resources */,
 				D2162DA4207463D700260BC0 /* FFMAboutWC.xib in Resources */,
+				D2540B1F207A3D0A00C01C4B /* ad-hoc.plist in Resources */,
+				D2540B1E207A3D0A00C01C4B /* release.plist in Resources */,
 				D2162D8D2073C15E00260BC0 /* Assets.xcassets in Resources */,
 				D2D24EF22079C609008CEB8E /* FFMWorkPathVC.xib in Resources */,
 				D2D24EFC2079F139008CEB8E /* FFMFirSettingVC.xib in Resources */,
 				D2D24F012079F14F008CEB8E /* FFMTestFlightSettingVC.xib in Resources */,
+				D2540B1D207A3D0A00C01C4B /* development.plist in Resources */,
 				D2D24EE22074C76E008CEB8E /* FFMGitRepoSettingWC.xib in Resources */,
 				021AE5C12073DBB800DB96A9 /* FFMWindowController.xib in Resources */,
 				D2162D902073C15E00260BC0 /* MainMenu.xib in Resources */,
@@ -407,6 +438,7 @@
 				021AE5C02073DBB800DB96A9 /* FFMWindowController.m in Sources */,
 				D2D24EF12079C609008CEB8E /* FFMWorkPathVC.m in Sources */,
 				D2D24EF62079E6E5008CEB8E /* FFMPgySettingVC.m in Sources */,
+				D2540B19207A383C00C01C4B /* FFMShellTask.m in Sources */,
 				D2D24EE62074D568008CEB8E /* FFMBaseView.m in Sources */,
 				D2D24F002079F14F008CEB8E /* FFMTestFlightSettingVC.m in Sources */,
 				D2162DC42074AE6E00260BC0 /* FFMNibHelper.m in Sources */,

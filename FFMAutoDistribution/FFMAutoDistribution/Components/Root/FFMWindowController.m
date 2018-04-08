@@ -12,6 +12,8 @@
 #import "FFMPreferencesWC.h"
 #import "FFMGitRepoSettingWC.h"
 
+#import "FFMShellTask.h"
+
 @interface FFMWindowController ()<NSComboBoxDataSource>
 
 @property (nonatomic, strong) FFMAboutWC *about;
@@ -26,6 +28,8 @@
 @property (unsafe_unretained) IBOutlet NSTextView *log; // 更新日志
 @property (weak) IBOutlet NSButton *packingBtn;
 
+@property (strong) FFMShellTaskArgs *shellArgs;
+
 @end
 
 @implementation FFMWindowController
@@ -34,26 +38,33 @@
     [super windowDidLoad];
     
     NSNotificationCenter *notiCenter = [NSNotificationCenter defaultCenter];
-    [notiCenter addObserver:self selector:@selector(EditDidChange:) name:NSControlTextDidChangeNotification object:self.branch];
-    [notiCenter addObserver:self selector:@selector(EditDidChange:) name:NSTextViewDidChangeSelectionNotification object:self.log];
+    [notiCenter addObserver:self selector:@selector(editingDidChange:) name:NSControlTextDidChangeNotification object:self.branch];
+    [notiCenter addObserver:self selector:@selector(editingDidChange:) name:NSTextViewDidChangeSelectionNotification object:self.log];
     
-    [self setDefaultValues];
+    [self commonInit];
+    
 }
 
-- (void)setDefaultValues {
+- (void)commonInit {
+    self.shellArgs = [FFMShellTaskArgs new];
+    
     NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
     NSArray *branches = [ud stringArrayForKey:FFMPackingBranches];
     self.branch.stringValue = branches.count ? branches.firstObject : @"";
+    self.shellArgs.branchName = self.branch.stringValue;
     
     self.log.string = [ud stringForKey:FFMPackingLog] ?: @"";
+    self.shellArgs.log = self.log.string;
 }
 
-- (void)EditDidChange:(NSNotification *)note {
+- (void)editingDidChange:(NSNotification *)note {
     self.packingBtn.enabled = \
     self.branch.stringValue.length &&
     self.log.string.length;
     
     if (note.object == self.log) {
+        self.shellArgs.log = self.log.string;
+        
         NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
         [ud setObject:self.log.string forKey:FFMPackingLog];
         [ud synchronize];
@@ -65,6 +76,7 @@
 - (IBAction)packing:(NSButton *)sender {
     sender.state = NSControlStateValueOn;
     
+    self.output.args = self.shellArgs;
     
 }
 
@@ -74,6 +86,7 @@
     }
     
     NSString *branch = sender.stringValue;
+    self.shellArgs.branchName = branch;
     
     NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
     NSMutableArray *branches = [[ud arrayForKey:FFMPackingBranches]?:@[] mutableCopy];
@@ -92,6 +105,18 @@
     [ud setObject:branches.copy forKey:FFMPackingBranches];
     [sender reloadData];
 
+}
+
+- (IBAction)selectSignMode:(NSPopUpButton *)sender {
+    self.shellArgs.signMode = sender.selectedItem.title;
+}
+
+- (IBAction)selectBuilidConfig:(NSPopUpButton *)sender {
+    self.shellArgs.buildConfig = sender.selectedItem.title;
+}
+
+- (IBAction)selectPlatform:(NSPopUpButton *)sender {
+    self.shellArgs.platform = sender.selectedItem.title;
 }
 
 #pragma mark-   NSComboBoxDataSource

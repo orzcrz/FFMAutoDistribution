@@ -26,6 +26,9 @@
 		D2540B1D207A3D0A00C01C4B /* development.plist in Resources */ = {isa = PBXBuildFile; fileRef = D2540B1A207A3D0A00C01C4B /* development.plist */; };
 		D2540B1E207A3D0A00C01C4B /* release.plist in Resources */ = {isa = PBXBuildFile; fileRef = D2540B1B207A3D0A00C01C4B /* release.plist */; };
 		D2540B1F207A3D0A00C01C4B /* ad-hoc.plist in Resources */ = {isa = PBXBuildFile; fileRef = D2540B1C207A3D0A00C01C4B /* ad-hoc.plist */; };
+		D2540B23207B135100C01C4B /* pgy.sh in Resources */ = {isa = PBXBuildFile; fileRef = D2540B22207B135100C01C4B /* pgy.sh */; };
+		D2540B25207B144900C01C4B /* testflight.sh in Resources */ = {isa = PBXBuildFile; fileRef = D2540B24207B144800C01C4B /* testflight.sh */; };
+		D2540B27207B513A00C01C4B /* packing.sh in Resources */ = {isa = PBXBuildFile; fileRef = D2540B26207B513900C01C4B /* packing.sh */; };
 		D2D24EE12074C76E008CEB8E /* FFMGitRepoSettingWC.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D24EDF2074C76E008CEB8E /* FFMGitRepoSettingWC.m */; };
 		D2D24EE22074C76E008CEB8E /* FFMGitRepoSettingWC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2D24EE02074C76E008CEB8E /* FFMGitRepoSettingWC.xib */; };
 		D2D24EE62074D568008CEB8E /* FFMBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D24EE52074D568008CEB8E /* FFMBaseView.m */; };
@@ -72,6 +75,9 @@
 		D2540B1A207A3D0A00C01C4B /* development.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = development.plist; sourceTree = "<group>"; };
 		D2540B1B207A3D0A00C01C4B /* release.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = release.plist; sourceTree = "<group>"; };
 		D2540B1C207A3D0A00C01C4B /* ad-hoc.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ad-hoc.plist"; sourceTree = "<group>"; };
+		D2540B22207B135100C01C4B /* pgy.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = pgy.sh; sourceTree = "<group>"; };
+		D2540B24207B144800C01C4B /* testflight.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = testflight.sh; sourceTree = "<group>"; };
+		D2540B26207B513900C01C4B /* packing.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = packing.sh; sourceTree = "<group>"; };
 		D2D24EDE2074C76E008CEB8E /* FFMGitRepoSettingWC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFMGitRepoSettingWC.h; sourceTree = "<group>"; };
 		D2D24EDF2074C76E008CEB8E /* FFMGitRepoSettingWC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFMGitRepoSettingWC.m; sourceTree = "<group>"; };
 		D2D24EE02074C76E008CEB8E /* FFMGitRepoSettingWC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FFMGitRepoSettingWC.xib; sourceTree = "<group>"; };
@@ -128,6 +134,7 @@
 		021AE59B2073D11500DB96A9 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D2540B21207B134700C01C4B /* Shell */,
 				D2540B20207A3D0D00C01C4B /* Plist */,
 			);
 			path = Resources;
@@ -269,6 +276,16 @@
 			path = Plist;
 			sourceTree = "<group>";
 		};
+		D2540B21207B134700C01C4B /* Shell */ = {
+			isa = PBXGroup;
+			children = (
+				D2540B26207B513900C01C4B /* packing.sh */,
+				D2540B22207B135100C01C4B /* pgy.sh */,
+				D2540B24207B144800C01C4B /* testflight.sh */,
+			);
+			path = Shell;
+			sourceTree = "<group>";
+		};
 		D2D24EDD2074C73F008CEB8E /* GitRepo */ = {
 			isa = PBXGroup;
 			children = (
@@ -397,12 +414,15 @@
 				D2162DA4207463D700260BC0 /* FFMAboutWC.xib in Resources */,
 				D2540B1F207A3D0A00C01C4B /* ad-hoc.plist in Resources */,
 				D2540B1E207A3D0A00C01C4B /* release.plist in Resources */,
+				D2540B25207B144900C01C4B /* testflight.sh in Resources */,
 				D2162D8D2073C15E00260BC0 /* Assets.xcassets in Resources */,
+				D2540B23207B135100C01C4B /* pgy.sh in Resources */,
 				D2D24EF22079C609008CEB8E /* FFMWorkPathVC.xib in Resources */,
 				D2D24EFC2079F139008CEB8E /* FFMFirSettingVC.xib in Resources */,
 				D2D24F012079F14F008CEB8E /* FFMTestFlightSettingVC.xib in Resources */,
 				D2540B1D207A3D0A00C01C4B /* development.plist in Resources */,
 				D2D24EE22074C76E008CEB8E /* FFMGitRepoSettingWC.xib in Resources */,
+				D2540B27207B513A00C01C4B /* packing.sh in Resources */,
 				021AE5C12073DBB800DB96A9 /* FFMWindowController.xib in Resources */,
 				D2162D902073C15E00260BC0 /* MainMenu.xib in Resources */,
 				D2540B15207A1B0400C01C4B /* FFMOutputWC.xib in Resources */,

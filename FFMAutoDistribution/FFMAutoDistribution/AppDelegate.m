@@ -20,8 +20,8 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     _windowController = [FFMWindowController ffm_loadFromNib];
     [_windowController.window makeKeyAndOrderFront:nil];
-//    [FFMAuthorization requestAuthorization:^(BOOL isAuthorized) {
-//    }];
+    [FFMAuthorization requestAuthorization:^(BOOL isAuthorized) {
+    }];
 }
 
 

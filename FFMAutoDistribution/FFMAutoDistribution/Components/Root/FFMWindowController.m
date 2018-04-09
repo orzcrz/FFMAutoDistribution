@@ -28,8 +28,6 @@
 @property (unsafe_unretained) IBOutlet NSTextView *log; // 更新日志
 @property (weak) IBOutlet NSButton *packingBtn;
 
-@property (strong) FFMShellTaskArgs *shellArgs;
-
 @end
 
 @implementation FFMWindowController
@@ -46,15 +44,11 @@
 }
 
 - (void)commonInit {
-    self.shellArgs = [FFMShellTaskArgs new];
-    
     NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
     NSArray *branches = [ud stringArrayForKey:FFMPackingBranches];
     self.branch.stringValue = branches.count ? branches.firstObject : @"";
-    self.shellArgs.branchName = self.branch.stringValue;
     
     self.log.string = [ud stringForKey:FFMPackingLog] ?: @"";
-    self.shellArgs.log = self.log.string;
 }
 
 - (void)editingDidChange:(NSNotification *)note {
@@ -63,8 +57,6 @@
     self.log.string.length;
     
     if (note.object == self.log) {
-        self.shellArgs.log = self.log.string;
-        
         NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
         [ud setObject:self.log.string forKey:FFMPackingLog];
         [ud synchronize];
@@ -76,8 +68,28 @@
 - (IBAction)packing:(NSButton *)sender {
     sender.state = NSOnState;
     
-    self.output.args = self.shellArgs;
+    FFMShellTaskArgs *shellArgs = [FFMShellTaskArgs new];
+    shellArgs.branchName = self.branch.stringValue;
+    shellArgs.log = self.log.string;
+    shellArgs.signMode = self.sign.title;
+    shellArgs.buildConfig = self.build.title;
+    FFMPackingPlatform pf = FFMPackingPlatform_Pgy;
+    if ([self.platform.title isEqualToString:@"None"]) {
+        pf = FFMPackingPlatform_None;
+    }
+    else if ([self.platform.title isEqualToString:@"Fir"]) {
+        pf = FFMPackingPlatform_Fir;
+    }
+    else if ([self.platform.title isEqualToString:@"TestFlight"]) {
+        pf = FFMPackingPlatform_TestFlight;
+    }
     
+    shellArgs.platform = pf;
+    self.output = [FFMOutputWC ffm_loadFromNib];
+    self.output.args = shellArgs;
+    [self.window beginSheet:self.output.window completionHandler:^(NSModalResponse returnCode) {
+        
+    }];
 }
 
 - (IBAction)checkBranch:(NSComboBox *)sender {
@@ -86,7 +98,6 @@
     }
     
     NSString *branch = sender.stringValue;
-    self.shellArgs.branchName = branch;
     
     NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
     NSMutableArray *branches = [[ud arrayForKey:FFMPackingBranches]?:@[] mutableCopy];
@@ -108,15 +119,15 @@
 }
 
 - (IBAction)selectSignMode:(NSPopUpButton *)sender {
-    self.shellArgs.signMode = sender.selectedItem.title;
+
 }
 
 - (IBAction)selectBuilidConfig:(NSPopUpButton *)sender {
-    self.shellArgs.buildConfig = sender.selectedItem.title;
+
 }
 
 - (IBAction)selectPlatform:(NSPopUpButton *)sender {
-    self.shellArgs.platform = sender.selectedItem.title;
+
 }
 
 #pragma mark-   NSComboBoxDataSource
@@ -144,17 +155,13 @@
     [self.preferenceWC showWindow:self];
 }
 
-- (void)showRepoSetting {
-    [self.gitRepo showWindow:self];
+- (void)showRepoSetting {    
+    [self.window beginSheet:self.gitRepo.window completionHandler:^(NSModalResponse returnCode) {
+        
+    }];
 }
 
 #pragma mark-   Setter & Getter
-
-- (FFMOutputWC *)output {
-    if (_output) return _output;
-    _output = [FFMOutputWC ffm_loadFromNib];
-    return _output;
-}
 
 - (FFMAboutWC *)about {
     if (_about) return _about;

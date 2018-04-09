@@ -19,6 +19,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+    _workPath.stringValue = [ud stringForKey:FFMPackingWorkPath];
+
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(saveWorkPath) name:NSControlTextDidEndEditingNotification object:nil];
 }
 

@@ -11,6 +11,53 @@
 
 @implementation FFMShellTaskArgs
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+        _repoLocalPath = [ud stringForKey:FFMGitRepoLocalURL];
+        _repoRemoteURL = [ud stringForKey:FFMGitRepoRemoteURL];
+    }
+    return self;
+}
+
+- (void)setPlatform:(FFMPackingPlatform)platform {
+    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+
+    NSString *shellName = @"packing";
+    switch (platform) {
+        case FFMPackingPlatform_Pgy: {
+            shellName = @"pgy";
+            self.ext1 = [ud stringForKey:FFMPackingPgyAPIKey];
+            self.ext2 = [ud stringForKey:FFMPackingPgyUserKey];
+            break;
+        }
+        case FFMPackingPlatform_Fir: {
+            shellName = @"fir";
+            self.ext1 = [ud stringForKey:FFMPackingFirAPIToken];
+            break;
+        }
+        case FFMPackingPlatform_TestFlight: {
+            shellName = @"testflight";
+            self.ext1 = [ud stringForKey:FFMPackingTestFlightAccount];
+            self.ext2 = [ud stringForKey:FFMPackingTestFlightPasscode];
+            break;
+        }
+            
+        default:
+            break;
+    }
+
+    self.shellPath = [[NSBundle mainBundle] pathForResource:shellName ofType:@"sh"];
+}
+
+- (void)setSignMode:(NSString *)signMode {
+    _signMode = signMode;
+    
+    _plistPath = [[NSBundle mainBundle] pathForResource:signMode ofType:@"plist"];
+}
+
 - (NSArray<NSString *> *)allArgs {
     NSMutableArray *args = @[].mutableCopy;
     u_int count;
@@ -53,15 +100,14 @@
     _task.arguments = args.allArgs;
     
     __weak typeof(self) weakself = self;
-    dispatch_queue_t mainQueue = dispatch_get_main_queue();
     [[_task.standardOutput fileHandleForReading] setReadabilityHandler:^(NSFileHandle *output) {
-        dispatch_async(mainQueue, ^{
+        dispatch_async(dispatch_get_main_queue(), ^{
             !weakself.outputReadabilityHandler ?: weakself.outputReadabilityHandler(output);
         });
     }];
     
     [[_task.standardError fileHandleForReading] setReadabilityHandler:^(NSFileHandle *error) {
-        dispatch_async(mainQueue, ^{
+        dispatch_async(dispatch_get_main_queue(), ^{
             !weakself.errorReadabilityHandler ?: weakself.errorReadabilityHandler(error);
         });
     }];

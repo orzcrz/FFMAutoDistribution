@@ -20,6 +20,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+    _akTF.stringValue = [ud stringForKey:FFMPackingPgyAPIKey]?:@"";
+    _ukTF.stringValue = [ud stringForKey:FFMPackingPgyUserKey]?:@"";
+
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(savePgyApiInfo) name:NSControlTextDidEndEditingNotification object:nil];
 }
 

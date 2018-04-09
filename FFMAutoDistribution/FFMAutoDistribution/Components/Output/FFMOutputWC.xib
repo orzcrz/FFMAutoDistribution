@@ -8,14 +8,14 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="FFMOutputWC">
             <connections>
+                <outlet property="stopBtn" destination="SJF-eY-EIA" id="LlN-3o-Fnf"/>
                 <outlet property="textView" destination="BC9-UW-Fxy" id="nWg-tQ-jFj"/>
                 <outlet property="window" destination="F0z-JX-Cv5" id="gIp-Ho-8D9"/>
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
-        <window title="输出" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" animationBehavior="default" id="F0z-JX-Cv5">
-            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+        <window title="输出" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" titleVisibility="hidden" id="F0z-JX-Cv5">
             <rect key="contentRect" x="196" y="240" width="480" height="270"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
             <view key="contentView" wantsLayer="YES" id="se5-gp-TjO">
@@ -23,16 +23,16 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4S3-Xs-fQc">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <rect key="frame" x="0.0" y="30" width="480" height="240"/>
                         <clipView key="contentView" wantsLayer="YES" id="bfF-Wr-9yx">
-                            <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                            <rect key="frame" x="0.0" y="0.0" width="465" height="240"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <textView editable="NO" importsGraphics="NO" verticallyResizable="YES" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="BC9-UW-Fxy">
-                                    <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="465" height="240"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                    <size key="minSize" width="480" height="270"/>
+                                    <size key="minSize" width="465" height="240"/>
                                     <size key="maxSize" width="480" height="10000000"/>
                                     <color key="insertionPointColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </textView>
@@ -44,32 +44,37 @@
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                         <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="vXc-3o-wKp">
-                            <rect key="frame" x="464" y="0.0" width="16" height="270"/>
+                            <rect key="frame" x="465" y="0.0" width="15" height="240"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                     </scrollView>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="SJF-eY-EIA">
+                        <rect key="frame" x="386" y="-1" width="100" height="32"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="88" id="CQw-J7-Kfs"/>
+                        </constraints>
+                        <buttonCell key="cell" type="push" title="退出" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="94W-Zk-zwu">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" size="13" name=".PingFangSC-Regular"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="pressStopButtonAction:" target="-2" id="hbg-bS-UJO"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="4S3-Xs-fQc" firstAttribute="top" secondItem="se5-gp-TjO" secondAttribute="top" id="6VZ-Hh-hn2"/>
+                    <constraint firstItem="SJF-eY-EIA" firstAttribute="top" secondItem="BC9-UW-Fxy" secondAttribute="bottom" constant="3" id="L5H-Rs-hit"/>
                     <constraint firstAttribute="trailing" secondItem="4S3-Xs-fQc" secondAttribute="trailing" id="e5c-g9-1CS"/>
-                    <constraint firstAttribute="bottom" secondItem="4S3-Xs-fQc" secondAttribute="bottom" id="i6e-QB-FtS"/>
+                    <constraint firstAttribute="bottom" secondItem="4S3-Xs-fQc" secondAttribute="bottom" constant="30" id="i6e-QB-FtS"/>
                     <constraint firstItem="4S3-Xs-fQc" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" id="sdY-Dp-IfV"/>
+                    <constraint firstItem="SJF-eY-EIA" firstAttribute="trailing" secondItem="BC9-UW-Fxy" secondAttribute="trailing" id="zQ4-ot-9xA"/>
                 </constraints>
             </view>
             <connections>
                 <outlet property="delegate" destination="-2" id="0bl-1N-AYu"/>
             </connections>
-        </window>
-        <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" frameAutosaveName="" animationBehavior="default" id="Gbw-d0-5fs">
-            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
-            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="131" y="158" width="480" height="270"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
-            <view key="contentView" id="gcp-UP-36Q">
-                <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
-                <autoresizingMask key="autoresizingMask"/>
-            </view>
-            <point key="canvasLocation" x="139" y="551"/>
+            <point key="canvasLocation" x="124" y="161"/>
         </window>
     </objects>
 </document>

@@ -20,6 +20,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+    _accountTF.stringValue = [ud stringForKey:FFMPackingTestFlightAccount]?:@"";
+    _passcodeTF.stringValue = [ud stringForKey:FFMPackingTestFlightPasscode]?:@"";
+
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(saveDeveloperInfo) name:NSControlTextDidEndEditingNotification object:nil];
 }
 

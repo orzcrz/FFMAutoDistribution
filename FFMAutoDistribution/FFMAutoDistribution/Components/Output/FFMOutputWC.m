@@ -14,6 +14,7 @@
 
 @property (unsafe_unretained) IBOutlet NSTextView *textView;
 @property (strong) FFMShellTask *task;
+@property (weak) IBOutlet NSButton *stopBtn;
 
 @end
 
@@ -23,11 +24,32 @@
     [super windowDidLoad];
     
     self.task = [FFMShellTask new];
+    
+    __weak typeof(self) weakself = self;
+    self.task.outputReadabilityHandler = ^(NSFileHandle *output) {
+        NSData *data = output.availableData;
+        if (data.length) {
+            NSString *string = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+            [weakself appendConentString:string toTextView:weakself.textView];
+        }
+    };
+    self.task.errorReadabilityHandler = ^(NSFileHandle *error) {
+        NSData *data = error.availableData;
+        if (data.length) {
+            NSString *string = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+            [weakself appendConentString:string toTextView:weakself.textView];
+        }
+    };
+    self.task.terminationHandler = ^(NSTask *task) {
+        [weakself appendConentString:@"退出当前任务" toTextView:weakself.textView];
+    };
+    
     [self.task startWithArgs:self.args];
 }
 
-- (void)close {
+- (IBAction)pressStopButtonAction:(NSButton *)sender {
     [self.task stop];
+    [self.window.sheetParent endSheet:self.window];
 }
 
 - (void)appendConentString:(NSString *)string toTextView:(NSTextView *)textView {

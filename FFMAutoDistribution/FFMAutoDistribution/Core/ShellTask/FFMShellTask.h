@@ -8,19 +8,29 @@
 
 #import <Foundation/Foundation.h>
 
+typedef NS_ENUM(NSUInteger, FFMPackingPlatform) {
+    FFMPackingPlatform_None,
+    FFMPackingPlatform_Pgy,
+    FFMPackingPlatform_Fir,
+    FFMPackingPlatform_TestFlight,
+};
+
 @interface FFMShellTaskArgs : NSObject
 
 @property (copy) NSString *shellPath;  // must be the first one in args
 
 @property (copy) NSString *branchName;
-@property (copy) NSString *signMode;
+@property (nonatomic, copy) NSString *signMode;
 @property (copy) NSString *buildConfig;
-@property (copy) NSString *platform;
 @property (copy) NSString *repoLocalPath;
 @property (copy) NSString *repoRemoteURL;
 @property (copy) NSString *plistPath;
 @property (copy) NSString *log;
 
+@property (copy) NSString *ext1; // 追加字段
+@property (copy) NSString *ext2; // 追加字段
+
+- (void)setPlatform:(FFMPackingPlatform)platform;
 - (NSArray<NSString *> *)allArgs;
 
 @end

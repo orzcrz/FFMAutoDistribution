@@ -23,6 +23,12 @@
 - (void)windowDidLoad {
     [super windowDidLoad];
     
+    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+    _remoteNameTF.stringValue = [ud stringForKey:FFMGitRepoRemoteName]?:@"";
+    _remoteTF.stringValue = [ud stringForKey:FFMGitRepoRemoteURL]?:@"";
+    _localNameTF.stringValue = [ud stringForKey:FFMGitRepoLocalName]?:@"";
+    _localTF.stringValue = [ud stringForKey:FFMGitRepoLocalURL]?:@"";
+
     __weak typeof(self) weakself = self;
     [[NSNotificationCenter defaultCenter] addObserverForName:NSControlTextDidChangeNotification object:nil queue:nil usingBlock:^(NSNotification * _Nonnull note) {
         weakself.confirmBtn.enabled = \
@@ -35,20 +41,15 @@
 
 #pragma mark-   touch action
 
-- (IBAction)openPanel:(NSButton *)sender {
-    sender.state = NSOnState;
-    [FFMUtils openPanel:^(NSString *path) {
-        _localTF.stringValue = path;
-    }];
-}
-
 - (IBAction)cancel:(id)sender {
-    [self.window close];
+    [self.window.sheetParent endSheet:self.window returnCode:NSModalResponseCancel];
 }
 
 - (IBAction)confirm:(NSButton *)sender {
     sender.state = NSOnState;
     
+    [self.window.sheetParent endSheet:self.window returnCode:NSModalResponseOK];
+
     NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
     [ud setObject:_remoteNameTF.stringValue forKey:FFMGitRepoRemoteName];
     [ud setObject:_remoteTF.stringValue forKey:FFMGitRepoRemoteURL];

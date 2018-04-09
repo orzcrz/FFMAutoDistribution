@@ -19,8 +19,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(saveFirApiInfo) name:NSControlTextDidEndEditingNotification object:nil];
+    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+    _tkTF.stringValue = [ud stringForKey:FFMPackingFirAPIToken]?:@"";
 
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(saveFirApiInfo) name:NSControlTextDidEndEditingNotification object:nil];
 }
 
 - (void)saveFirApiInfo {

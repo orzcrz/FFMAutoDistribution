@@ -7,6 +7,8 @@
 //
 
 #import "FFMAuthorization.h"
+#import <ServiceManagement/ServiceManagement.h>
+#import <Security/Authorization.h>
 
 @implementation FFMAuthorization
 
@@ -17,6 +19,39 @@
 
     return auth;
 }
+
+//- (BOOL)requestAuthorization {
+//
+//    AuthorizationRef authRef = NULL;
+//
+//    OSStatus status = AuthorizationCreate(NULL, kAuthorizationEmptyEnvironment, kAuthorizationFlagDefaults, &authRef);
+//    if (status != errAuthorizationSuccess) {
+//        authRef = NULL;
+//        return NO;
+//    }
+//
+//    BOOL result = NO;
+//    NSError *error = nil;
+//    AuthorizationItem authItem        = { kSMRightBlessPrivilegedHelper, 0, NULL, 0 };
+//    AuthorizationRights authRights    = { 1, &authItem };
+//    AuthorizationFlags flags          = kAuthorizationFlagDefaults | kAuthorizationFlagInteractionAllowed | kAuthorizationFlagPreAuthorize | kAuthorizationFlagExtendRights;
+//
+//    status = AuthorizationCopyRights(authRef, &authRights, kAuthorizationEmptyEnvironment, flags, NULL);
+//    if (status != errAuthorizationSuccess) {
+//        error = [NSError errorWithDomain:NSOSStatusErrorDomain code:status userInfo:nil];
+//    } else {
+//        CFErrorRef  cfError;
+//        NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
+//        NSString *bundleId = [infoDictionary objectForKey:@"CFBundleIdentifier"];
+//        result = (BOOL) SMJobBless(kSMDomainSystemLaunchd, (__bridge CFStringRef)bundleId, authRef, &cfError);
+//        if (!result) {
+//            error = CFBridgingRelease(cfError);
+//            NSLog(@"%@", error);
+//        }
+//    }
+//
+//    return result;
+//}
 
 - (BOOL)requestAuthorization {
     AuthorizationRef myAuthorizationRef;
@@ -32,12 +67,12 @@
     AuthorizationRights myRights;
     myRights.count = sizeof (myItems) / sizeof (myItems[0]);
     myRights.items = myItems;
-    
+
     AuthorizationFlags myFlags;
     myFlags = kAuthorizationFlagDefaults |
     kAuthorizationFlagInteractionAllowed |
     kAuthorizationFlagExtendRights;
-    
+
     myStatus = AuthorizationCopyRights (myAuthorizationRef, &myRights,
                                         kAuthorizationEmptyEnvironment, myFlags, NULL);
     return (myStatus==errAuthorizationSuccess);

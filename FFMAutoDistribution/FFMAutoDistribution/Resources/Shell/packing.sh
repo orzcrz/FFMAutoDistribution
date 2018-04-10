@@ -15,8 +15,8 @@ function createFolderIfNotExist() {
 function checkoutCodeFromGitLab() {
     local git="/usr/bin/git"
     if [[ ! -d "$git_folder" ]] && [[ ! -d "$git_folder/.git" ]]; then
-        echo "--------- 首次使用脚本，将会从gitlab克隆项目，需要等待10-15分钟 ---------"
-        $git clone --progress $remote_repo $git_folder
+        echo "--------- 首次使用，将会从gitlab克隆项目，需要等待10-15分钟 ---------"
+        $git clone --progress --depth=1 $remote_repo $git_folder
     fi
 	cd $git_folder
 	$git checkout master
@@ -35,22 +35,25 @@ function podInstall() {
 }
 
 function initProjectBuildConfigure() {    
+    local plistBuddy="/usr/libexec/PlistBuddy"
 
     project_name=$(ls | grep xcodeproj | awk -F.xcodeproj '{print $1}')
+
     local project_plist="${project_path}/${project_name}/SupportingFiles/Info.plist"
     local extension_notification_plist="${project_path}/NotificationService/Info.plist"
 
     short_version=$(/usr/libexec/PlistBuddy -c "print CFBundleShortVersionString" "${project_plist}")
-    local pre_bundle_version=$(/usr/libexec/PlistBuddy -c "print CFBundleVersion" "${project_plist}")
+    local pre_bundle_version=$($plist_buddy -c "print CFBundleVersion" "${project_plist}")
 
+    backup_path="$local_repo/backup"
     output_path="${backup_path}/${short_version}/$project_name $(date "+%Y-%m-%d %H-%M-%S")"
     createFolderIfNotExist "$output_path"
-	ipa_path="${output_path}/${project_name}.ipa"
+    ipa_path="${output_path}/${project_name}.ipa"
 
     bundle_version=$(echo $(date "+%m%d.%H%M") | sed s'/^0//')
 
-    /usr/libexec/PlistBuddy -c "set CFBundleVersion ${bundle_version}" ${project_plist}
-    /usr/libexec/PlistBuddy -c "set CFBundleVersion ${bundle_version}" ${extension_notification_plist}
+    $plist_buddy -c "set CFBundleVersion ${bundle_version}" ${project_plist}
+    $plist_buddy -c "set CFBundleVersion ${bundle_version}" ${extension_notification_plist}
 
     echo "------------------------ 项目信息汇总 ------------------------"
     echo "签名方式 : $sign_mode"
@@ -109,7 +112,6 @@ plist_path=$6
 cd $local_repo
 
 git_folder="$local_repo/qukan-ios"
-
 project_path="$git_folder/QuKan"
 
 checkoutCodeFromGitLab

@@ -68,23 +68,17 @@
 - (IBAction)packing:(NSButton *)sender {
     sender.state = NSOnState;
     
+    if ([self.platform.title isEqualToString:@"Fir"] || [self.platform.title isEqualToString:@"TestFlight"]) {
+        [FFMUtils alertMessage:@"功能尚未开发"];
+        return;
+    }
+    
     FFMShellTaskArgs *shellArgs = [FFMShellTaskArgs new];
     shellArgs.branchName = self.branch.stringValue;
     shellArgs.log = self.log.string;
     shellArgs.signMode = self.sign.title;
     shellArgs.buildConfig = self.build.title;
-    FFMPackingPlatform pf = FFMPackingPlatform_Pgy;
-    if ([self.platform.title isEqualToString:@"None"]) {
-        pf = FFMPackingPlatform_None;
-    }
-    else if ([self.platform.title isEqualToString:@"Fir"]) {
-        pf = FFMPackingPlatform_Fir;
-    }
-    else if ([self.platform.title isEqualToString:@"TestFlight"]) {
-        pf = FFMPackingPlatform_TestFlight;
-    }
-    
-    shellArgs.platform = pf;
+    shellArgs.platform = self.platform.title;
     self.output = [FFMOutputWC ffm_loadFromNib];
     self.output.args = shellArgs;
     [self.window beginSheet:self.output.window completionHandler:^(NSModalResponse returnCode) {
@@ -101,32 +95,20 @@
     
     NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
     NSMutableArray *branches = [[ud arrayForKey:FFMPackingBranches]?:@[] mutableCopy];
-    if (branches.count > 5) {
-        [branches replaceObjectAtIndex:0 withObject:branch];
-    }
-    else {
-        if ([branches indexOfObject:branch] != 0) {
-            if ([branches containsObject:branch]) {
-                [branches removeObject:branch];
-            }
-            
-            [branches insertObject:branch atIndex:0];
+    if ([branches containsObject:branch]) {
+        if (branches.count > 1) {
+            [branches exchangeObjectAtIndex:[branches indexOfObject:branch] withObjectAtIndex:0];
         }
     }
+    else {
+        if (branches.count > 5) {
+            [branches removeLastObject];
+        }
+        [branches insertObject:branch atIndex:0];
+    }
+
     [ud setObject:branches.copy forKey:FFMPackingBranches];
     [sender reloadData];
-
-}
-
-- (IBAction)selectSignMode:(NSPopUpButton *)sender {
-
-}
-
-- (IBAction)selectBuilidConfig:(NSPopUpButton *)sender {
-
-}
-
-- (IBAction)selectPlatform:(NSPopUpButton *)sender {
 
 }
 

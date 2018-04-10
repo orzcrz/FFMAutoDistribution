@@ -19,10 +19,10 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <customView translatesAutoresizingMaskIntoConstraints="NO" id="eR0-Wz-qsC" customClass="FFMBaseView">
-                    <rect key="frame" x="16" y="20" width="443" height="48"/>
+                    <rect key="frame" x="16" y="19" width="443" height="49"/>
                     <subviews>
                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="1Pl-un-eT3">
-                            <rect key="frame" x="14" y="15" width="71" height="17"/>
+                            <rect key="frame" x="14" y="16" width="71" height="17"/>
                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="工作路径：" id="jO2-PF-lsq">
                                 <font key="font" size="13" name=".PingFangSC-Regular"/>
                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -30,7 +30,7 @@
                             </textFieldCell>
                         </textField>
                         <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ydC-YS-vXE">
-                            <rect key="frame" x="91" y="13" width="299" height="22"/>
+                            <rect key="frame" x="91" y="14" width="299" height="22"/>
                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="选择或输入工作路径" drawsBackground="YES" id="Sln-Sk-Mo1">
                                 <font key="font" metaFont="system"/>
                                 <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -38,7 +38,7 @@
                             </textFieldCell>
                         </textField>
                         <button horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="T0G-Ta-ati">
-                            <rect key="frame" x="402" y="10" width="29" height="26"/>
+                            <rect key="frame" x="402" y="11" width="29" height="26"/>
                             <buttonCell key="cell" type="disclosure" bezelStyle="roundedDisclosure" imagePosition="only" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="O9Q-Pr-R77">
                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
                                 <font key="font" metaFont="system"/>
@@ -54,8 +54,8 @@
                         <constraint firstItem="ydC-YS-vXE" firstAttribute="leading" secondItem="1Pl-un-eT3" secondAttribute="trailing" constant="8" id="IPW-yi-b0I"/>
                         <constraint firstItem="1Pl-un-eT3" firstAttribute="top" secondItem="eR0-Wz-qsC" secondAttribute="top" constant="16" id="O88-b7-Zhv"/>
                         <constraint firstItem="1Pl-un-eT3" firstAttribute="leading" secondItem="eR0-Wz-qsC" secondAttribute="leading" constant="16" id="aLA-zQ-nEY"/>
-                        <constraint firstAttribute="height" constant="48" id="fls-M0-Rlr"/>
                         <constraint firstItem="T0G-Ta-ati" firstAttribute="leading" secondItem="ydC-YS-vXE" secondAttribute="trailing" constant="16" id="hfV-LM-WOt"/>
+                        <constraint firstAttribute="bottom" secondItem="1Pl-un-eT3" secondAttribute="bottom" constant="16" id="xT2-jz-gTy"/>
                         <constraint firstAttribute="trailing" secondItem="T0G-Ta-ati" secondAttribute="trailing" constant="16" id="yc8-Cj-IMW"/>
                     </constraints>
                 </customView>

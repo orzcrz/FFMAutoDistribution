@@ -10,6 +10,8 @@
 
 @interface FFMWindowController : NSWindowController
 
+- (IBAction)packing:(NSButton *)sender;
+
 - (void)showAbout;
 - (void)showPreference;
 - (void)showRepoSetting;

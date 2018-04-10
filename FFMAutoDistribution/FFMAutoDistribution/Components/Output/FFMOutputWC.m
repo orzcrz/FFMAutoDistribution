@@ -30,18 +30,24 @@
         NSData *data = output.availableData;
         if (data.length) {
             NSString *string = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-            [weakself appendConentString:string toTextView:weakself.textView];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [weakself appendConentString:string toTextView:weakself.textView];
+            });
         }
     };
     self.task.errorReadabilityHandler = ^(NSFileHandle *error) {
         NSData *data = error.availableData;
         if (data.length) {
             NSString *string = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-            [weakself appendConentString:string toTextView:weakself.textView];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [weakself appendConentString:string toTextView:weakself.textView];
+            });
         }
     };
     self.task.terminationHandler = ^(NSTask *task) {
-        [weakself appendConentString:@"退出当前任务" toTextView:weakself.textView];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [weakself appendConentString:@"退出当前任务" toTextView:weakself.textView];
+        });
     };
     
     [self.task startWithArgs:self.args];

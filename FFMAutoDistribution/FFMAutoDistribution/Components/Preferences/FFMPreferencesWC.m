@@ -17,6 +17,7 @@
     NSView *_titleBar;
 }
 
+@property (weak) IBOutlet NSToolbar *toolBar;
 @property (nonatomic, strong) FFMPgySettingVC *pgyVC;
 @property (nonatomic, strong) FFMFirSettingVC *firVC;
 @property (nonatomic, strong) FFMTestFlightSettingVC *testFlightVC;
@@ -29,6 +30,8 @@
 - (void)windowDidLoad {
     [super windowDidLoad];
     _titleBar = self.window.ffm_titleBar;
+    
+    self.toolBar.selectedItemIdentifier = self.toolBar.items.firstObject.itemIdentifier;
     [self pgy:nil];
 }
 

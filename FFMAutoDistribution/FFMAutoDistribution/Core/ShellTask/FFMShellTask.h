@@ -8,13 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-typedef NS_ENUM(NSUInteger, FFMPackingPlatform) {
-    FFMPackingPlatform_None,
-    FFMPackingPlatform_Pgy,
-    FFMPackingPlatform_Fir,
-    FFMPackingPlatform_TestFlight,
-};
-
 @interface FFMShellTaskArgs : NSObject
 
 @property (copy) NSString *shellPath;  // must be the first one in args
@@ -30,7 +23,7 @@ typedef NS_ENUM(NSUInteger, FFMPackingPlatform) {
 @property (copy) NSString *ext1; // 追加字段
 @property (copy) NSString *ext2; // 追加字段
 
-- (void)setPlatform:(FFMPackingPlatform)platform;
+- (void)setPlatform:(NSString *)platform;
 - (NSArray<NSString *> *)allArgs;
 
 @end
@@ -40,8 +33,8 @@ typedef NS_ENUM(NSUInteger, FFMPackingPlatform) {
 @interface FFMShellTask : NSObject
 
 @property (strong, readonly) NSTask *task;
-@property (strong) NSPipe *output;
-@property (strong) NSPipe *error;
+@property (strong, readonly) NSPipe *output;
+@property (strong, readonly) NSPipe *error;
 
 @property (copy) void (^outputReadabilityHandler)(NSFileHandle *output);
 @property (copy) void (^errorReadabilityHandler)(NSFileHandle *error);

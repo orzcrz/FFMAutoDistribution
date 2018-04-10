@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+FOUNDATION_EXTERN NSString *const FFMAppAuthorization;              // 授权
+
 FOUNDATION_EXTERN NSString *const FFMPackingBranches;               // 打包的分支
 
 FOUNDATION_EXTERN NSString *const FFMPackingLog;                    // 打包的日志
@@ -26,5 +28,4 @@ FOUNDATION_EXTERN NSString *const FFMGitRepoRemoteName;             // 远程仓
 FOUNDATION_EXTERN NSString *const FFMGitRepoRemoteURL;              // 远程仓库地址
 
 FOUNDATION_EXTERN NSString *const FFMGitRepoLocalName;              // 本地仓库名称 文件夹名
-FOUNDATION_EXTERN NSString *const FFMGitRepoLocalURL;               // 本地仓库路径
 

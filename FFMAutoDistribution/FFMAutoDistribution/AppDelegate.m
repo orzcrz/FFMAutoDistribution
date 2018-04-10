@@ -20,16 +20,21 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     _windowController = [FFMWindowController ffm_loadFromNib];
     [_windowController.window makeKeyAndOrderFront:nil];
-    [FFMAuthorization requestAuthorization:^(BOOL isAuthorized) {
-    }];
-}
-
-
-- (void)applicationWillTerminate:(NSNotification *)aNotification {
     
+    if (![[NSUserDefaults standardUserDefaults] boolForKey:FFMAppAuthorization]) {
+        [FFMAuthorization requestAuthorization:^(BOOL isAuthorized) {
+            [[NSUserDefaults standardUserDefaults] setBool:isAuthorized forKey:FFMAppAuthorization];
+        }];
+    }
 }
 
-#pragma mark-  menu
+#pragma mark-  dock menu
+
+- (IBAction)packing:(NSMenuItem *)sender {
+    [_windowController packing:nil];
+}
+
+#pragma mark-  top menu
 
 - (IBAction)about:(NSMenuItem *)sender {
     [_windowController showAbout];

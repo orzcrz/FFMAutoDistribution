@@ -49,9 +49,9 @@
                         </scroller>
                     </scrollView>
                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="SJF-eY-EIA">
-                        <rect key="frame" x="386" y="-1" width="100" height="32"/>
+                        <rect key="frame" x="371" y="1" width="100" height="32"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="88" id="CQw-J7-Kfs"/>
+                            <constraint firstAttribute="width" constant="88" id="jjD-u6-vcl"/>
                         </constraints>
                         <buttonCell key="cell" type="push" title="退出" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="94W-Zk-zwu">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -64,11 +64,11 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="4S3-Xs-fQc" firstAttribute="top" secondItem="se5-gp-TjO" secondAttribute="top" id="6VZ-Hh-hn2"/>
-                    <constraint firstItem="SJF-eY-EIA" firstAttribute="top" secondItem="BC9-UW-Fxy" secondAttribute="bottom" constant="3" id="L5H-Rs-hit"/>
+                    <constraint firstItem="SJF-eY-EIA" firstAttribute="trailing" secondItem="BC9-UW-Fxy" secondAttribute="trailing" id="9Tt-bY-Djz"/>
+                    <constraint firstAttribute="bottom" secondItem="SJF-eY-EIA" secondAttribute="bottom" constant="8" id="FMQ-D9-RNM"/>
                     <constraint firstAttribute="trailing" secondItem="4S3-Xs-fQc" secondAttribute="trailing" id="e5c-g9-1CS"/>
                     <constraint firstAttribute="bottom" secondItem="4S3-Xs-fQc" secondAttribute="bottom" constant="30" id="i6e-QB-FtS"/>
                     <constraint firstItem="4S3-Xs-fQc" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" id="sdY-Dp-IfV"/>
-                    <constraint firstItem="SJF-eY-EIA" firstAttribute="trailing" secondItem="BC9-UW-Fxy" secondAttribute="trailing" id="zQ4-ot-9xA"/>
                 </constraints>
             </view>
             <connections>

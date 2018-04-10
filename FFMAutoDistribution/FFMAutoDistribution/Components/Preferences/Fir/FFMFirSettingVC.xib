@@ -19,10 +19,10 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <customView translatesAutoresizingMaskIntoConstraints="NO" id="lyF-49-71B" customClass="FFMBaseView">
-                    <rect key="frame" x="16" y="20" width="443" height="48"/>
+                    <rect key="frame" x="16" y="19" width="443" height="49"/>
                     <subviews>
                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="7cC-5H-CsG">
-                            <rect key="frame" x="14" y="15" width="81" height="17"/>
+                            <rect key="frame" x="14" y="16" width="81" height="17"/>
                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="API Token：" id="ajn-Aj-BjK">
                                 <font key="font" size="13" name=".PingFangSC-Regular"/>
                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -30,7 +30,7 @@
                             </textFieldCell>
                         </textField>
                         <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="faJ-mv-tXy">
-                            <rect key="frame" x="101" y="13" width="326" height="22"/>
+                            <rect key="frame" x="101" y="14" width="326" height="22"/>
                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="填写上传app包所需的token" drawsBackground="YES" id="bZU-qH-Wqk">
                                 <font key="font" metaFont="system"/>
                                 <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -40,7 +40,7 @@
                     </subviews>
                     <constraints>
                         <constraint firstItem="7cC-5H-CsG" firstAttribute="leading" secondItem="lyF-49-71B" secondAttribute="leading" constant="16" id="Agb-5j-wSG"/>
-                        <constraint firstAttribute="height" constant="48" id="QTN-bv-Ve0"/>
+                        <constraint firstAttribute="bottom" secondItem="7cC-5H-CsG" secondAttribute="bottom" constant="16" id="Sci-GQ-qhz"/>
                         <constraint firstItem="7cC-5H-CsG" firstAttribute="top" secondItem="lyF-49-71B" secondAttribute="top" constant="16" id="bxD-61-eNk"/>
                         <constraint firstAttribute="trailing" secondItem="faJ-mv-tXy" secondAttribute="trailing" constant="16" id="cwq-Zs-GrP"/>
                         <constraint firstItem="faJ-mv-tXy" firstAttribute="leading" secondItem="7cC-5H-CsG" secondAttribute="trailing" constant="8" id="f4E-Am-5Ma"/>

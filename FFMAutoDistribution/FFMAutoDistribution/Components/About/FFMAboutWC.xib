@@ -86,28 +86,8 @@
             </connections>
             <point key="canvasLocation" x="158" y="71"/>
         </window>
-        <toolbar implicitIdentifier="EFB33063-D02E-4E4B-A5B4-BAC8C1CF41CC" explicitIdentifier="PreferenceToolBar" autosavesConfiguration="NO" displayMode="iconAndLabel" sizeMode="small" id="1x3-B4-RSi">
-            <allowedToolbarItems>
-                <toolbarItem implicitItemIdentifier="F1A37C6A-FCA0-4FE8-BB94-7275C7BDE617" explicitItemIdentifier="PGY" label="蒲公英" paletteLabel="PGY" toolTip="蒲公英平台的相关设置" tag="-1" image="pgy" selectable="YES" id="Kft-6s-wO3"/>
-                <toolbarItem implicitItemIdentifier="BE383F00-E01A-4DC8-9C7F-A0F0B4A5BA75" explicitItemIdentifier="Fir" label="Fir" paletteLabel="Fir" toolTip="Fir平台的相关设置" tag="-1" image="fir" selectable="YES" id="RPS-cc-d0c"/>
-                <toolbarItem implicitItemIdentifier="4BED3640-380A-4562-8C5C-397AD67E459C" explicitItemIdentifier="TestFlight" label="TestFlight" paletteLabel="TestFlight" toolTip="TestFlight相关设置" tag="-1" image="testflight" selectable="YES" id="8yk-SL-nvG"/>
-                <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="K13-UD-LdC"/>
-                <toolbarItem implicitItemIdentifier="90AA662A-8926-439C-86ED-9807D5B36005" explicitItemIdentifier="WorkPath" label="工作路径" paletteLabel="WorkPath" toolTip="设置打包和临时文件路径" tag="-1" image="work" selectable="YES" id="lIO-WN-bGP"/>
-            </allowedToolbarItems>
-            <defaultToolbarItems>
-                <toolbarItem reference="Kft-6s-wO3"/>
-                <toolbarItem reference="RPS-cc-d0c"/>
-                <toolbarItem reference="8yk-SL-nvG"/>
-                <toolbarItem reference="K13-UD-LdC"/>
-                <toolbarItem reference="lIO-WN-bGP"/>
-            </defaultToolbarItems>
-        </toolbar>
     </objects>
     <resources>
         <image name="about" width="100" height="100"/>
-        <image name="fir" width="95" height="87"/>
-        <image name="pgy" width="130" height="43"/>
-        <image name="testflight" width="64" height="64"/>
-        <image name="work" width="61.439998626708984" height="61.439998626708984"/>
     </resources>
 </document>

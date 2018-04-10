@@ -15,7 +15,7 @@ function createFolderIfNotExist() {
 function checkoutCodeFromGitLab() {
     local git="/usr/bin/git"
     if [[ ! -d "$git_folder" ]] && [[ ! -d "$git_folder/.git" ]]; then
-        echo "--------- 首次使用，将会从gitlab克隆项目，需要等待10-15分钟 ---------"
+        echo "--------- 首次使用，将会从gitlab克隆项目 ---------"
         $git clone --progress --depth=1 $remote_repo $git_folder
     fi
 	cd $git_folder
@@ -35,7 +35,6 @@ function podInstall() {
 }
 
 function initProjectBuildConfigure() {    
-    local plistBuddy="/usr/libexec/PlistBuddy"
 
     project_name=$(ls | grep xcodeproj | awk -F.xcodeproj '{print $1}')
 
@@ -43,7 +42,7 @@ function initProjectBuildConfigure() {
     local extension_notification_plist="${project_path}/NotificationService/Info.plist"
 
     short_version=$(/usr/libexec/PlistBuddy -c "print CFBundleShortVersionString" "${project_plist}")
-    local pre_bundle_version=$($plist_buddy -c "print CFBundleVersion" "${project_plist}")
+    local pre_bundle_version=$(/usr/libexec/PlistBuddy -c "print CFBundleVersion" "${project_plist}")
 
     backup_path="$local_repo/backup"
     output_path="${backup_path}/${short_version}/$project_name $(date "+%Y-%m-%d %H-%M-%S")"
@@ -52,8 +51,8 @@ function initProjectBuildConfigure() {
 
     bundle_version=$(echo $(date "+%m%d.%H%M") | sed s'/^0//')
 
-    $plist_buddy -c "set CFBundleVersion ${bundle_version}" ${project_plist}
-    $plist_buddy -c "set CFBundleVersion ${bundle_version}" ${extension_notification_plist}
+    /usr/libexec/PlistBuddy -c "set CFBundleVersion ${bundle_version}" ${project_plist}
+    /usr/libexec/PlistBuddy -c "set CFBundleVersion ${bundle_version}" ${extension_notification_plist}
 
     echo "------------------------ 项目信息汇总 ------------------------"
     echo "签名方式 : $sign_mode"
@@ -64,7 +63,7 @@ function initProjectBuildConfigure() {
     echo "原内部版本号 : $pre_bundle_version"
     echo "修改后的内部版本号 : $bundle_version"
     echo "--------------------------------------------------------------"
-
+    sleep 5
 }
 
 function building() {
@@ -120,5 +119,5 @@ podInstall
 
 initProjectBuildConfigure
 
-building
+#building
 

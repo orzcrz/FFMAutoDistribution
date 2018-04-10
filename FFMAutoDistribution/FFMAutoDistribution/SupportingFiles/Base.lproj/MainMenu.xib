@@ -17,9 +17,9 @@
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
         <menu title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
             <items>
-                <menuItem title="FFMAutoDistribution" id="1Xt-HY-uBw">
+                <menuItem title="这个工具" id="1Xt-HY-uBw">
                     <modifierMask key="keyEquivalentModifierMask"/>
-                    <menu key="submenu" title="FFMAutoDistribution" systemMenu="apple" id="uQy-DD-JDr">
+                    <menu key="submenu" title="这个工具" systemMenu="apple" id="uQy-DD-JDr">
                         <items>
                             <menuItem title="关于" id="5kV-Vb-QxS">
                                 <modifierMask key="keyEquivalentModifierMask"/>
@@ -46,81 +46,75 @@
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <menu key="submenu" title="编辑" id="sIz-OQ-50f">
                         <items>
-                            <menuItem title="Undo" keyEquivalent="z" id="A4p-Af-ORn">
+                            <menuItem title="撤消" keyEquivalent="z" id="A4p-Af-ORn">
                                 <connections>
                                     <action selector="undo:" target="-1" id="xuo-VP-eO5"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Redo" keyEquivalent="Z" id="W1h-OV-kbr">
+                            <menuItem title="重做" keyEquivalent="Z" id="W1h-OV-kbr">
                                 <connections>
                                     <action selector="redo:" target="-1" id="V9K-oY-Vuo"/>
                                 </connections>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="M8u-t3-Xha"/>
-                            <menuItem title="Cut" keyEquivalent="x" id="oJD-CR-qyA">
+                            <menuItem title="剪切" keyEquivalent="x" id="oJD-CR-qyA">
                                 <connections>
                                     <action selector="cut:" target="-1" id="nYP-ip-Y59"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Copy" keyEquivalent="c" id="h3a-Sb-RWH">
+                            <menuItem title="复制" keyEquivalent="c" id="h3a-Sb-RWH">
                                 <connections>
                                     <action selector="copy:" target="-1" id="1i3-zm-IWo"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Paste" keyEquivalent="v" id="PQf-iN-E74">
+                            <menuItem title="粘贴" keyEquivalent="v" id="PQf-iN-E74">
                                 <connections>
                                     <action selector="paste:" target="-1" id="E9d-XD-jXL"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Paste and Match Style" keyEquivalent="V" id="I1q-4i-Enw">
-                                <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
-                                <connections>
-                                    <action selector="pasteAsPlainText:" target="-1" id="jBp-hb-7DO"/>
-                                </connections>
-                            </menuItem>
-                            <menuItem title="Delete" id="5ce-cn-wY4">
+                            <menuItem title="删除" id="5ce-cn-wY4">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="delete:" target="-1" id="D6a-wh-V5G"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Select All" keyEquivalent="a" id="nTd-3r-QXv">
+                            <menuItem title="全选" keyEquivalent="a" id="nTd-3r-QXv">
                                 <connections>
                                     <action selector="selectAll:" target="-1" id="XdA-Rm-Y4Q"/>
                                 </connections>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="yYy-Dn-DpP"/>
-                            <menuItem title="Find" id="33d-f9-hn2">
+                            <menuItem title="查找" id="33d-f9-hn2">
                                 <modifierMask key="keyEquivalentModifierMask"/>
-                                <menu key="submenu" title="Find" id="D0O-cc-hzT">
+                                <menu key="submenu" title="查找" id="D0O-cc-hzT">
                                     <items>
-                                        <menuItem title="Find…" tag="1" keyEquivalent="f" id="C3O-vt-eux">
+                                        <menuItem title="查找" tag="1" keyEquivalent="f" id="C3O-vt-eux">
                                             <connections>
                                                 <action selector="performFindPanelAction:" target="-1" id="QYe-IW-1j2"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="Find and Replace…" tag="12" keyEquivalent="f" id="ctP-WJ-nBQ">
+                                        <menuItem title="查找并替换" tag="12" keyEquivalent="f" id="ctP-WJ-nBQ">
                                             <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
                                             <connections>
                                                 <action selector="performFindPanelAction:" target="-1" id="Rzt-3X-7l9"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="Find Next" tag="2" keyEquivalent="g" id="Jhn-pt-FbV">
+                                        <menuItem title="查找下一个" tag="2" keyEquivalent="g" id="Jhn-pt-FbV">
                                             <connections>
                                                 <action selector="performFindPanelAction:" target="-1" id="LJ6-qY-n69"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="Find Previous" tag="3" keyEquivalent="G" id="xJr-wy-8QO">
+                                        <menuItem title="查找上一个" tag="3" keyEquivalent="G" id="xJr-wy-8QO">
                                             <connections>
                                                 <action selector="performFindPanelAction:" target="-1" id="n2Y-a9-3Iu"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="Use Selection for Find" tag="7" keyEquivalent="e" id="kiy-Th-rrH">
+                                        <menuItem title="使用查找项" tag="7" keyEquivalent="e" id="kiy-Th-rrH">
                                             <connections>
                                                 <action selector="performFindPanelAction:" target="-1" id="y1N-b0-L0y"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="Jump to Selection" keyEquivalent="j" id="WWv-JH-yUT">
+                                        <menuItem title="跳到选择处" keyEquivalent="j" id="WWv-JH-yUT">
                                             <connections>
                                                 <action selector="centerSelectionInVisibleArea:" target="-1" id="nPG-Jy-Fp1"/>
                                             </connections>
@@ -139,6 +133,18 @@
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="setGitRepo:" target="Voe-Tx-rLC" id="nlm-zb-fDR"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+                <menuItem title="窗口" id="xAN-Gw-POR">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <menu key="submenu" title="窗口" id="MCb-Bw-6WG">
+                        <items>
+                            <menuItem title="关闭" keyEquivalent="w" id="a5z-mB-p8L">
+                                <connections>
+                                    <action selector="performClose:" target="-1" id="IbT-qI-v9w"/>
                                 </connections>
                             </menuItem>
                         </items>

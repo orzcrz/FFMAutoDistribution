@@ -14,4 +14,6 @@
 
 + (void)openPanel:(void (^)(NSString *path))block;
 
++ (NSBundle *)bundleWithName:(NSString *)name;
+
 @end

@@ -74,7 +74,7 @@ pgy_uk=$9
 
 source "$(cd $(dirname $0); pwd)/packing.sh" $1 $2 $3 $4 $5 $6
 
-uploadToPgy
+#uploadToPgy
 
-pushBundleVersionModification
+#pushBundleVersionModification
 

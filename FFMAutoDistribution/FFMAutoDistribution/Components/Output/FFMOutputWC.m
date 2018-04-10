@@ -22,7 +22,7 @@
 
 - (void)windowDidLoad {
     [super windowDidLoad];
-    
+
     self.task = [FFMShellTask new];
     
     __weak typeof(self) weakself = self;

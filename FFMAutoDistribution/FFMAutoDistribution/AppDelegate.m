@@ -28,6 +28,11 @@
     }
 }
 
+- (BOOL)applicationShouldHandleReopen:(NSApplication *)sender hasVisibleWindows:(BOOL)flag {
+    [_windowController.window makeKeyAndOrderFront:nil];
+    return YES;
+}
+
 #pragma mark-  dock menu
 
 - (IBAction)packing:(NSMenuItem *)sender {

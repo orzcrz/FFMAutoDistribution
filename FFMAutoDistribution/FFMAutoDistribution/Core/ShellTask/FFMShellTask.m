@@ -41,13 +41,13 @@
         self.ext2 = [ud stringForKey:FFMPackingTestFlightPasscode];
     }
 
-    self.shellPath = [[NSBundle mainBundle] pathForResource:shellName ofType:@"sh"];
+    self.shellPath = [[FFMUtils bundleWithName:@"shell"] pathForResource:shellName ofType:@"sh"];
 }
 
 - (void)setSignMode:(NSString *)signMode {
     _signMode = signMode;
     
-    _plistPath = [[NSBundle mainBundle] pathForResource:signMode ofType:@"plist"];
+    _plistPath = [[FFMUtils bundleWithName:@"plist"] pathForResource:signMode ofType:@"plist"];
 }
 
 - (NSArray<NSString *> *)allArgs {

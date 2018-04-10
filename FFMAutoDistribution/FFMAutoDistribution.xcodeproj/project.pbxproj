@@ -23,12 +23,8 @@
 		D2540B14207A1B0400C01C4B /* FFMOutputWC.m in Sources */ = {isa = PBXBuildFile; fileRef = D2540B12207A1B0400C01C4B /* FFMOutputWC.m */; };
 		D2540B15207A1B0400C01C4B /* FFMOutputWC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2540B13207A1B0400C01C4B /* FFMOutputWC.xib */; };
 		D2540B19207A383C00C01C4B /* FFMShellTask.m in Sources */ = {isa = PBXBuildFile; fileRef = D2540B18207A383C00C01C4B /* FFMShellTask.m */; };
-		D2540B1D207A3D0A00C01C4B /* development.plist in Resources */ = {isa = PBXBuildFile; fileRef = D2540B1A207A3D0A00C01C4B /* development.plist */; };
-		D2540B1E207A3D0A00C01C4B /* release.plist in Resources */ = {isa = PBXBuildFile; fileRef = D2540B1B207A3D0A00C01C4B /* release.plist */; };
-		D2540B1F207A3D0A00C01C4B /* ad-hoc.plist in Resources */ = {isa = PBXBuildFile; fileRef = D2540B1C207A3D0A00C01C4B /* ad-hoc.plist */; };
-		D2540B23207B135100C01C4B /* pgy.sh in Resources */ = {isa = PBXBuildFile; fileRef = D2540B22207B135100C01C4B /* pgy.sh */; };
-		D2540B25207B144900C01C4B /* testflight.sh in Resources */ = {isa = PBXBuildFile; fileRef = D2540B24207B144800C01C4B /* testflight.sh */; };
-		D2540B27207B513A00C01C4B /* packing.sh in Resources */ = {isa = PBXBuildFile; fileRef = D2540B26207B513900C01C4B /* packing.sh */; };
+		D2540B68207CE58E00C01C4B /* shell.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D2540B67207CE58D00C01C4B /* shell.bundle */; };
+		D2540B6A207CE63200C01C4B /* plist.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D2540B69207CE63200C01C4B /* plist.bundle */; };
 		D2D24EE12074C76E008CEB8E /* FFMGitRepoSettingWC.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D24EDF2074C76E008CEB8E /* FFMGitRepoSettingWC.m */; };
 		D2D24EE22074C76E008CEB8E /* FFMGitRepoSettingWC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2D24EE02074C76E008CEB8E /* FFMGitRepoSettingWC.xib */; };
 		D2D24EE62074D568008CEB8E /* FFMBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D24EE52074D568008CEB8E /* FFMBaseView.m */; };
@@ -49,7 +45,7 @@
 		021AE5BD2073DBB800DB96A9 /* FFMWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFMWindowController.h; sourceTree = "<group>"; };
 		021AE5BE2073DBB800DB96A9 /* FFMWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFMWindowController.m; sourceTree = "<group>"; };
 		021AE5BF2073DBB800DB96A9 /* FFMWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FFMWindowController.xib; sourceTree = "<group>"; };
-		D2162D862073C15E00260BC0 /* FFMAutoDistribution.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FFMAutoDistribution.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2162D862073C15E00260BC0 /* 一键打包工具.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "一键打包工具.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2162D892073C15E00260BC0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D2162D8A2073C15E00260BC0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		D2162D8C2073C15E00260BC0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -72,12 +68,8 @@
 		D2540B13207A1B0400C01C4B /* FFMOutputWC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FFMOutputWC.xib; sourceTree = "<group>"; };
 		D2540B17207A383C00C01C4B /* FFMShellTask.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFMShellTask.h; sourceTree = "<group>"; };
 		D2540B18207A383C00C01C4B /* FFMShellTask.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFMShellTask.m; sourceTree = "<group>"; };
-		D2540B1A207A3D0A00C01C4B /* development.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = development.plist; sourceTree = "<group>"; };
-		D2540B1B207A3D0A00C01C4B /* release.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = release.plist; sourceTree = "<group>"; };
-		D2540B1C207A3D0A00C01C4B /* ad-hoc.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ad-hoc.plist"; sourceTree = "<group>"; };
-		D2540B22207B135100C01C4B /* pgy.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = pgy.sh; sourceTree = "<group>"; };
-		D2540B24207B144800C01C4B /* testflight.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = testflight.sh; sourceTree = "<group>"; };
-		D2540B26207B513900C01C4B /* packing.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = packing.sh; sourceTree = "<group>"; };
+		D2540B67207CE58D00C01C4B /* shell.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = shell.bundle; sourceTree = "<group>"; };
+		D2540B69207CE63200C01C4B /* plist.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = plist.bundle; sourceTree = "<group>"; };
 		D2D24EDE2074C76E008CEB8E /* FFMGitRepoSettingWC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFMGitRepoSettingWC.h; sourceTree = "<group>"; };
 		D2D24EDF2074C76E008CEB8E /* FFMGitRepoSettingWC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFMGitRepoSettingWC.m; sourceTree = "<group>"; };
 		D2D24EE02074C76E008CEB8E /* FFMGitRepoSettingWC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FFMGitRepoSettingWC.xib; sourceTree = "<group>"; };
@@ -134,8 +126,8 @@
 		021AE59B2073D11500DB96A9 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				D2540B21207B134700C01C4B /* Shell */,
-				D2540B20207A3D0D00C01C4B /* Plist */,
+				D2540B69207CE63200C01C4B /* plist.bundle */,
+				D2540B67207CE58D00C01C4B /* shell.bundle */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -164,7 +156,7 @@
 		D2162D872073C15E00260BC0 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D2162D862073C15E00260BC0 /* FFMAutoDistribution.app */,
+				D2162D862073C15E00260BC0 /* 一键打包工具.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -266,26 +258,6 @@
 			path = ShellTask;
 			sourceTree = "<group>";
 		};
-		D2540B20207A3D0D00C01C4B /* Plist */ = {
-			isa = PBXGroup;
-			children = (
-				D2540B1C207A3D0A00C01C4B /* ad-hoc.plist */,
-				D2540B1A207A3D0A00C01C4B /* development.plist */,
-				D2540B1B207A3D0A00C01C4B /* release.plist */,
-			);
-			path = Plist;
-			sourceTree = "<group>";
-		};
-		D2540B21207B134700C01C4B /* Shell */ = {
-			isa = PBXGroup;
-			children = (
-				D2540B26207B513900C01C4B /* packing.sh */,
-				D2540B22207B135100C01C4B /* pgy.sh */,
-				D2540B24207B144800C01C4B /* testflight.sh */,
-			);
-			path = Shell;
-			sourceTree = "<group>";
-		};
 		D2D24EDD2074C73F008CEB8E /* GitRepo */ = {
 			isa = PBXGroup;
 			children = (
@@ -355,7 +327,8 @@
 				D2162D822073C15E00260BC0 /* Sources */,
 				D2162D832073C15E00260BC0 /* Frameworks */,
 				D2162D842073C15E00260BC0 /* Resources */,
-				021AE5A22073D3F600DB96A9 /* ShellScript */,
+				021AE5A22073D3F600DB96A9 /* Increase Build Number */,
+				D2540B4E207CDCB700C01C4B /* Copy App To Share */,
 			);
 			buildRules = (
 			);
@@ -363,7 +336,7 @@
 			);
 			name = FFMAutoDistribution;
 			productName = FFMAutoDistribution;
-			productReference = D2162D862073C15E00260BC0 /* FFMAutoDistribution.app */;
+			productReference = D2162D862073C15E00260BC0 /* 一键打包工具.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -392,7 +365,6 @@
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
 				Base,
 			);
 			mainGroup = D2162D7D2073C15E00260BC0;
@@ -410,22 +382,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2540B6A207CE63200C01C4B /* plist.bundle in Resources */,
 				D2162DB32074AC8F00260BC0 /* FFMPreferencesWC.xib in Resources */,
 				D2162DA4207463D700260BC0 /* FFMAboutWC.xib in Resources */,
-				D2540B1F207A3D0A00C01C4B /* ad-hoc.plist in Resources */,
-				D2540B1E207A3D0A00C01C4B /* release.plist in Resources */,
-				D2540B25207B144900C01C4B /* testflight.sh in Resources */,
 				D2162D8D2073C15E00260BC0 /* Assets.xcassets in Resources */,
-				D2540B23207B135100C01C4B /* pgy.sh in Resources */,
 				D2D24EF22079C609008CEB8E /* FFMWorkPathVC.xib in Resources */,
 				D2D24EFC2079F139008CEB8E /* FFMFirSettingVC.xib in Resources */,
 				D2D24F012079F14F008CEB8E /* FFMTestFlightSettingVC.xib in Resources */,
-				D2540B1D207A3D0A00C01C4B /* development.plist in Resources */,
 				D2D24EE22074C76E008CEB8E /* FFMGitRepoSettingWC.xib in Resources */,
-				D2540B27207B513A00C01C4B /* packing.sh in Resources */,
 				021AE5C12073DBB800DB96A9 /* FFMWindowController.xib in Resources */,
 				D2162D902073C15E00260BC0 /* MainMenu.xib in Resources */,
 				D2540B15207A1B0400C01C4B /* FFMOutputWC.xib in Resources */,
+				D2540B68207CE58E00C01C4B /* shell.bundle in Resources */,
 				D2D24EF72079E6E5008CEB8E /* FFMPgySettingVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -433,18 +401,33 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		021AE5A22073D3F600DB96A9 /* ShellScript */ = {
+		021AE5A22073D3F600DB96A9 /* Increase Build Number */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
+			name = "Increase Build Number";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if [ \"Release\" == \"${CONFIGURATION}\" ]\n\nthen\n\nbuildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\n\nbuildNumber=$(($buildNumber + 1))\n\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"\n\nfi";
+		};
+		D2540B4E207CDCB700C01C4B /* Copy App To Share */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy App To Share";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "PRODUCT=$BUILT_PRODUCTS_DIR/$PRODUCT_NAME\nTOOL=\"/Users/Shared/software/打包工具/一键打包.app\"\nrm -rf $TOOL\ncp -a \"$PRODUCT.app\" \"$TOOL\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -597,13 +580,14 @@
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
 				DEVELOPMENT_TEAM = "";
 				GCC_PREFIX_HEADER = "${SRCROOT}/$(TARGET_NAME)/SupportingFiles/FFMPrefixHeader.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/FFMAutoDistribution/SupportingFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = com.stem.FFMAutoDistribution;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "一键打包工具";
 			};
 			name = Debug;
 		};
@@ -620,7 +604,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = com.stem.FFMAutoDistribution;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "一键打包工具";
 			};
 			name = Release;
 		};

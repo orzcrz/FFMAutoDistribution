@@ -32,4 +32,9 @@
     }];
 }
 
++ (NSBundle *)bundleWithName:(NSString *)name {
+    NSString *bundlePath = [[NSBundle mainBundle] pathForResource:name ofType:@"bundle"];
+    return [NSBundle bundleWithPath:bundlePath];
+}
+
 @end

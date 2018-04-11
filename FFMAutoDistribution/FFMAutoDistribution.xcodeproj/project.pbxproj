@@ -48,7 +48,7 @@
 		021AE5BD2073DBB800DB96A9 /* FFMWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFMWindowController.h; sourceTree = "<group>"; };
 		021AE5BE2073DBB800DB96A9 /* FFMWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFMWindowController.m; sourceTree = "<group>"; };
 		021AE5BF2073DBB800DB96A9 /* FFMWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FFMWindowController.xib; sourceTree = "<group>"; };
-		D2162D862073C15E00260BC0 /* 一键打包工具.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "一键打包工具.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2162D862073C15E00260BC0 /* 一键分发工具.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "一键分发工具.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2162D892073C15E00260BC0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D2162D8A2073C15E00260BC0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		D2162D8C2073C15E00260BC0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -166,7 +166,7 @@
 		D2162D872073C15E00260BC0 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D2162D862073C15E00260BC0 /* 一键打包工具.app */,
+				D2162D862073C15E00260BC0 /* 一键分发工具.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -375,7 +375,7 @@
 			);
 			name = FFMAutoDistribution;
 			productName = FFMAutoDistribution;
-			productReference = D2162D862073C15E00260BC0 /* 一键打包工具.app */;
+			productReference = D2162D862073C15E00260BC0 /* 一键分发工具.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -452,7 +452,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [ \"Release\" == \"${CONFIGURATION}\" ]\n\nthen\n\nbuildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\n\nbuildNumber=$(($buildNumber + 1))\n\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"\n\nfi";
+			shellScript = "version=`/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" $PRODUCT_SETTINGS_PATH`\nversion=`expr $version + 1`\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $version\" $PRODUCT_SETTINGS_PATH";
 		};
 		D2540B4E207CDCB700C01C4B /* Copy App To Share */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -466,7 +466,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "PRODUCT=$BUILT_PRODUCTS_DIR/$PRODUCT_NAME\nTOOL=\"/Users/Shared/software/打包工具/一键打包.app\"\nrm -rf $TOOL\ncp -a \"$PRODUCT.app\" \"$TOOL\"";
+			shellScript = "PRODUCT=$BUILT_PRODUCTS_DIR/$PRODUCT_NAME\nTOOL=\"/Users/Shared/software/打包工具/一键分发工具.app\"\nrm -rf $TOOL\ncp -a \"$PRODUCT.app\" \"$TOOL\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -623,13 +623,15 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				CURRENT_PROJECT_VERSION = "";
 				DEVELOPMENT_TEAM = "";
 				GCC_PREFIX_HEADER = "${SRCROOT}/$(TARGET_NAME)/SupportingFiles/FFMPrefixHeader.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/FFMAutoDistribution/SupportingFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = com.stem.FFMAutoDistribution;
-				PRODUCT_NAME = "一键打包工具";
+				PRODUCT_NAME = "一键分发工具";
+				VERSIONING_SYSTEM = "";
 			};
 			name = Debug;
 		};
@@ -640,13 +642,15 @@
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = "";
 				DEVELOPMENT_TEAM = "";
 				GCC_PREFIX_HEADER = "${SRCROOT}/$(TARGET_NAME)/SupportingFiles/FFMPrefixHeader.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/FFMAutoDistribution/SupportingFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = com.stem.FFMAutoDistribution;
-				PRODUCT_NAME = "一键打包工具";
+				PRODUCT_NAME = "一键分发工具";
+				VERSIONING_SYSTEM = "";
 			};
 			name = Release;
 		};

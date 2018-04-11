@@ -10,8 +10,10 @@
 
 @interface FFMAboutWC ()
 
+@property (weak) IBOutlet NSImageView *icon;
 @property (weak) IBOutlet NSTextField *appName;
 @property (weak) IBOutlet NSTextField *version;
+@property (weak) IBOutlet NSTextField *rights;
 
 @end
 
@@ -20,12 +22,18 @@
 - (void)windowDidLoad {
     [super windowDidLoad];
     
+    self.icon.wantsLayer = YES;
+    self.icon.layer.cornerRadius = 16;
+    self.icon.layer.masksToBounds = YES;
+    
     NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
-    NSString *app_name = [infoDictionary objectForKey:@"CFBundleName"];
-    NSString *app_version = [infoDictionary objectForKey:@"CFBundleShortVersionString"];
-
-    self.appName.stringValue = app_name;
-    self.version.stringValue = [NSString stringWithFormat:@"v%@", app_version];
+    NSString *name = [infoDictionary objectForKey:@"CFBundleName"];
+    NSString *bundleVersion = [infoDictionary objectForKey:@"CFBundleVersion"];
+    NSString *shortVersion = [infoDictionary objectForKey:@"CFBundleShortVersionString"];
+    NSString *copyright = [infoDictionary objectForKey:@"NSHumanReadableCopyright"];
+    self.appName.stringValue = name;
+    self.version.stringValue = [NSString stringWithFormat:@"版本 %@（%@）", shortVersion, bundleVersion];
+    self.rights.stringValue = copyright;
 }
 
 @end

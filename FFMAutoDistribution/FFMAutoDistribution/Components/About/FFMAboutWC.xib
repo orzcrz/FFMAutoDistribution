@@ -10,6 +10,8 @@
         <customObject id="-2" userLabel="File's Owner" customClass="FFMAboutWC">
             <connections>
                 <outlet property="appName" destination="LuX-u8-JCB" id="L6n-Ue-iqM"/>
+                <outlet property="icon" destination="VuE-Dr-6OG" id="5eh-LH-igS"/>
+                <outlet property="rights" destination="MWv-yf-XSu" id="Va6-jq-yJY"/>
                 <outlet property="version" destination="WIy-78-A1O" id="O3W-aq-sNR"/>
                 <outlet property="window" destination="F0z-JX-Cv5" id="gIp-Ho-8D9"/>
             </connections>
@@ -24,67 +26,79 @@
                 <rect key="frame" x="0.0" y="0.0" width="267" height="278"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="x2B-1s-6sd">
+                    <visualEffectView blendingMode="behindWindow" material="appearanceBased" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="eZb-8J-JiR">
                         <rect key="frame" x="0.0" y="0.0" width="267" height="278"/>
                         <subviews>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="LuX-u8-JCB">
-                                <rect key="frame" x="60" y="120" width="148" height="18"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="FFMAutoDistribution" id="TUA-sC-vxw">
-                                    <font key="font" metaFont="systemBold" size="14"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="WIy-78-A1O">
-                                <rect key="frame" x="115" y="95" width="39" height="17"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="v0.0.1" id="FPc-dd-c1E">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="TML-VJ-zgH">
-                                <rect key="frame" x="14" y="16" width="239" height="17"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="support: chuangrunze@qutoutiao.net" id="pFU-8j-jm0">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VuE-Dr-6OG">
-                                <rect key="frame" x="84" y="162" width="100" height="100"/>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="x2B-1s-6sd">
+                                <rect key="frame" x="0.0" y="0.0" width="267" height="278"/>
+                                <subviews>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="LuX-u8-JCB">
+                                        <rect key="frame" x="87" y="120" width="94" height="18"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="一键分发工具" id="TUA-sC-vxw">
+                                            <font key="font" metaFont="systemBold" size="14"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="WIy-78-A1O">
+                                        <rect key="frame" x="105" y="98" width="58" height="14"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="版本 0.0.1" id="FPc-dd-c1E">
+                                            <font key="font" metaFont="system" size="11"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MWv-yf-XSu">
+                                        <rect key="frame" x="26" y="16" width="215" height="17"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="17" id="OFl-3Q-Qe3"/>
+                                        </constraints>
+                                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="Copyright © 2018年 常润泽. All rights reserved." id="MXE-EY-vcc">
+                                            <font key="font" metaFont="system" size="9"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VuE-Dr-6OG">
+                                        <rect key="frame" x="84" y="162" width="100" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="KYP-WO-5CM"/>
+                                            <constraint firstAttribute="width" secondItem="VuE-Dr-6OG" secondAttribute="height" multiplier="1:1" id="kEL-jZ-atr"/>
+                                        </constraints>
+                                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="axesIndependently" image="about" id="KCH-3v-EsZ"/>
+                                    </imageView>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="KYP-WO-5CM"/>
-                                    <constraint firstAttribute="width" secondItem="VuE-Dr-6OG" secondAttribute="height" multiplier="1:1" id="kEL-jZ-atr"/>
+                                    <constraint firstItem="MWv-yf-XSu" firstAttribute="centerX" secondItem="x2B-1s-6sd" secondAttribute="centerX" id="00z-0q-pKv"/>
+                                    <constraint firstItem="LuX-u8-JCB" firstAttribute="top" secondItem="VuE-Dr-6OG" secondAttribute="bottom" constant="24" id="Gfe-MS-cBX"/>
+                                    <constraint firstAttribute="bottom" secondItem="MWv-yf-XSu" secondAttribute="bottom" constant="16" id="Qt3-Lg-zSP"/>
+                                    <constraint firstItem="WIy-78-A1O" firstAttribute="top" secondItem="LuX-u8-JCB" secondAttribute="bottom" constant="8" id="YfS-PC-6UR"/>
+                                    <constraint firstItem="VuE-Dr-6OG" firstAttribute="top" secondItem="x2B-1s-6sd" secondAttribute="top" constant="16" id="jF3-AO-Sec"/>
+                                    <constraint firstItem="VuE-Dr-6OG" firstAttribute="centerX" secondItem="x2B-1s-6sd" secondAttribute="centerX" id="mCW-ep-QRP"/>
+                                    <constraint firstItem="LuX-u8-JCB" firstAttribute="centerX" secondItem="VuE-Dr-6OG" secondAttribute="centerX" id="oTp-QD-dxb"/>
+                                    <constraint firstItem="WIy-78-A1O" firstAttribute="centerX" secondItem="LuX-u8-JCB" secondAttribute="centerX" id="ot3-zZ-bOW"/>
                                 </constraints>
-                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="axesIndependently" image="about" id="KCH-3v-EsZ"/>
-                            </imageView>
+                            </customView>
                         </subviews>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="TML-VJ-zgH" secondAttribute="bottom" constant="16" id="9WW-py-3jr"/>
-                            <constraint firstItem="TML-VJ-zgH" firstAttribute="centerX" secondItem="x2B-1s-6sd" secondAttribute="centerX" id="F5w-7g-777"/>
-                            <constraint firstItem="LuX-u8-JCB" firstAttribute="top" secondItem="VuE-Dr-6OG" secondAttribute="bottom" constant="24" id="Gfe-MS-cBX"/>
-                            <constraint firstItem="WIy-78-A1O" firstAttribute="top" secondItem="LuX-u8-JCB" secondAttribute="bottom" constant="8" id="YfS-PC-6UR"/>
-                            <constraint firstItem="TML-VJ-zgH" firstAttribute="leading" secondItem="x2B-1s-6sd" secondAttribute="leading" constant="16" id="bbH-M0-S0C"/>
-                            <constraint firstItem="VuE-Dr-6OG" firstAttribute="top" secondItem="x2B-1s-6sd" secondAttribute="top" constant="16" id="jF3-AO-Sec"/>
-                            <constraint firstItem="VuE-Dr-6OG" firstAttribute="centerX" secondItem="x2B-1s-6sd" secondAttribute="centerX" id="mCW-ep-QRP"/>
-                            <constraint firstItem="LuX-u8-JCB" firstAttribute="centerX" secondItem="VuE-Dr-6OG" secondAttribute="centerX" id="oTp-QD-dxb"/>
-                            <constraint firstItem="WIy-78-A1O" firstAttribute="centerX" secondItem="LuX-u8-JCB" secondAttribute="centerX" id="ot3-zZ-bOW"/>
-                            <constraint firstAttribute="trailing" secondItem="TML-VJ-zgH" secondAttribute="trailing" constant="16" id="wBq-LC-Wph"/>
+                            <constraint firstItem="x2B-1s-6sd" firstAttribute="leading" secondItem="eZb-8J-JiR" secondAttribute="leading" id="6vo-0K-EXd"/>
+                            <constraint firstItem="x2B-1s-6sd" firstAttribute="top" secondItem="eZb-8J-JiR" secondAttribute="top" id="UZX-jB-DH7"/>
+                            <constraint firstAttribute="bottom" secondItem="x2B-1s-6sd" secondAttribute="bottom" id="hUT-2S-8nI"/>
+                            <constraint firstAttribute="trailing" secondItem="x2B-1s-6sd" secondAttribute="trailing" id="kQw-Ox-ktG"/>
                         </constraints>
-                    </customView>
+                    </visualEffectView>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="x2B-1s-6sd" secondAttribute="bottom" id="340-AU-sKu"/>
-                    <constraint firstAttribute="trailing" secondItem="x2B-1s-6sd" secondAttribute="trailing" id="SOe-gM-IgL"/>
-                    <constraint firstItem="x2B-1s-6sd" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" id="djg-HV-asc"/>
-                    <constraint firstItem="x2B-1s-6sd" firstAttribute="top" secondItem="se5-gp-TjO" secondAttribute="top" id="rYH-4x-021"/>
+                    <constraint firstAttribute="trailing" secondItem="eZb-8J-JiR" secondAttribute="trailing" id="Nbr-eB-tqy"/>
+                    <constraint firstAttribute="bottom" secondItem="eZb-8J-JiR" secondAttribute="bottom" id="ZP9-Wp-rUN"/>
+                    <constraint firstItem="eZb-8J-JiR" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" id="avz-NO-tlr"/>
+                    <constraint firstItem="eZb-8J-JiR" firstAttribute="top" secondItem="se5-gp-TjO" secondAttribute="top" id="jqM-po-h1d"/>
                 </constraints>
             </view>
             <connections>
                 <outlet property="delegate" destination="-2" id="0bl-1N-AYu"/>
             </connections>
-            <point key="canvasLocation" x="158" y="71"/>
+            <point key="canvasLocation" x="157.5" y="71"/>
         </window>
     </objects>
     <resources>

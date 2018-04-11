@@ -19,7 +19,7 @@ function pushBundleVersionModification() {
 	$git push origin
 
 	$git checkout master
-	$git branch -D $branch
+	$git branch -D $branch_name
 	$git branch
 }
 

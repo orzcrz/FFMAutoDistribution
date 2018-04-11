@@ -19,11 +19,12 @@ function checkoutCodeFromGitLab() {
         $git clone --progress $remote_repo $git_folder
     fi
 	cd $git_folder
+    $git checkout .
 	$git checkout master
 	$git branch -D $branch_name
 	$git fetch && $git checkout -b $branch_name origin/$branch_name
+    echo "----------------------- 切换至打包分支 $branch_name -----------------------"
 	$git branch
-	echo "----------------------- 切换至分支 $branch_name -----------------------"
     sleep 3
 }
 

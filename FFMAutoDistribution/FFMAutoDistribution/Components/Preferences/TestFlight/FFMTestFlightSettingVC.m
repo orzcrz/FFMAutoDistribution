@@ -20,18 +20,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
-    _accountTF.stringValue = [ud stringForKey:FFMPackingTestFlightAccount]?:@"";
-    _passcodeTF.stringValue = [ud stringForKey:FFMPackingTestFlightPasscode]?:@"";
+    FFMUserDefault *ud = [FFMUserDefault new];
+    _accountTF.stringValue = ud.FFMPackingTestFlightAccount?:@"";
+    _passcodeTF.stringValue = ud.FFMPackingTestFlightPasscode?:@"";
 
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(saveDeveloperInfo) name:NSControlTextDidEndEditingNotification object:nil];
 }
 
 - (void)saveDeveloperInfo {
-    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
-    [ud setObject:_accountTF.stringValue forKey:FFMPackingTestFlightAccount];
-    [ud setObject:_passcodeTF.stringValue forKey:FFMPackingTestFlightPasscode];
-    [ud synchronize];
+    FFMUserDefault *ud = [FFMUserDefault new];
+    _accountTF.stringValue = ud.FFMPackingTestFlightAccount;
+    _passcodeTF.stringValue = ud.FFMPackingTestFlightPasscode;
 }
 
 @end

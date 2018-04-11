@@ -20,18 +20,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
-    _akTF.stringValue = [ud stringForKey:FFMPackingPgyAPIKey]?:@"";
-    _ukTF.stringValue = [ud stringForKey:FFMPackingPgyUserKey]?:@"";
+    FFMUserDefault *ud = [FFMUserDefault new];
+    _akTF.stringValue = ud.FFMPackingPgyAPIKey?:@"";
+    _ukTF.stringValue = ud.FFMPackingPgyUserKey?:@"";
 
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(savePgyApiInfo) name:NSControlTextDidEndEditingNotification object:nil];
 }
 
 - (void)savePgyApiInfo {
-    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
-    [ud setObject:_akTF.stringValue forKey:FFMPackingPgyAPIKey];
-    [ud setObject:_ukTF.stringValue forKey:FFMPackingPgyUserKey];
-    [ud synchronize];
+    FFMUserDefault *ud = [FFMUserDefault new];
+    ud.FFMPackingPgyAPIKey = _akTF.stringValue;
+    ud.FFMPackingPgyUserKey = _ukTF.stringValue;
 }
 
 @end

@@ -15,7 +15,7 @@ function createFolderIfNotExist() {
 function checkoutCodeFromGitLab() {
     local git="/usr/bin/git"
     if [[ ! -d "$git_folder" ]] && [[ ! -d "$git_folder/.git" ]]; then
-        echo "--------- 首次使用，将会从gitlab克隆项目 ---------"
+        echo "--------- 本地未找到项目文件，将会从gitlab克隆项目 ---------"
         $git clone --progress --depth=1 $remote_repo $git_folder
     fi
 	cd $git_folder
@@ -23,15 +23,13 @@ function checkoutCodeFromGitLab() {
 	$git branch -D $branch_name
 	$git fetch && $git checkout -b $branch_name origin/$branch_name
 	$git branch
-	echo "----------------------- 切换至分支 $branch -----------------------"
+	echo "----------------------- 切换至分支 $branch_name -----------------------"
 }
 
 function podInstall() {
     cd $project_path
-
     export LC_ALL="en_US.UTF-8"
-    /usr/local/bin/pod install --no-repo-update
-
+    $pod install --no-repo-update
 }
 
 function initProjectBuildConfigure() {    
@@ -82,7 +80,7 @@ function building() {
     -configuration "$build_config" \
     -allowProvisioningUpdates \
 	-archivePath "${build_path}/${project_name}.xcarchive" \
-    | /usr/local/bin/xcpretty \
+    | $xcpretty \
 	&& echo "------------------------ 构建成功 ------------------------" \
 	|| error_exit "------------------------ 构建失败 ------------------------" 777 
 
@@ -92,7 +90,7 @@ function building() {
 	-exportOptionsPlist "$plist_path" \
 	-exportPath "${build_path}" \
 	-allowProvisioningUpdates \
-    | /usr/local/bin/xcpretty \
+    | $xcpretty \
 	&& echo "------------------------ 导出ipa成功 ------------------------" \
 	|| error_exit "------------------------ 导出ipa失败 ------------------------" 888
 
@@ -101,12 +99,14 @@ function building() {
 	cp -f -p -r ${build_path}/${project_name}.xcarchive "${output_path}/${project_name}.xcarchive" || error_exit "------------------------ 复制生成文件失败 ------------------------" 33
 }
 
-branch_name=$1
-sign_mode=$2
-build_config=$3
-local_repo=$4
-remote_repo=$5
-plist_path=$6
+pod=$1
+xcpretty=$2
+branch_name=$3
+sign_mode=$4
+build_config=$5
+local_repo=$6
+remote_repo=$7
+plist_path=$8
 
 cd $local_repo
 
@@ -119,5 +119,5 @@ podInstall
 
 initProjectBuildConfigure
 
-#building
+building
 

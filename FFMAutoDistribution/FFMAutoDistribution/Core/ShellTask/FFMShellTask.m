@@ -15,30 +15,32 @@
 {
     self = [super init];
     if (self) {
-        NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
-        _repoLocalPath = [ud stringForKey:FFMPackingWorkPath];
-        _repoRemoteURL = [ud stringForKey:FFMGitRepoRemoteURL];
+        FFMUserDefault *ud = [FFMUserDefault new];
+        _repoLocalPath = ud.FFMPackingWorkPath;
+        _repoRemoteURL = ud.FFMGitRepoRemoteURL;
+        _podPath = ud.FFMPackingPodPath;
+        _xcprettyPath = ud.FFMPackingXcprettyPath;
     }
     return self;
 }
 
 - (void)setPlatform:(NSString *)platform {
-    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+    FFMUserDefault *ud = [FFMUserDefault new];
     NSString *shellName = @"packing";
 
     if ([platform isEqualToString:@"蒲公英"]) {
         shellName = @"pgy";
-        self.ext1 = [ud stringForKey:FFMPackingPgyAPIKey];
-        self.ext2 = [ud stringForKey:FFMPackingPgyUserKey];
+        self.ext1 = ud.FFMPackingPgyAPIKey;
+        self.ext2 = ud.FFMPackingPgyUserKey;
     }
     else if ([platform isEqualToString:@"Fir"]) {
         shellName = @"fir";
-        self.ext1 = [ud stringForKey:FFMPackingFirAPIToken];
+        self.ext1 = ud.FFMPackingFirAPIToken;
     }
     else if ([platform isEqualToString:@"TestFlight"]) {
         shellName = @"testflight";
-        self.ext1 = [ud stringForKey:FFMPackingTestFlightAccount];
-        self.ext2 = [ud stringForKey:FFMPackingTestFlightPasscode];
+        self.ext1 = ud.FFMPackingTestFlightAccount;
+        self.ext2 = ud.FFMPackingTestFlightPasscode;
     }
 
     self.shellPath = [[FFMUtils bundleWithName:@"shell"] pathForResource:shellName ofType:@"sh"];
@@ -90,7 +92,6 @@
 
 - (void)startWithArgs:(FFMShellTaskArgs *)args {
     _task.arguments = args.allArgs;
-    
     __weak typeof(self) weakself = self;
     [[_task.standardOutput fileHandleForReading] setReadabilityHandler:^(NSFileHandle *output) {
         !weakself.outputReadabilityHandler ?: weakself.outputReadabilityHandler(output);

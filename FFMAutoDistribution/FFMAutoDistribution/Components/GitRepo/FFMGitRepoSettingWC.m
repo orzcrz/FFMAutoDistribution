@@ -22,10 +22,10 @@
 - (void)windowDidLoad {
     [super windowDidLoad];
     
-    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
-    _remoteNameTF.stringValue = [ud stringForKey:FFMGitRepoRemoteName]?:@"";
-    _remoteTF.stringValue = [ud stringForKey:FFMGitRepoRemoteURL]?:@"";
-    _localNameTF.stringValue = [ud stringForKey:FFMGitRepoLocalName]?:@"";
+    FFMUserDefault *ud = [FFMUserDefault new];
+    _remoteNameTF.stringValue = ud.FFMGitRepoRemoteName?:@"";
+    _remoteTF.stringValue = ud.FFMGitRepoRemoteURL?:@"";
+    _localNameTF.stringValue = ud.FFMGitRepoLocalName?:@"";
 
     __weak typeof(self) weakself = self;
     [[NSNotificationCenter defaultCenter] addObserverForName:NSControlTextDidChangeNotification object:nil queue:nil usingBlock:^(NSNotification * _Nonnull note) {
@@ -47,11 +47,10 @@
     
     [self.window.sheetParent endSheet:self.window returnCode:NSModalResponseOK];
 
-    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
-    [ud setObject:_remoteNameTF.stringValue forKey:FFMGitRepoRemoteName];
-    [ud setObject:_remoteTF.stringValue forKey:FFMGitRepoRemoteURL];
-    [ud setObject:_localNameTF.stringValue forKey:FFMGitRepoLocalName];
-    [ud synchronize];
+    FFMUserDefault *ud = [FFMUserDefault new];
+    ud.FFMGitRepoRemoteName = _remoteNameTF.stringValue;
+    ud.FFMGitRepoRemoteURL = _remoteTF.stringValue;
+    ud.FFMGitRepoLocalName = _localNameTF.stringValue;
 }
 
 @end

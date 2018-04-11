@@ -67,14 +67,14 @@ function uploadToPgy() {
 
 ######## START ########
 
-change_log=$7
+change_log=$9
 
-pgy_ak=$8
-pgy_uk=$9
+pgy_ak=${10}
+pgy_uk=${11}
 
-source "$(cd $(dirname $0); pwd)/packing.sh" $1 $2 $3 $4 $5 $6
+source "$(cd $(dirname $0); pwd)/packing.sh" $1 $2 $3 $4 $5 $6 $7 $8
 
-#uploadToPgy
+uploadToPgy
 
-#pushBundleVersionModification
+pushBundleVersionModification
 

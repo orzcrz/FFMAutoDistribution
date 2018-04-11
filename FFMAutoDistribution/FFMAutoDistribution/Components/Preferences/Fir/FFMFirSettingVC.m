@@ -19,16 +19,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
-    _tkTF.stringValue = [ud stringForKey:FFMPackingFirAPIToken]?:@"";
+    FFMUserDefault *ud = [FFMUserDefault new];
+    _tkTF.stringValue = ud.FFMPackingFirAPIToken?:@"";
 
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(saveFirApiInfo) name:NSControlTextDidEndEditingNotification object:nil];
 }
 
 - (void)saveFirApiInfo {
-    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
-    [ud setObject:_tkTF.stringValue forKey:FFMPackingFirAPIToken];
-    [ud synchronize];
+    FFMUserDefault *ud = [FFMUserDefault new];
+    _tkTF.stringValue = ud.FFMPackingFirAPIToken;
 }
 
 @end

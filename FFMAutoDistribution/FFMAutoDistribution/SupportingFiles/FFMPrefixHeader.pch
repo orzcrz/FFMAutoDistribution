@@ -11,6 +11,8 @@
 
 #import "FFMConstants.h"
 
+#import "FFMUserDefault.h"
+
 #import "FFMNibHelper.h"
 
 #import "FFMBaseView.h"

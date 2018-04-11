@@ -12,6 +12,9 @@
 
 @property (copy) NSString *shellPath;  // must be the first one in args
 
+@property (copy) NSString *podPath;
+@property (copy) NSString *xcprettyPath;
+
 @property (copy) NSString *branchName;
 @property (nonatomic, copy) NSString *signMode;
 @property (copy) NSString *buildConfig;

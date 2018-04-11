@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "FFMAuthorization.h"
+#import "FFMUserDefaultsManager.h"
 
 #import "FFMGitRepoSettingWC.h"
 
@@ -18,12 +19,15 @@
 @implementation AppDelegate
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
+    [FFMUserDefaultsManager.shareManager registerClass:[FFMUserDefault class]];
+    
     _windowController = [FFMWindowController ffm_loadFromNib];
     [_windowController.window makeKeyAndOrderFront:nil];
     
-    if (![[NSUserDefaults standardUserDefaults] boolForKey:FFMAppAuthorization]) {
+    FFMUserDefault *ud = [FFMUserDefault new];
+    if (!ud.FFMAppAuthorization) {
         [FFMAuthorization requestAuthorization:^(BOOL isAuthorized) {
-            [[NSUserDefaults standardUserDefaults] setBool:isAuthorized forKey:FFMAppAuthorization];
+            ud.FFMAppAuthorization = isAuthorized;
         }];
     }
 }

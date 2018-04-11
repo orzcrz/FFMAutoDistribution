@@ -8,18 +8,20 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="FFMWorkPathVC">
             <connections>
+                <outlet property="podPath" destination="ICr-ZP-YxF" id="heW-qC-DEI"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
                 <outlet property="workPath" destination="ydC-YS-vXE" id="rcE-2P-RyW"/>
+                <outlet property="xcprettyPath" destination="Sf8-P2-3Rw" id="mjK-Km-QV5"/>
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customView id="Hz6-mo-xeY">
-            <rect key="frame" x="0.0" y="0.0" width="475" height="100"/>
+            <rect key="frame" x="0.0" y="0.0" width="475" height="215"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <customView translatesAutoresizingMaskIntoConstraints="NO" id="eR0-Wz-qsC" customClass="FFMBaseView">
-                    <rect key="frame" x="16" y="19" width="443" height="49"/>
+                    <rect key="frame" x="16" y="134" width="443" height="49"/>
                     <subviews>
                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="1Pl-un-eT3">
                             <rect key="frame" x="14" y="16" width="71" height="17"/>
@@ -60,8 +62,67 @@
                     </constraints>
                 </customView>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="TZe-RI-OWf">
-                    <rect key="frame" x="14" y="70" width="49" height="14"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="路径设置" id="BIc-dR-KxT">
+                    <rect key="frame" x="14" y="185" width="72" height="14"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="工作路径设置" id="BIc-dR-KxT">
+                        <font key="font" size="11" name=".PingFangSC-Regular"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <customView translatesAutoresizingMaskIntoConstraints="NO" id="3cf-Ga-iUi" customClass="FFMBaseView">
+                    <rect key="frame" x="16" y="20" width="443" height="82"/>
+                    <subviews>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="K8h-xW-h83">
+                            <rect key="frame" x="14" y="49" width="95" height="17"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="pod路径：" id="ZkC-sf-GLo">
+                                <font key="font" size="13" name=".PingFangSC-Regular"/>
+                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ICr-ZP-YxF">
+                            <rect key="frame" x="115" y="47" width="312" height="22"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="输入pod路径" drawsBackground="YES" id="t2P-1r-lCs">
+                                <font key="font" metaFont="system"/>
+                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="zoL-5A-WyC">
+                            <rect key="frame" x="14" y="16" width="95" height="17"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="xcpretty路径：" id="e1e-dz-18p">
+                                <font key="font" size="13" name=".PingFangSC-Regular"/>
+                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Sf8-P2-3Rw">
+                            <rect key="frame" x="115" y="14" width="312" height="22"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="输入xcpretty路径" drawsBackground="YES" id="QLT-ho-zZT">
+                                <font key="font" metaFont="system"/>
+                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="zoL-5A-WyC" firstAttribute="trailing" secondItem="K8h-xW-h83" secondAttribute="trailing" id="0Mf-Fp-N3Z"/>
+                        <constraint firstItem="Sf8-P2-3Rw" firstAttribute="leading" secondItem="zoL-5A-WyC" secondAttribute="trailing" constant="8" id="4te-gq-I1S"/>
+                        <constraint firstItem="ICr-ZP-YxF" firstAttribute="centerY" secondItem="K8h-xW-h83" secondAttribute="centerY" id="AzU-1X-BJQ"/>
+                        <constraint firstItem="K8h-xW-h83" firstAttribute="top" secondItem="3cf-Ga-iUi" secondAttribute="top" constant="16" id="CTY-S8-HHD"/>
+                        <constraint firstItem="K8h-xW-h83" firstAttribute="leading" secondItem="3cf-Ga-iUi" secondAttribute="leading" constant="16" id="JtL-Te-roR"/>
+                        <constraint firstItem="Sf8-P2-3Rw" firstAttribute="trailing" secondItem="ICr-ZP-YxF" secondAttribute="trailing" id="avN-hr-104"/>
+                        <constraint firstItem="zoL-5A-WyC" firstAttribute="leading" secondItem="K8h-xW-h83" secondAttribute="leading" id="fVJ-Ro-8F8"/>
+                        <constraint firstAttribute="bottom" secondItem="zoL-5A-WyC" secondAttribute="bottom" constant="16" id="iqj-Ep-evX"/>
+                        <constraint firstAttribute="trailing" secondItem="ICr-ZP-YxF" secondAttribute="trailing" constant="16" id="k5I-hT-dM6"/>
+                        <constraint firstItem="Sf8-P2-3Rw" firstAttribute="centerY" secondItem="zoL-5A-WyC" secondAttribute="centerY" id="mvU-yM-iSA"/>
+                        <constraint firstItem="zoL-5A-WyC" firstAttribute="top" secondItem="K8h-xW-h83" secondAttribute="bottom" constant="16" id="oLV-6K-Xn7"/>
+                        <constraint firstItem="ICr-ZP-YxF" firstAttribute="leading" secondItem="K8h-xW-h83" secondAttribute="trailing" constant="8" id="xRz-iF-SXd"/>
+                    </constraints>
+                </customView>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="SYI-HO-3VH">
+                    <rect key="frame" x="14" y="104" width="49" height="14"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="环境设置" id="bip-yg-erb">
                         <font key="font" size="11" name=".PingFangSC-Regular"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -71,12 +132,17 @@
             <constraints>
                 <constraint firstItem="eR0-Wz-qsC" firstAttribute="top" secondItem="TZe-RI-OWf" secondAttribute="bottom" constant="2" id="5m3-mT-qFJ"/>
                 <constraint firstItem="TZe-RI-OWf" firstAttribute="leading" secondItem="eR0-Wz-qsC" secondAttribute="leading" id="8id-u3-iJh"/>
+                <constraint firstItem="SYI-HO-3VH" firstAttribute="leading" secondItem="eR0-Wz-qsC" secondAttribute="leading" id="O6X-5y-naj"/>
+                <constraint firstItem="3cf-Ga-iUi" firstAttribute="trailing" secondItem="eR0-Wz-qsC" secondAttribute="trailing" id="Tz8-or-EWO"/>
+                <constraint firstItem="SYI-HO-3VH" firstAttribute="leading" secondItem="3cf-Ga-iUi" secondAttribute="leading" id="Yoe-ic-bAZ"/>
                 <constraint firstAttribute="trailing" secondItem="eR0-Wz-qsC" secondAttribute="trailing" constant="16" id="Zvg-FT-Dm0"/>
                 <constraint firstItem="eR0-Wz-qsC" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="32" id="ewy-9S-9sd"/>
+                <constraint firstItem="SYI-HO-3VH" firstAttribute="top" secondItem="eR0-Wz-qsC" secondAttribute="bottom" constant="16" id="hF3-Lw-DEm"/>
+                <constraint firstItem="3cf-Ga-iUi" firstAttribute="top" secondItem="SYI-HO-3VH" secondAttribute="bottom" constant="2" id="i4m-GW-BmH"/>
                 <constraint firstItem="TZe-RI-OWf" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="16" id="nIr-k9-EKN"/>
                 <constraint firstItem="eR0-Wz-qsC" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="16" id="uFa-aj-tTt"/>
             </constraints>
-            <point key="canvasLocation" x="129.5" y="82"/>
+            <point key="canvasLocation" x="129.5" y="139.5"/>
         </customView>
     </objects>
 </document>

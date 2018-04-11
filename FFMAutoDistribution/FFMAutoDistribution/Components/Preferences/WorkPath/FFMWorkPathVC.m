@@ -11,6 +11,8 @@
 @interface FFMWorkPathVC ()
 
 @property (weak) IBOutlet NSTextField *workPath;
+@property (weak) IBOutlet NSTextField *podPath;
+@property (weak) IBOutlet NSTextField *xcprettyPath;
 
 @end
 
@@ -19,8 +21,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
-    _workPath.stringValue = [ud stringForKey:FFMPackingWorkPath];
+    FFMUserDefault *ud = [FFMUserDefault new];
+    _workPath.stringValue = ud.FFMPackingWorkPath?:@"";
+    _podPath.stringValue = ud.FFMPackingPodPath?:@"";
+    _xcprettyPath.stringValue = ud.FFMPackingXcprettyPath?:@"";
 
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(saveWorkPath) name:NSControlTextDidEndEditingNotification object:nil];
 }
@@ -35,9 +39,10 @@
 }
 
 - (void)saveWorkPath {
-    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
-    [ud setObject:_workPath.stringValue forKey:FFMPackingWorkPath];
-    [ud synchronize];
+    FFMUserDefault *ud = [FFMUserDefault new];
+    ud.FFMPackingWorkPath = _workPath.stringValue;
+    ud.FFMPackingPodPath = _podPath.stringValue;
+    ud.FFMPackingXcprettyPath = _xcprettyPath.stringValue;
 }
 
 @end

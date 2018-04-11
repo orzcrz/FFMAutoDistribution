@@ -44,11 +44,11 @@
 }
 
 - (void)commonInit {
-    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
-    NSArray *branches = [ud stringArrayForKey:FFMPackingBranches];
+    FFMUserDefault *ud = [FFMUserDefault new];
+    NSArray *branches = ud.FFMPackingBranches;
     self.branch.stringValue = branches.count ? branches.firstObject : @"";
     
-    self.log.string = [ud stringForKey:FFMPackingLog] ?: @"";
+    self.log.string = ud.FFMPackingLog ?: @"";
 }
 
 - (void)editingDidChange:(NSNotification *)note {
@@ -57,9 +57,8 @@
     self.log.string.length;
     
     if (note.object == self.log) {
-        NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
-        [ud setObject:self.log.string forKey:FFMPackingLog];
-        [ud synchronize];
+        FFMUserDefault *ud = [FFMUserDefault new];
+        ud.FFMPackingLog = self.log.string;
     }
 }
 
@@ -94,8 +93,8 @@
     
     NSString *branch = sender.stringValue;
     
-    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
-    NSMutableArray *branches = [[ud arrayForKey:FFMPackingBranches]?:@[] mutableCopy];
+    FFMUserDefault *ud = [FFMUserDefault new];
+    NSMutableArray *branches = [ud.FFMPackingBranches?:@[] mutableCopy];
     if ([branches containsObject:branch]) {
         if (branches.count > 1) {
             [branches exchangeObjectAtIndex:[branches indexOfObject:branch] withObjectAtIndex:0];
@@ -107,8 +106,7 @@
         }
         [branches insertObject:branch atIndex:0];
     }
-
-    [ud setObject:branches.copy forKey:FFMPackingBranches];
+    ud.FFMPackingBranches = branches.copy;
     [sender reloadData];
 
 }
@@ -116,12 +114,12 @@
 #pragma mark-   NSComboBoxDataSource
 
 - (NSInteger)numberOfItemsInComboBox:(NSComboBox *)comboBox {
-    NSArray *branches = [[NSUserDefaults standardUserDefaults] arrayForKey:FFMPackingBranches];
+    NSArray *branches = [FFMUserDefault new].FFMPackingBranches;
     return branches.count;
 }
 
 - (nullable id)comboBox:(NSComboBox *)comboBox objectValueForItemAtIndex:(NSInteger)index {
-    NSArray *branches = [[NSUserDefaults standardUserDefaults] arrayForKey:FFMPackingBranches];
+    NSArray *branches = [FFMUserDefault new].FFMPackingBranches;
     if (branches.count) {
         return branches[index];
     }

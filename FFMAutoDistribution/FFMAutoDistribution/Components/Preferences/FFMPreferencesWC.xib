@@ -40,7 +40,7 @@
                         </connections>
                     </toolbarItem>
                     <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="5VX-1H-c1K"/>
-                    <toolbarItem implicitItemIdentifier="90AA662A-8926-439C-86ED-9807D5B36005" explicitItemIdentifier="WorkPath" label="工作路径" paletteLabel="WorkPath" toolTip="设置打包和临时文件路径" tag="-1" image="workpath" selectable="YES" id="Ij7-Cl-IRq">
+                    <toolbarItem implicitItemIdentifier="90AA662A-8926-439C-86ED-9807D5B36005" explicitItemIdentifier="WorkPath" label="环境配置" paletteLabel="WorkPath" toolTip="设置打包和临时文件路径" tag="-1" image="workpath" selectable="YES" id="Ij7-Cl-IRq">
                         <connections>
                             <action selector="workPath:" target="-2" id="eLB-8V-TmT"/>
                         </connections>

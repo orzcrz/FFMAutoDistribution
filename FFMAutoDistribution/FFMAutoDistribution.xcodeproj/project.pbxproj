@@ -37,6 +37,9 @@
 		D2D24EFC2079F139008CEB8E /* FFMFirSettingVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2D24EFA2079F139008CEB8E /* FFMFirSettingVC.xib */; };
 		D2D24F002079F14F008CEB8E /* FFMTestFlightSettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D24EFE2079F14F008CEB8E /* FFMTestFlightSettingVC.m */; };
 		D2D24F012079F14F008CEB8E /* FFMTestFlightSettingVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2D24EFF2079F14F008CEB8E /* FFMTestFlightSettingVC.xib */; };
+		D2F076B6207DB4A100C7C829 /* FFMUserDefault.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F076B4207DB4A100C7C829 /* FFMUserDefault.m */; };
+		D2F076B7207DB4A100C7C829 /* FFMUserDefaultsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F076B5207DB4A100C7C829 /* FFMUserDefaultsManager.m */; };
+		D2F076BB207DB4A800C7C829 /* CocoaClass.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F076BA207DB4A800C7C829 /* CocoaClass.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -89,6 +92,12 @@
 		D2D24EFD2079F14F008CEB8E /* FFMTestFlightSettingVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFMTestFlightSettingVC.h; sourceTree = "<group>"; };
 		D2D24EFE2079F14F008CEB8E /* FFMTestFlightSettingVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFMTestFlightSettingVC.m; sourceTree = "<group>"; };
 		D2D24EFF2079F14F008CEB8E /* FFMTestFlightSettingVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FFMTestFlightSettingVC.xib; sourceTree = "<group>"; };
+		D2F076B2207DB4A100C7C829 /* FFMUserDefault.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFMUserDefault.h; sourceTree = "<group>"; };
+		D2F076B3207DB4A100C7C829 /* FFMUserDefaultsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFMUserDefaultsManager.h; sourceTree = "<group>"; };
+		D2F076B4207DB4A100C7C829 /* FFMUserDefault.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFMUserDefault.m; sourceTree = "<group>"; };
+		D2F076B5207DB4A100C7C829 /* FFMUserDefaultsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFMUserDefaultsManager.m; sourceTree = "<group>"; };
+		D2F076B9207DB4A800C7C829 /* CocoaClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocoaClass.h; sourceTree = "<group>"; };
+		D2F076BA207DB4A800C7C829 /* CocoaClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CocoaClass.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +144,7 @@
 		021AE59C2073D11500DB96A9 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				D2F076B0207DB47C00C7C829 /* Tools */,
 				D2D24EE32074D553008CEB8E /* UI */,
 				D2162DBE2074ADFC00260BC0 /* Ext */,
 				021AE5A32073D5FD00DB96A9 /* FFMConstants.h */,
@@ -317,6 +327,35 @@
 			path = WorkPath;
 			sourceTree = "<group>";
 		};
+		D2F076B0207DB47C00C7C829 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				D2F076B8207DB4A800C7C829 /* Kernel */,
+				D2F076B1207DB4A100C7C829 /* UesrDefault */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		D2F076B1207DB4A100C7C829 /* UesrDefault */ = {
+			isa = PBXGroup;
+			children = (
+				D2F076B2207DB4A100C7C829 /* FFMUserDefault.h */,
+				D2F076B4207DB4A100C7C829 /* FFMUserDefault.m */,
+				D2F076B3207DB4A100C7C829 /* FFMUserDefaultsManager.h */,
+				D2F076B5207DB4A100C7C829 /* FFMUserDefaultsManager.m */,
+			);
+			path = UesrDefault;
+			sourceTree = "<group>";
+		};
+		D2F076B8207DB4A800C7C829 /* Kernel */ = {
+			isa = PBXGroup;
+			children = (
+				D2F076B9207DB4A800C7C829 /* CocoaClass.h */,
+				D2F076BA207DB4A800C7C829 /* CocoaClass.m */,
+			);
+			path = Kernel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -438,16 +477,19 @@
 			files = (
 				D2D24EE12074C76E008CEB8E /* FFMGitRepoSettingWC.m in Sources */,
 				021AE5A52073D5FD00DB96A9 /* FFMConstants.m in Sources */,
+				D2F076B6207DB4A100C7C829 /* FFMUserDefault.m in Sources */,
 				021AE5C02073DBB800DB96A9 /* FFMWindowController.m in Sources */,
 				D2D24EF12079C609008CEB8E /* FFMWorkPathVC.m in Sources */,
 				D2D24EF62079E6E5008CEB8E /* FFMPgySettingVC.m in Sources */,
 				D2540B19207A383C00C01C4B /* FFMShellTask.m in Sources */,
+				D2F076B7207DB4A100C7C829 /* FFMUserDefaultsManager.m in Sources */,
 				D2D24EE62074D568008CEB8E /* FFMBaseView.m in Sources */,
 				D2D24F002079F14F008CEB8E /* FFMTestFlightSettingVC.m in Sources */,
 				D2162DC42074AE6E00260BC0 /* FFMNibHelper.m in Sources */,
 				D2162DA3207463D700260BC0 /* FFMAboutWC.m in Sources */,
 				D2162DB22074AC8F00260BC0 /* FFMPreferencesWC.m in Sources */,
 				D2162D932073C15E00260BC0 /* main.m in Sources */,
+				D2F076BB207DB4A800C7C829 /* CocoaClass.m in Sources */,
 				D2D24EFB2079F139008CEB8E /* FFMFirSettingVC.m in Sources */,
 				D2540B14207A1B0400C01C4B /* FFMOutputWC.m in Sources */,
 				D2162D8B2073C15E00260BC0 /* AppDelegate.m in Sources */,

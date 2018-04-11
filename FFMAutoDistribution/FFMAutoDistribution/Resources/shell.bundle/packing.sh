@@ -24,6 +24,7 @@ function checkoutCodeFromGitLab() {
 	$git fetch && $git checkout -b $branch_name origin/$branch_name
 	$git branch
 	echo "----------------------- 切换至分支 $branch_name -----------------------"
+    sleep 3
 }
 
 function podInstall() {

@@ -16,7 +16,7 @@ function checkoutCodeFromGitLab() {
     local git="/usr/bin/git"
     if [[ ! -d "$git_folder" ]] && [[ ! -d "$git_folder/.git" ]]; then
         echo "--------- 本地未找到项目文件，将会从gitlab克隆项目 ---------"
-        $git clone --progress --depth=1 $remote_repo $git_folder
+        $git clone --progress $remote_repo $git_folder
     fi
 	cd $git_folder
 	$git checkout master

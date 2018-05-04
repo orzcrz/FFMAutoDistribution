@@ -19,7 +19,7 @@ function pushBundleVersionModification() {
 	$git push origin
 
 	$git checkout master
-	$git branch -D $branch_name
+    $git branch -D $branch_name
 	$git branch
 }
 
@@ -67,12 +67,12 @@ function uploadToPgy() {
 
 ######## START ########
 
-change_log=$9
+change_log=${10}
 
-pgy_ak=${10}
-pgy_uk=${11}
+pgy_ak=${11}
+pgy_uk=${12}
 
-source "$(cd $(dirname $0); pwd)/packing.sh" $1 $2 $3 $4 $5 $6 $7 $8
+source "$(cd $(dirname $0); pwd)/packing.sh" $1 $2 $3 $4 $5 $6 $7 $8 $9
 
 uploadToPgy
 

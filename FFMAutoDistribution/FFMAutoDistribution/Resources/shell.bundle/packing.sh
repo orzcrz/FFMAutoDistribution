@@ -52,7 +52,10 @@ function initProjectBuildConfigure() {
     bundle_version=$(echo $(date "+%m%d.%H%M") | sed s'/^0//')
 
     /usr/libexec/PlistBuddy -c "set CFBundleVersion ${bundle_version}" ${project_plist}
-    /usr/libexec/PlistBuddy -c "set CFBundleVersion ${bundle_version}" ${extension_notification_plist}
+
+    if [[ -d "$extension_notification_plist" ]]; then
+        /usr/libexec/PlistBuddy -c "set CFBundleVersion ${bundle_version}" ${extension_notification_plist}
+    fi
 
     echo "------------------------ 项目信息汇总 ------------------------"
     echo "签名方式 : $sign_mode"
@@ -107,13 +110,14 @@ branch_name=$3
 sign_mode=$4
 build_config=$5
 local_repo=$6
-remote_repo=$7
-plist_path=$8
+local_prjName=$7
+remote_repo=$8
+plist_path=$9
 
 cd $local_repo
 
-git_folder="$local_repo/qukan-ios"
-project_path="$git_folder/QuKan"
+git_folder="$local_repo/${local_prjName}"
+project_path="$git_folder/${local_prjName}"
 
 checkoutCodeFromGitLab
 

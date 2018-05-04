@@ -26,13 +26,14 @@
     _remoteNameTF.stringValue = ud.FFMGitRepoRemoteName?:@"";
     _remoteTF.stringValue = ud.FFMGitRepoRemoteURL?:@"";
     _localNameTF.stringValue = ud.FFMGitRepoLocalName?:@"";
+    _confirmBtn.enabled = _remoteNameTF.stringValue.length && _remoteTF.stringValue.length;
 
     __weak typeof(self) weakself = self;
     [[NSNotificationCenter defaultCenter] addObserverForName:NSControlTextDidChangeNotification object:nil queue:nil usingBlock:^(NSNotification * _Nonnull note) {
         weakself.confirmBtn.enabled = \
-        weakself.remoteNameTF.stringValue.length &&
-        weakself.remoteTF.stringValue.length &&
-        weakself.localNameTF.stringValue.length;
+        weakself.remoteNameTF.stringValue.length
+        && weakself.remoteTF.stringValue.length
+        && weakself.localNameTF.stringValue.length;
     }];
 }
 

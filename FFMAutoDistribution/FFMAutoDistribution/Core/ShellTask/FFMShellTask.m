@@ -17,6 +17,7 @@
     if (self) {
         FFMUserDefault *ud = [FFMUserDefault new];
         _repoLocalPath = ud.FFMPackingWorkPath;
+        _repoProjectName = ud.FFMGitRepoLocalName;
         _repoRemoteURL = ud.FFMGitRepoRemoteURL;
         _podPath = ud.FFMPackingPodPath;
         _xcprettyPath = ud.FFMPackingXcprettyPath;

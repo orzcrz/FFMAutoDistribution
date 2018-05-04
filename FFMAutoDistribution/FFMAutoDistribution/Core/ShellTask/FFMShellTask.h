@@ -19,6 +19,7 @@
 @property (nonatomic, copy) NSString *signMode;
 @property (copy) NSString *buildConfig;
 @property (copy) NSString *repoLocalPath;
+@property (copy) NSString *repoProjectName;
 @property (copy) NSString *repoRemoteURL;
 @property (copy) NSString *plistPath;
 @property (copy) NSString *log;

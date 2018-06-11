@@ -25,5 +25,6 @@
 @property (nonatomic, copy) NSString *FFMPackingTestFlightAccount;      // 上传TestFlight所需的开发者帐号
 @property (nonatomic, copy) NSString *FFMPackingTestFlightPasscode;     // 上传TestFlight所需的开发者密码
 
+@property (nonatomic, strong) NSDictionary<NSString *, NSString *> *FFMPrivateSpecs;     // 私仓  url : name
 
 @end

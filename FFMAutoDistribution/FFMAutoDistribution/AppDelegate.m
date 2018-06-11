@@ -57,4 +57,8 @@
     [_windowController showRepoSetting];
 }
 
+- (IBAction)setPrivateRepo:(NSMenuItem *)sender {
+    [_windowController showPrivateRepoSetting];
+}
+
 @end

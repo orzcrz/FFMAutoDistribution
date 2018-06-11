@@ -20,6 +20,9 @@
 		D2162DB22074AC8F00260BC0 /* FFMPreferencesWC.m in Sources */ = {isa = PBXBuildFile; fileRef = D2162DB02074AC8F00260BC0 /* FFMPreferencesWC.m */; };
 		D2162DB32074AC8F00260BC0 /* FFMPreferencesWC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2162DB12074AC8F00260BC0 /* FFMPreferencesWC.xib */; };
 		D2162DC42074AE6E00260BC0 /* FFMNibHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D2162DC32074AE6E00260BC0 /* FFMNibHelper.m */; };
+		D24DFFB920B26B6E006FD43B /* FFMSetPrivateRepo.m in Sources */ = {isa = PBXBuildFile; fileRef = D24DFFB720B26B6E006FD43B /* FFMSetPrivateRepo.m */; };
+		D24DFFBA20B26B6E006FD43B /* FFMSetPrivateRepo.xib in Resources */ = {isa = PBXBuildFile; fileRef = D24DFFB820B26B6E006FD43B /* FFMSetPrivateRepo.xib */; };
+		D24DFFBD20B3BD1B006FD43B /* FFMPrivateRepoInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D24DFFBC20B3BD1B006FD43B /* FFMPrivateRepoInfo.m */; };
 		D2540B14207A1B0400C01C4B /* FFMOutputWC.m in Sources */ = {isa = PBXBuildFile; fileRef = D2540B12207A1B0400C01C4B /* FFMOutputWC.m */; };
 		D2540B15207A1B0400C01C4B /* FFMOutputWC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2540B13207A1B0400C01C4B /* FFMOutputWC.xib */; };
 		D2540B19207A383C00C01C4B /* FFMShellTask.m in Sources */ = {isa = PBXBuildFile; fileRef = D2540B18207A383C00C01C4B /* FFMShellTask.m */; };
@@ -66,6 +69,11 @@
 		D2162DB12074AC8F00260BC0 /* FFMPreferencesWC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FFMPreferencesWC.xib; sourceTree = "<group>"; };
 		D2162DC22074AE6E00260BC0 /* FFMNibHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFMNibHelper.h; sourceTree = "<group>"; };
 		D2162DC32074AE6E00260BC0 /* FFMNibHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFMNibHelper.m; sourceTree = "<group>"; };
+		D24DFFB620B26B6E006FD43B /* FFMSetPrivateRepo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFMSetPrivateRepo.h; sourceTree = "<group>"; };
+		D24DFFB720B26B6E006FD43B /* FFMSetPrivateRepo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFMSetPrivateRepo.m; sourceTree = "<group>"; };
+		D24DFFB820B26B6E006FD43B /* FFMSetPrivateRepo.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FFMSetPrivateRepo.xib; sourceTree = "<group>"; };
+		D24DFFBB20B3BD1B006FD43B /* FFMPrivateRepoInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFMPrivateRepoInfo.h; sourceTree = "<group>"; };
+		D24DFFBC20B3BD1B006FD43B /* FFMPrivateRepoInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFMPrivateRepoInfo.m; sourceTree = "<group>"; };
 		D2540B11207A1B0400C01C4B /* FFMOutputWC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFMOutputWC.h; sourceTree = "<group>"; };
 		D2540B12207A1B0400C01C4B /* FFMOutputWC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFMOutputWC.m; sourceTree = "<group>"; };
 		D2540B13207A1B0400C01C4B /* FFMOutputWC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FFMOutputWC.xib; sourceTree = "<group>"; };
@@ -249,6 +257,28 @@
 			path = Ext;
 			sourceTree = "<group>";
 		};
+		D24DFFB420B26B4A006FD43B /* SetGitRepo */ = {
+			isa = PBXGroup;
+			children = (
+				D2D24EDE2074C76E008CEB8E /* FFMGitRepoSettingWC.h */,
+				D2D24EDF2074C76E008CEB8E /* FFMGitRepoSettingWC.m */,
+				D2D24EE02074C76E008CEB8E /* FFMGitRepoSettingWC.xib */,
+			);
+			path = SetGitRepo;
+			sourceTree = "<group>";
+		};
+		D24DFFB520B26B55006FD43B /* SetPrivateRepo */ = {
+			isa = PBXGroup;
+			children = (
+				D24DFFB620B26B6E006FD43B /* FFMSetPrivateRepo.h */,
+				D24DFFB720B26B6E006FD43B /* FFMSetPrivateRepo.m */,
+				D24DFFB820B26B6E006FD43B /* FFMSetPrivateRepo.xib */,
+				D24DFFBB20B3BD1B006FD43B /* FFMPrivateRepoInfo.h */,
+				D24DFFBC20B3BD1B006FD43B /* FFMPrivateRepoInfo.m */,
+			);
+			path = SetPrivateRepo;
+			sourceTree = "<group>";
+		};
 		D2540B10207A1AE000C01C4B /* Output */ = {
 			isa = PBXGroup;
 			children = (
@@ -271,9 +301,8 @@
 		D2D24EDD2074C73F008CEB8E /* GitRepo */ = {
 			isa = PBXGroup;
 			children = (
-				D2D24EDE2074C76E008CEB8E /* FFMGitRepoSettingWC.h */,
-				D2D24EDF2074C76E008CEB8E /* FFMGitRepoSettingWC.m */,
-				D2D24EE02074C76E008CEB8E /* FFMGitRepoSettingWC.xib */,
+				D24DFFB520B26B55006FD43B /* SetPrivateRepo */,
+				D24DFFB420B26B4A006FD43B /* SetGitRepo */,
 			);
 			path = GitRepo;
 			sourceTree = "<group>";
@@ -423,6 +452,7 @@
 			files = (
 				D2540B6A207CE63200C01C4B /* plist.bundle in Resources */,
 				D2162DB32074AC8F00260BC0 /* FFMPreferencesWC.xib in Resources */,
+				D24DFFBA20B26B6E006FD43B /* FFMSetPrivateRepo.xib in Resources */,
 				D2162DA4207463D700260BC0 /* FFMAboutWC.xib in Resources */,
 				D2162D8D2073C15E00260BC0 /* Assets.xcassets in Resources */,
 				D2D24EF22079C609008CEB8E /* FFMWorkPathVC.xib in Resources */,
@@ -483,12 +513,14 @@
 				D2D24EF62079E6E5008CEB8E /* FFMPgySettingVC.m in Sources */,
 				D2540B19207A383C00C01C4B /* FFMShellTask.m in Sources */,
 				D2F076B7207DB4A100C7C829 /* FFMUserDefaultsManager.m in Sources */,
+				D24DFFB920B26B6E006FD43B /* FFMSetPrivateRepo.m in Sources */,
 				D2D24EE62074D568008CEB8E /* FFMBaseView.m in Sources */,
 				D2D24F002079F14F008CEB8E /* FFMTestFlightSettingVC.m in Sources */,
 				D2162DC42074AE6E00260BC0 /* FFMNibHelper.m in Sources */,
 				D2162DA3207463D700260BC0 /* FFMAboutWC.m in Sources */,
 				D2162DB22074AC8F00260BC0 /* FFMPreferencesWC.m in Sources */,
 				D2162D932073C15E00260BC0 /* main.m in Sources */,
+				D24DFFBD20B3BD1B006FD43B /* FFMPrivateRepoInfo.m in Sources */,
 				D2F076BB207DB4A800C7C829 /* CocoaClass.m in Sources */,
 				D2D24EFB2079F139008CEB8E /* FFMFirSettingVC.m in Sources */,
 				D2540B14207A1B0400C01C4B /* FFMOutputWC.m in Sources */,

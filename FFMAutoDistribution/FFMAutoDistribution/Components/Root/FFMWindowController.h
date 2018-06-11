@@ -15,5 +15,6 @@
 - (void)showAbout;
 - (void)showPreference;
 - (void)showRepoSetting;
+- (void)showPrivateRepoSetting;
 
 @end

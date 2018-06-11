@@ -11,6 +11,7 @@
 #import "FFMAboutWC.h"
 #import "FFMPreferencesWC.h"
 #import "FFMGitRepoSettingWC.h"
+#import "FFMSetPrivateRepo.h"
 
 #import "FFMShellTask.h"
 
@@ -20,6 +21,7 @@
 @property (nonatomic, strong) FFMPreferencesWC *preferenceWC;
 @property (nonatomic, strong) FFMGitRepoSettingWC *gitRepo;
 @property (nonatomic, strong) FFMOutputWC *output;
+@property (nonatomic, strong) FFMSetPrivateRepo *priRepo;
 
 @property (weak) IBOutlet NSComboBox *branch; // 分支名
 @property (weak) IBOutlet NSPopUpButton *sign; // development/ad-hoc/app-store
@@ -142,6 +144,10 @@
     }];
 }
 
+- (void)showPrivateRepoSetting {
+    [self.priRepo showWindow:self];
+}
+
 #pragma mark-   Setter & Getter
 
 - (FFMAboutWC *)about {
@@ -160,6 +166,12 @@
     if (_gitRepo) return _gitRepo;
     _gitRepo = [FFMGitRepoSettingWC ffm_loadFromNib];
     return _gitRepo;
+}
+
+- (FFMSetPrivateRepo *)priRepo {
+    if (_priRepo) return _priRepo;
+    _priRepo = [FFMSetPrivateRepo ffm_loadFromNib];
+    return _priRepo;
 }
 
 @end
